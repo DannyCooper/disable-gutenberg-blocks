@@ -1,3 +1,15 @@
-tr.disabled {
+.gutenberg_page_disable-blocks tr.disabled {
 	opacity: .5
+}
+
+.gutenberg_page_disable-blocks table {
+	position: relative;
+}
+
+.no-items {
+	display: none
+}
+
+.example-block {
+	display: none
 }

@@ -102,7 +102,7 @@ class Disable_Gutenberg_Blocks {
 	 * Get all blocks.
 	 */
 	public function get_disabled_blocks() {
-		return get_option( 'dgb_disabled_blocks', array() );
+		return (array) get_option( 'dgb_disabled_blocks', array() );
 	}
 }
 
@@ -122,6 +122,7 @@ function gdb_add_all_blocks() {
 	DGF()->add_blocks( 'core' );
 
 	$block_plugins = array(
+		'advanced-gutenberg'        => 'advanced-gutenberg/advanced-gutenberg.php',
 		'advanced-gutenberg-blocks' => 'advanced-gutenberg-blocks/plugin.php',
 		'atomic-blocks'             => 'atomic-blocks/atomicblocks.php',
 		'blockgallery'              => 'block-gallery/class-block-gallery.php',

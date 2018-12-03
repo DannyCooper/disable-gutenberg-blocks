@@ -42,7 +42,14 @@ class DGB_List_Table extends WP_List_Table {
 	 * [set_data description]
 	 */
 	public function set_data() {
-		$this->data = DGF()->get_blocks();
+		$this->data = array(
+			array(
+				'name'        => 'Example Block',
+				'id'          => '0',
+				'description' => 'Description',
+				'category'    => 'example',
+			),
+		);
 	}
 
 	/**
@@ -54,6 +61,7 @@ class DGB_List_Table extends WP_List_Table {
 	public function column_default( $item, $column_name ) {
 		switch ( $column_name ) {
 			case 'name':
+			case 'id':
 			case 'description':
 			case 'category':
 				return $item[ $column_name ];
@@ -69,6 +77,7 @@ class DGB_List_Table extends WP_List_Table {
 		$columns = array(
 			'cb'          => '<input type="checkbox" />',
 			'name'        => __( 'Name', 'disable-gutenberg-blocks' ),
+			'id'          => __( 'ID', 'disable-gutenberg-blocks' ),
 			'description' => __( 'Description', 'disable-gutenberg-blocks' ),
 			'category'    => __( 'Category', 'disable-gutenberg-blocks' ),
 		);
@@ -88,6 +97,15 @@ class DGB_List_Table extends WP_List_Table {
 		$sortable              = array();
 		$this->_column_headers = array( $columns, $hidden, $sortable );
 		$this->items           = $this->data;
+
+	}
+
+	/**
+	 * Output number of blocks.
+	 */
+	public function get_row_count() {
+
+		return count( $this->data );
 
 	}
 
@@ -219,7 +237,7 @@ class DGB_List_Table extends WP_List_Table {
 	 * @param string $name Name of block to disable.
 	 */
 	public function disable_block( $name ) {
-		$blocks = get_option( 'dgb_disabled_blocks', array() );
+		$blocks = (array) get_option( 'dgb_disabled_blocks', array() );
 		if ( ! in_array( $name, (array) $blocks, true ) ) {
 			$blocks[] = $name;
 		}
@@ -232,7 +250,7 @@ class DGB_List_Table extends WP_List_Table {
 	 * @param string $name Name of block to enable.
 	 */
 	public function enable_block( $name ) {
-		$blocks     = get_option( 'dgb_disabled_blocks', array() );
+		$blocks     = (array) get_option( 'dgb_disabled_blocks', array() );
 		$new_blocks = array();
 		if ( in_array( $name, (array) $blocks, true ) ) {
 			$new_blocks = array_diff( $blocks, array( $name ) );
@@ -246,7 +264,7 @@ class DGB_List_Table extends WP_List_Table {
 	 * @param string $name Name of block to check if disabled.
 	 */
 	public function is_block_disabled( $name ) {
-		$disabled_blocks = get_option( 'dgb_disabled_blocks', array() );
+		$disabled_blocks = (array) get_option( 'dgb_disabled_blocks', array() );
 
 		if ( in_array( $name, (array) $disabled_blocks, true ) ) {
 			return true;
@@ -262,12 +280,7 @@ class DGB_List_Table extends WP_List_Table {
 	 */
 	public function single_row( $item ) {
 
-		if ( $this->is_block_disabled( $item['name'] ) ) {
-			echo '<tr class="disabled">';
-		} else {
-			echo '<tr>';
-		}
-
+		echo '<tr class="example-block">';
 		$this->single_row_columns( $item );
 		echo '</tr>';
 	}

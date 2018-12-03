@@ -10,7 +10,7 @@ Remove unwanted blocks from Gutenberg editor.
 
 == Description ==
 
-The Gutenberg Block inserter can quickly become cluttered. There are currently over 100 free blocks available, in addition to the 34 core blocks. This plugin allows you to disable the blocks you or your clients don't need.
+The Gutenberg Block inserter can quickly become cluttered. There are currently over 200 free blocks available, in addition to the 34 core blocks. This plugin allows you to disable the blocks you or your clients don't need.
 
 ## TODO
 
@@ -20,11 +20,11 @@ The Gutenberg Block inserter can quickly become cluttered. There are currently o
 
 ## Missing Blocks
 
-If you find a block you can't disable using this plugin, please create a support thread:
+If you find a block you can't disable using this plugin, please create a [support thread](https://wordpress.org/support/plugin/disable-gutenberg-blocks).
 
 ## Block Developers
 
-To enable this plugin to manage your blocks, create a pull request with a list of your blocks in JSON format. Example:
+To enable this plugin to manage your blocks, create a pull request with a list of your blocks in JSON format. [EXAMPLE](https://github.com/editorblocks/disable-gutenberg-blocks/blob/master/json/example.json)
 
 ## Supports
 
@@ -45,7 +45,6 @@ To enable this plugin to manage your blocks, create a pull request with a list o
 * [WooCommerce Product Block](https://wordpress.org/plugins/woo-gutenberg-products-block/)
 * [Recipe Card Blocks by WPZOOM](https://wordpress.org/plugins/recipe-card-blocks-by-wpzoom/)
 
-
 == Installation ==
 Upload 'Disable Gutenberg Blocks', activate it, and you're done!
 
@@ -53,12 +52,12 @@ Navigate to wp-admin -> Gutenberg -> Disable Blocks to use the plugin.
 
 == Screenshots ==
 
-1. Instant Live Preview - Google Fonts for WordPress
-2. Customizer Settings Search - Google Fonts for WordPress
+1. Block Inserter with all Blocks disabled.
+2. Disable Gutenberg Blocks list.
 
 == Changelog ==
 
 = 1.0.0 =
-*Release Date - December 2 2018*
+*Release Date - December 3 2018*
 
 * Initial release
