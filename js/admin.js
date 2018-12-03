@@ -4,7 +4,7 @@ jQuery( document ).ready(function() {
 	var disabledBlocks = dgb_object.disabledBlocks;
 	var nonce = dgb_object.nonce;
 
-	$(".block-count").text($( blocks ).size());
+	jQuery(".block-count").text(jQuery( blocks ).size());
 
 	blocks.sort(function(a, b) {
 	    var textA = a.name.toUpperCase();
@@ -30,7 +30,7 @@ jQuery( document ).ready(function() {
 		  });
 
 
-	  if( isDisabledBlock ) {
+	  	if( isDisabledBlock ) {
 			html += '<tr class="disabled">';
 		} else {
 			html += '<tr>';
@@ -50,18 +50,13 @@ jQuery( document ).ready(function() {
 		}
 
 		html += '</div>';
-		html += '<button type="button" class="toggle-row">';
-			html += '<span class="screen-reader-text">Show more details</span>';
-		html += '</button>';
-		html += '<button type="button" class="toggle-row">';
-		html += '<span class="screen-reader-text">Show more details</span></button>';
 		html += '</td>';
 		html += '<td class="id column-id" data-colname="ID">' + id +'</td>';
 		html += '<td class="description column-description" data-colname="Description">' + description +'</td>';
 		html += '<td class="category column-category" data-colname="Category">' + category +'</td>';
 		html += '</tr>';
 
-		var table = $('.wp-list-table');
+		var table = jQuery('.wp-list-table');
 		table.append(html);
 
 	});

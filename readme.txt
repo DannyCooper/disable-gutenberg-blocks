@@ -22,10 +22,6 @@ The Gutenberg Block inserter can quickly become cluttered. There are currently o
 
 If you find a block you can't disable using this plugin, please create a [support thread](https://wordpress.org/support/plugin/disable-gutenberg-blocks).
 
-## Block Developers
-
-To enable this plugin to manage your blocks, create a pull request with a list of your blocks in JSON format. [EXAMPLE](https://github.com/editorblocks/disable-gutenberg-blocks/blob/master/json/example.json)
-
 ## Supports
 
 * Core Blocks
@@ -56,6 +52,11 @@ Navigate to wp-admin -> Gutenberg -> Disable Blocks to use the plugin.
 2. Disable Gutenberg Blocks list.
 
 == Changelog ==
+
+= 1.0.1 =
+*Release Date - December 3 2018*
+
+* Initial release
 
 = 1.0.0 =
 *Release Date - December 3 2018*

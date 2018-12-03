@@ -5,7 +5,7 @@
  * Plugin Name: Disable Gutenberg Blocks
  * Plugin URI:  https://wordpress.org/plugins/disable-gutenberg-blocks/
  * Description: Remove unwanted blocks from Gutenberg editor.
- * Version:     1.0.0
+ * Version:     1.0.1
  * Author:      Danny Cooper
  * Author URI:  https://editorblocks.com/disable-gutenberg-blocks
  * Text Domain: disable-gutenberg-blocks
@@ -38,13 +38,6 @@ class Disable_Gutenberg_Blocks {
 	private static $instance = null;
 
 	/**
-	 * Array of blocks.
-	 *
-	 * @var array
-	 */
-	public $blocks;
-
-	/**
 	 * The object is created from within the class itself
 	 * only if the class has no instance.
 	 */
@@ -61,6 +54,7 @@ class Disable_Gutenberg_Blocks {
 	 */
 	private function __construct() {
 		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue' ) );
+		require_once DGB_PLUGIN_DIR_PATH . 'class-dgb-admin-page.php';
 	}
 
 	/**
@@ -72,33 +66,6 @@ class Disable_Gutenberg_Blocks {
 	}
 
 	/**
-	 * Add blocks to the array.
-	 *
-	 * @param string $name Name of json file to get.
-	 */
-	public function add_blocks( $name ) {
-		$blocks_json = file_get_contents( DGB_PLUGIN_DIR_PATH . "json/${name}.json" );
-		$array       = json_decode( $blocks_json );
-
-		foreach ( $array as $block ) {
-			$new['name']        = ( isset( $block->name ) ? $block->name : '' );
-			$new['title']       = ( isset( $block->title ) ? $block->title : '' );
-			$new['category']    = ( isset( $block->category ) ? $block->category : '' );
-			$new['description'] = ( isset( $block->description ) ? $block->description : '' );
-
-			$this->blocks[] = $new;
-		}
-
-	}
-
-	/**
-	 * Get all blocks.
-	 */
-	public function get_blocks() {
-		return $this->blocks;
-	}
-
-	/**
 	 * Get all blocks.
 	 */
 	public function get_disabled_blocks() {
@@ -107,46 +74,17 @@ class Disable_Gutenberg_Blocks {
 }
 
 /**
- * The main function for that returns Easy_Digital_Downloads
+ * The main function for that returns Disable_Gutenberg_Blocks.
  */
 function DGF() {
 	return Disable_Gutenberg_Blocks::instance();
 }
-DGF();
 
 /**
- * Remove all Gutenberg Blocks.
+ * Detect plugin. For use on Front End only.
  */
-function gdb_add_all_blocks() {
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
-	DGF()->add_blocks( 'core' );
-
-	$block_plugins = array(
-		'advanced-gutenberg'        => 'advanced-gutenberg/advanced-gutenberg.php',
-		'advanced-gutenberg-blocks' => 'advanced-gutenberg-blocks/plugin.php',
-		'atomic-blocks'             => 'atomic-blocks/atomicblocks.php',
-		'blockgallery'              => 'block-gallery/class-block-gallery.php',
-		'bokez'                     => 'bokez-awesome-gutenberg-blocks/plugin.php',
-		'caxton'                    => 'caxton/caxton.php',
-		'coblocks'                  => 'coblocks/class-coblocks.php',
-		'editor-blocks'             => 'editor-blocks/plugin.php',
-		'ghostkit'                  => 'ghostkit/class-ghost-kit.php',
-		'kadence'                   => 'kadence-blocks/kadence-blocks.php',
-		'matt-watson'               => 'secure-blocks-for-gutenberg/plugin.php',
-		'sgb'                       => 'stag-blocks/stag-blocks.php',
-		'themeisle-blocks'          => 'themeisle-companion/themeisle-companion.php',
-		'ugb'                       => 'stackable-ultimate-gutenberg-blocks/plugin.php',
-		'wpzoom-recipe-card'        => 'recipe-card-blocks-by-wpzoom/wpzoom-recipe-card.php',
-		'woocommerce'               => 'woo-gutenberg-products-block/woocommerce-gutenberg-products-block.php',
-	);
-
-	foreach ( $block_plugins as $name => $file ) {
-		if ( is_plugin_active( $file ) ) {
-			DGF()->add_blocks( $name );
-		}
-	}
-
+if ( is_plugin_active( 'gutenberg/gutenberg.php' ) ) {
+	DGF();
 }
-add_action( 'admin_init', 'gdb_add_all_blocks' );
-
-require_once DGB_PLUGIN_DIR_PATH . 'class-dgb-admin-page.php';
