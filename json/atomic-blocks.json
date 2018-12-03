@@ -1,0 +1,721 @@
+[
+  {
+    "name": "atomic-blocks/ab-testimonial",
+    "title": "AB Testimonial",
+    "description": "Add a user testimonial with a name and title.",
+    "icon": {
+      "src": "format-quote"
+    },
+    "category": "atomic-blocks",
+    "keywords": [
+      "testimonial",
+      "quote",
+      "atomic"
+    ],
+    "attributes": {
+      "testimonialName": {
+        "type": "array",
+        "selector": ".ab-testimonial-name",
+        "source": "children"
+      },
+      "testimonialTitle": {
+        "type": "array",
+        "selector": ".ab-testimonial-title",
+        "source": "children"
+      },
+      "testimonialContent": {
+        "type": "array",
+        "selector": ".ab-testimonial-text",
+        "source": "children"
+      },
+      "testimonialAlignment": {
+        "type": "string"
+      },
+      "testimonialImgURL": {
+        "type": "string",
+        "source": "attribute",
+        "attribute": "src",
+        "selector": "img"
+      },
+      "testimonialImgID": {
+        "type": "number"
+      },
+      "testimonialBackgroundColor": {
+        "type": "string",
+        "default": "#f2f2f2"
+      },
+      "testimonialTextColor": {
+        "type": "string",
+        "default": "#32373c"
+      },
+      "testimonialFontSize": {
+        "type": "number",
+        "default": 18
+      },
+      "testimonialCiteAlign": {
+        "type": "string",
+        "default": "left-aligned"
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "atomic-blocks/ab-profile-box",
+    "title": "AB Profile Box",
+    "description": "Add a profile box with bio info and social media links.",
+    "icon": {
+      "src": "admin-users"
+    },
+    "category": "atomic-blocks",
+    "keywords": [
+      "author",
+      "profile",
+      "atomic"
+    ],
+    "attributes": {
+      "profileName": {
+        "type": "array",
+        "source": "children",
+        "selector": ".ab-profile-name"
+      },
+      "profileTitle": {
+        "type": "array",
+        "source": "children",
+        "selector": ".ab-profile-title"
+      },
+      "profileContent": {
+        "type": "array",
+        "selector": ".ab-profile-text",
+        "source": "children"
+      },
+      "profileAlignment": {
+        "type": "string"
+      },
+      "profileImgURL": {
+        "type": "string",
+        "source": "attribute",
+        "attribute": "src",
+        "selector": "img"
+      },
+      "profileImgID": {
+        "type": "number"
+      },
+      "profileBackgroundColor": {
+        "type": "string",
+        "default": "#f2f2f2"
+      },
+      "profileTextColor": {
+        "type": "string",
+        "default": "#32373c"
+      },
+      "profileLinkColor": {
+        "type": "string",
+        "default": "#392f43"
+      },
+      "profileFontSize": {
+        "type": "number",
+        "default": 18
+      },
+      "profileAvatarShape": {
+        "type": "string",
+        "default": "square"
+      },
+      "twitter": {
+        "type": "url"
+      },
+      "facebook": {
+        "type": "url"
+      },
+      "instagram": {
+        "type": "url"
+      },
+      "pinterest": {
+        "type": "url"
+      },
+      "google": {
+        "type": "url"
+      },
+      "youtube": {
+        "type": "url"
+      },
+      "github": {
+        "type": "url"
+      },
+      "email": {
+        "type": "url"
+      },
+      "website": {
+        "type": "url"
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "atomic-blocks/ab-notice",
+    "title": "AB Notice",
+    "description": "Add a stylized text notice.",
+    "icon": {
+      "src": "format-aside"
+    },
+    "category": "atomic-blocks",
+    "keywords": [
+      "notice",
+      "message",
+      "atomic"
+    ],
+    "attributes": {
+      "noticeTitle": {
+        "type": "string",
+        "selector": ".ab-notice-title"
+      },
+      "noticeContent": {
+        "type": "array",
+        "selector": ".ab-notice-text",
+        "source": "children"
+      },
+      "noticeAlignment": {
+        "type": "string"
+      },
+      "noticeBackgroundColor": {
+        "type": "string",
+        "default": "#00d1b2"
+      },
+      "noticeTextColor": {
+        "type": "string",
+        "default": "#32373c"
+      },
+      "noticeTitleColor": {
+        "type": "string",
+        "default": "#fff"
+      },
+      "noticeFontSize": {
+        "type": "number",
+        "default": 18
+      },
+      "noticeDismiss": {
+        "type": "string",
+        "default": ""
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "atomic-blocks/ab-drop-cap",
+    "title": "AB Drop Cap",
+    "description": "Add a styled drop cap to the beginning of your paragraph.",
+    "icon": {
+      "src": "format-quote"
+    },
+    "category": "atomic-blocks",
+    "keywords": [
+      "drop cap",
+      "quote",
+      "atomic"
+    ],
+    "attributes": {
+      "dropCapContent": {
+        "type": "array",
+        "selector": ".ab-drop-cap-text",
+        "source": "children"
+      },
+      "dropCapAlignment": {
+        "type": "string"
+      },
+      "dropCapBackgroundColor": {
+        "type": "string",
+        "default": "#f2f2f2"
+      },
+      "dropCapTextColor": {
+        "type": "string",
+        "default": "#32373c"
+      },
+      "dropCapFontSize": {
+        "type": "number",
+        "default": 3
+      },
+      "dropCapStyle": {
+        "type": "string",
+        "default": "drop-cap-letter"
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "atomic-blocks/ab-button",
+    "title": "AB Button",
+    "description": "Add a customizable button.",
+    "icon": {
+      "src": "admin-links"
+    },
+    "category": "atomic-blocks",
+    "keywords": [
+      "button",
+      "link",
+      "atomic"
+    ],
+    "attributes": {
+      "buttonText": {
+        "type": "string"
+      },
+      "buttonUrl": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "a",
+        "attribute": "href"
+      },
+      "buttonAlignment": {
+        "type": "string"
+      },
+      "buttonBackgroundColor": {
+        "type": "string",
+        "default": "#3373dc"
+      },
+      "buttonTextColor": {
+        "type": "string",
+        "default": "#ffffff"
+      },
+      "buttonSize": {
+        "type": "string",
+        "default": "ab-button-size-medium"
+      },
+      "buttonShape": {
+        "type": "string",
+        "default": "ab-button-shape-rounded"
+      },
+      "buttonTarget": {
+        "type": "boolean",
+        "default": false
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "atomic-blocks/ab-spacer",
+    "title": "AB Spacer",
+    "description": "Add a spacer and divider between your blocks.",
+    "icon": {
+      "src": "image-flip-vertical"
+    },
+    "category": "atomic-blocks",
+    "keywords": [
+      "spacer",
+      "divider",
+      "atomic"
+    ],
+    "attributes": {
+      "spacerHeight": {
+        "type": "number",
+        "default": 30
+      },
+      "spacerDivider": {
+        "type": "boolean",
+        "default": false
+      },
+      "spacerDividerStyle": {
+        "type": "string",
+        "default": "ab-divider-solid"
+      },
+      "spacerDividerColor": {
+        "type": "string",
+        "default": "#ddd"
+      },
+      "spacerDividerHeight": {
+        "type": "number",
+        "default": 1
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "atomic-blocks/ab-accordion",
+    "title": "AB Accordion",
+    "description": "Add accordion block with a title and text.",
+    "icon": {
+      "src": "editor-ul"
+    },
+    "category": "atomic-blocks",
+    "keywords": [
+      "accordion",
+      "list",
+      "atomic"
+    ],
+    "attributes": {
+      "accordionTitle": {
+        "type": "array",
+        "selector": ".ab-accordion-title",
+        "source": "children"
+      },
+      "accordionText": {
+        "type": "array",
+        "selector": ".ab-accordion-text",
+        "source": "children"
+      },
+      "accordionAlignment": {
+        "type": "string"
+      },
+      "accordionFontSize": {
+        "type": "number",
+        "default": 18
+      },
+      "accordionOpen": {
+        "type": "boolean",
+        "default": false
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "accordionText": {
+            "$ref": "$[17][\"attributes\"][\"accordionText\"]"
+          },
+          "accordionTitle": {
+            "$ref": "$[17][\"attributes\"][\"accordionTitle\"]"
+          },
+          "accordionAlignment": {
+            "$ref": "$[17][\"attributes\"][\"accordionAlignment\"]"
+          },
+          "accordionFontSize": {
+            "$ref": "$[17][\"attributes\"][\"accordionFontSize\"]"
+          },
+          "accordionOpen": {
+            "$ref": "$[17][\"attributes\"][\"accordionOpen\"]"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "atomic-blocks/ab-cta",
+    "title": "AB Call To Action",
+    "description": "Add a call to action section with a title, text, and a button.",
+    "icon": {
+      "src": "megaphone"
+    },
+    "category": "atomic-blocks",
+    "keywords": [
+      "call to action",
+      "cta",
+      "atomic"
+    ],
+    "attributes": {
+      "buttonText": {
+        "type": "string"
+      },
+      "buttonUrl": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "a",
+        "attribute": "href"
+      },
+      "buttonAlignment": {
+        "type": "string",
+        "default": "center"
+      },
+      "buttonBackgroundColor": {
+        "type": "string",
+        "default": "#3373dc"
+      },
+      "buttonTextColor": {
+        "type": "string",
+        "default": "#ffffff"
+      },
+      "buttonSize": {
+        "type": "string",
+        "default": "ab-button-size-medium"
+      },
+      "buttonShape": {
+        "type": "string",
+        "default": "ab-button-shape-rounded"
+      },
+      "buttonTarget": {
+        "type": "boolean",
+        "default": false
+      },
+      "ctaTitle": {
+        "type": "array",
+        "selector": ".ab-cta-title",
+        "source": "children"
+      },
+      "ctaTitleFontSize": {
+        "type": "string",
+        "default": "32"
+      },
+      "ctaTextFontSize": {
+        "type": "string",
+        "default": "20"
+      },
+      "ctaText": {
+        "type": "array",
+        "selector": ".ab-cta-text",
+        "source": "children"
+      },
+      "ctaWidth": {
+        "type": "string",
+        "default": "center"
+      },
+      "ctaBackgroundColor": {
+        "type": "string",
+        "default": "#f2f2f2"
+      },
+      "ctaTextColor": {
+        "type": "string",
+        "default": "#32373c"
+      },
+      "imgURL": {
+        "type": "string",
+        "source": "attribute",
+        "attribute": "src",
+        "selector": "img"
+      },
+      "imgID": {
+        "type": "number"
+      },
+      "imgAlt": {
+        "type": "string",
+        "source": "attribute",
+        "attribute": "alt",
+        "selector": "img"
+      },
+      "dimRatio": {
+        "type": "number",
+        "default": 50
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "atomic-blocks/ab-sharing",
+    "attributes": {
+      "facebook": {
+        "type": "boolean",
+        "default": true
+      },
+      "twitter": {
+        "type": "boolean",
+        "default": true
+      },
+      "google": {
+        "type": "boolean",
+        "default": true
+      },
+      "linkedin": {
+        "type": "boolean",
+        "default": false
+      },
+      "pinterest": {
+        "type": "boolean",
+        "default": false
+      },
+      "email": {
+        "type": "boolean",
+        "default": false
+      },
+      "reddit": {
+        "type": "boolean",
+        "default": false
+      },
+      "shareAlignment": {
+        "type": "string"
+      },
+      "shareButtonStyle": {
+        "type": "string",
+        "default": "ab-share-icon-text"
+      },
+      "shareButtonShape": {
+        "type": "string",
+        "default": "ab-share-shape-circular"
+      },
+      "shareButtonSize": {
+        "type": "string",
+        "default": "ab-share-size-medium"
+      },
+      "shareButtonColor": {
+        "type": "string",
+        "default": "ab-share-color-standard"
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "title": "AB Sharing",
+    "description": "Add sharing buttons to your posts and pages.",
+    "icon": {
+      "src": "admin-links"
+    },
+    "category": "atomic-blocks",
+    "keywords": [
+      "sharing",
+      "social",
+      "atomic"
+    ]
+  },
+  {
+    "name": "atomic-blocks/ab-post-grid",
+    "attributes": {
+      "categories": {
+        "type": "string"
+      },
+      "className": {
+        "type": "string"
+      },
+      "postsToShow": {
+        "type": "number",
+        "default": 6
+      },
+      "displayPostDate": {
+        "type": "boolean",
+        "default": true
+      },
+      "displayPostExcerpt": {
+        "type": "boolean",
+        "default": true
+      },
+      "displayPostAuthor": {
+        "type": "boolean",
+        "default": true
+      },
+      "displayPostImage": {
+        "type": "boolean",
+        "default": true
+      },
+      "displayPostLink": {
+        "type": "boolean",
+        "default": true
+      },
+      "postLayout": {
+        "type": "string",
+        "default": "grid"
+      },
+      "columns": {
+        "type": "number",
+        "default": 2
+      },
+      "align": {
+        "type": "string",
+        "default": "center"
+      },
+      "width": {
+        "type": "string",
+        "default": "wide"
+      },
+      "order": {
+        "type": "string",
+        "default": "desc"
+      },
+      "orderBy": {
+        "type": "string",
+        "default": "date"
+      },
+      "imageCrop": {
+        "type": "string",
+        "default": "landscape"
+      },
+      "readMoreText": {
+        "type": "string",
+        "default": "Continue Reading"
+      }
+    },
+    "title": "AB Post Grid",
+    "description": "Add a grid or list of customizable posts to your page.",
+    "icon": {
+      "src": "grid-view"
+    },
+    "category": "atomic-blocks",
+    "keywords": [
+      "post",
+      "grid",
+      "atomic"
+    ]
+  },
+  {
+    "name": "atomic-blocks/ab-container",
+    "title": "AB Container",
+    "description": "Add a container block to wrap several blocks in a parent container.",
+    "icon": {
+      "src": "editor-table"
+    },
+    "category": "atomic-blocks",
+    "keywords": [
+      "container",
+      "section",
+      "atomic"
+    ],
+    "attributes": {
+      "containerPaddingTop": {
+        "type": "number",
+        "default": 0
+      },
+      "containerPaddingRight": {
+        "type": "number",
+        "default": 0
+      },
+      "containerPaddingBottom": {
+        "type": "number",
+        "default": 0
+      },
+      "containerPaddingLeft": {
+        "type": "number",
+        "default": 0
+      },
+      "containerMarginTop": {
+        "type": "number",
+        "default": 0
+      },
+      "containerMarginBottom": {
+        "type": "number",
+        "default": 0
+      },
+      "containerWidth": {
+        "type": "string",
+        "default": "center"
+      },
+      "containerMaxWidth": {
+        "type": "number",
+        "default": 1600
+      },
+      "containerBackgroundColor": {
+        "type": "string",
+        "default": "#fff"
+      },
+      "containerImgURL": {
+        "type": "string",
+        "source": "attribute",
+        "attribute": "src",
+        "selector": "img"
+      },
+      "containerImgID": {
+        "type": "number"
+      },
+      "containerImgAlt": {
+        "type": "string",
+        "source": "attribute",
+        "attribute": "alt",
+        "selector": "img"
+      },
+      "containerDimRatio": {
+        "type": "number",
+        "default": 50
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  }
+]

@@ -1,0 +1,702 @@
+[
+  {
+    "name": "editor-blocks/brands",
+    "title": "Brands (EB)",
+    "icon": {
+      "src": "awards"
+    },
+    "category": "editor-blocks",
+    "keywords": [
+      "Brands",
+      "Editor Blocks",
+      "Logos"
+    ],
+    "attributes": {
+      "brands": {
+        "type": "array",
+        "selector": ".brand",
+        "source": "query",
+        "query": {
+          "image": {
+            "source": "attribute",
+            "attribute": "src",
+            "selector": ".brand__image"
+          }
+        },
+        "default": []
+      },
+      "count": {
+        "type": "number",
+        "default": 4
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "editor-blocks/callout",
+    "title": "Callout (EB)",
+    "category": "editor-blocks",
+    "icon": {
+      "src": "megaphone"
+    },
+    "keywords": [
+      "Callout",
+      "Button",
+      "Subheading"
+    ],
+    "attributes": {
+      "heading": {
+        "source": "children",
+        "selector": "h2"
+      },
+      "headingColor": {
+        "type": "string"
+      },
+      "headingSize": {
+        "type": "number"
+      },
+      "buttonText": {
+        "type": "string",
+        "default": "Click Here"
+      },
+      "buttonURL": {
+        "type": "string",
+        "default": ""
+      },
+      "buttonColor": {
+        "type": "string",
+        "default": "#ffffff"
+      },
+      "buttonBackgroundColor": {
+        "type": "string",
+        "default": "#bc0d0d"
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "editor-blocks/features",
+    "title": "Features (EB)",
+    "icon": {
+      "src": "editor-ul"
+    },
+    "category": "editor-blocks",
+    "keywords": [
+      "Features",
+      "Editor Blocks",
+      "EB"
+    ],
+    "attributes": {
+      "features": {
+        "type": "array",
+        "selector": ".feature",
+        "source": "query",
+        "query": {
+          "image": {
+            "source": "attribute",
+            "selector": ".feature__image",
+            "attribute": "src"
+          },
+          "heading": {
+            "source": "children",
+            "selector": ".feature__heading"
+          },
+          "text": {
+            "source": "children",
+            "selector": ".feature__text"
+          }
+        },
+        "default": []
+      },
+      "count": {
+        "type": "number",
+        "default": 3
+      },
+      "alignment": {
+        "type": "string"
+      },
+      "headingColor": {
+        "type": "string"
+      },
+      "textColor": {
+        "type": "string"
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "editor-blocks/hero",
+    "title": "Hero (EB)",
+    "category": "editor-blocks",
+    "icon": {
+      "src": "format-image"
+    },
+    "keywords": [
+      "Hero",
+      "Editor Blocks",
+      "EB"
+    ],
+    "attributes": {
+      "heading": {
+        "source": "children",
+        "selector": ".hero__heading"
+      },
+      "text": {
+        "source": "children",
+        "selector": ".hero__text"
+      },
+      "alignment": {
+        "type": "string"
+      },
+      "position": {
+        "type": "string",
+        "default": "left"
+      },
+      "width": {
+        "type": "number",
+        "default": 500
+      },
+      "headingColor": {
+        "type": "string"
+      },
+      "textColor": {
+        "type": "string"
+      },
+      "buttonColor": {
+        "type": "string",
+        "default": "#ffffff"
+      },
+      "showButton": {
+        "type": "bool",
+        "default": true
+      },
+      "buttonBackgroundColor": {
+        "type": "string",
+        "default": "#bc0d0d"
+      },
+      "buttonText": {
+        "type": "string",
+        "default": "Click Here"
+      },
+      "buttonURL": {
+        "type": "string",
+        "default": ""
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "editor-blocks/horizontal-feature",
+    "title": "Horizontal Feature (EB)",
+    "category": "editor-blocks",
+    "icon": {
+      "src": "arrow-right-alt"
+    },
+    "keywords": [
+      "Feature",
+      "Editor Blocks",
+      "Feature"
+    ],
+    "attributes": {
+      "image": {
+        "type": "string",
+        "source": "attribute",
+        "attribute": "src",
+        "selector": "img"
+      },
+      "heading": {
+        "source": "children",
+        "selector": ".horizontal-feature__heading"
+      },
+      "subHeading": {
+        "source": "children",
+        "selector": ".horizontal-feature__subheading"
+      },
+      "text": {
+        "source": "children",
+        "selector": ".horizontal-feature__text"
+      },
+      "alignment": {
+        "type": "string",
+        "default": "left"
+      },
+      "contentWidth": {
+        "type": "number",
+        "default": 50
+      },
+      "contentPaddingTop": {
+        "type": "number",
+        "default": 0
+      },
+      "imageWidth": {
+        "type": "number",
+        "default": 50
+      },
+      "imagePosition": {
+        "type": "string",
+        "default": "right"
+      },
+      "imagePaddingTop": {
+        "type": "number",
+        "default": 0
+      },
+      "headingColor": {
+        "type": "string"
+      },
+      "subHeadingColor": {
+        "type": "string"
+      },
+      "textColor": {
+        "type": "string"
+      },
+      "buttonColor": {
+        "type": "string",
+        "default": "#ffffff"
+      },
+      "showButton": {
+        "type": "bool",
+        "default": true
+      },
+      "buttonBackgroundColor": {
+        "type": "string",
+        "default": "#bc0d0d"
+      },
+      "buttonText": {
+        "type": "string",
+        "default": "Click Here"
+      },
+      "buttonURL": {
+        "type": "string",
+        "default": ""
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "editor-blocks/intro",
+    "title": "Intro (EB)",
+    "category": "editor-blocks",
+    "icon": {
+      "src": "editor-textcolor"
+    },
+    "keywords": [
+      "Intro",
+      "Heading",
+      "Subheading"
+    ],
+    "attributes": {
+      "maxWidth": {
+        "type": "number",
+        "default": 600
+      },
+      "heading": {
+        "source": "children",
+        "selector": ".intro__heading"
+      },
+      "subheading": {
+        "source": "children",
+        "selector": ".intro__subheading"
+      },
+      "alignment": {
+        "type": "string"
+      },
+      "headingColor": {
+        "type": "string"
+      },
+      "headingSize": {
+        "type": "number"
+      },
+      "subheadingColor": {
+        "type": "string"
+      },
+      "subheadingSize": {
+        "type": "number"
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "editor-blocks/pricing-table",
+    "title": "Pricing Table (EB)",
+    "icon": {
+      "src": "cart"
+    },
+    "category": "editor-blocks",
+    "keywords": [
+      "Pricing Table",
+      "Editor Blocks",
+      "EB"
+    ],
+    "attributes": {
+      "columns": {
+        "type": "array",
+        "selector": ".column",
+        "source": "query",
+        "query": {
+          "image": {
+            "source": "attribute",
+            "selector": ".pricing-table__image",
+            "attribute": "src"
+          },
+          "heading": {
+            "source": "children",
+            "selector": ".pricing-table__heading"
+          },
+          "description": {
+            "source": "children",
+            "selector": ".pricing-table__description"
+          },
+          "price": {
+            "source": "children",
+            "selector": ".pricing-table__price"
+          },
+          "features": {
+            "source": "children",
+            "selector": ".pricing-table__features"
+          },
+          "buttonText": {
+            "source": "children",
+            "selector": ".pricing-table__button"
+          },
+          "buttonURL": {
+            "source": "attribute",
+            "selector": ".pricing-table__button",
+            "attribute": "href"
+          }
+        },
+        "default": []
+      },
+      "count": {
+        "type": "number",
+        "default": 3
+      },
+      "alignment": {
+        "type": "string",
+        "default": "center"
+      },
+      "columnBackgroundColor": {
+        "type": "string"
+      },
+      "headingColor": {
+        "type": "string"
+      },
+      "descriptionColor": {
+        "type": "string"
+      },
+      "priceColor": {
+        "type": "string"
+      },
+      "featuresColor": {
+        "type": "string"
+      },
+      "buttonColor": {
+        "type": "string",
+        "default": "#ffffff"
+      },
+      "buttonBackgroundColor": {
+        "type": "string",
+        "default": "#bc0d0d"
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "editor-blocks/team",
+    "title": "Team (EB)",
+    "icon": {
+      "src": "groups"
+    },
+    "category": "editor-blocks",
+    "keywords": [
+      "Features",
+      "Editor Blocks",
+      "EB"
+    ],
+    "attributes": {
+      "members": {
+        "type": "array",
+        "selector": ".team-member",
+        "source": "query",
+        "query": {
+          "image": {
+            "source": "attribute",
+            "selector": ".team-member__image",
+            "attribute": "src"
+          },
+          "name": {
+            "source": "children",
+            "selector": ".team-member__name"
+          },
+          "position": {
+            "source": "children",
+            "selector": ".team-member__position"
+          },
+          "bio": {
+            "source": "children",
+            "selector": ".team-member__bio"
+          }
+        },
+        "default": []
+      },
+      "count": {
+        "type": "number",
+        "default": 4
+      },
+      "nameColor": {
+        "type": "string"
+      },
+      "positionColor": {
+        "type": "string"
+      },
+      "bioColor": {
+        "type": "string"
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "editor-blocks/testimonial",
+    "title": "Testimonial (EB)",
+    "category": "editor-blocks",
+    "icon": {
+      "src": "format-quote"
+    },
+    "keywords": [
+      "Testimonial",
+      "Review",
+      "Editor Blocks"
+    ],
+    "attributes": {
+      "maxWidth": {
+        "type": "number",
+        "default": 600
+      },
+      "testimonial": {
+        "source": "children",
+        "selector": ".testimonial__text"
+      },
+      "author": {
+        "source": "children",
+        "selector": ".testimonial__author"
+      },
+      "alignment": {
+        "type": "string",
+        "default": "center"
+      },
+      "authorImage": {
+        "source": "attribute",
+        "selector": ".testimonial__image",
+        "attribute": "src"
+      },
+      "authorImageSize": {
+        "type": "number"
+      },
+      "testimonialColor": {
+        "type": "string"
+      },
+      "testimonialSize": {
+        "type": "number"
+      },
+      "authorColor": {
+        "type": "string"
+      },
+      "authorSize": {
+        "type": "number"
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "editor-blocks/vertical-feature",
+    "title": "Vertical Feature (EB)",
+    "category": "editor-blocks",
+    "icon": {
+      "src": "arrow-down-alt"
+    },
+    "keywords": [
+      "Feature",
+      "Editor Blocks",
+      "Feature"
+    ],
+    "attributes": {
+      "image": {
+        "type": "string",
+        "source": "attribute",
+        "attribute": "src",
+        "selector": ".vertical-feature__image"
+      },
+      "heading": {
+        "source": "children",
+        "selector": ".vertical-feature__heading"
+      },
+      "subHeading": {
+        "source": "children",
+        "selector": ".vertical-feature__subheading"
+      },
+      "text": {
+        "source": "children",
+        "selector": ".vertical-feature__text"
+      },
+      "alignment": {
+        "type": "string",
+        "default": "center"
+      },
+      "contentWidth": {
+        "type": "number",
+        "default": "600"
+      },
+      "contentPaddingTop": {
+        "type": "number",
+        "default": 0
+      },
+      "contentPaddingBottom": {
+        "type": "number",
+        "default": 0
+      },
+      "imageWidth": {
+        "type": "number"
+      },
+      "imagePosition": {
+        "type": "string",
+        "default": "below"
+      },
+      "imagePaddingTop": {
+        "type": "number",
+        "default": 50
+      },
+      "imagePaddingBottom": {
+        "type": "number",
+        "default": 0
+      },
+      "headingColor": {
+        "type": "string"
+      },
+      "subHeadingColor": {
+        "type": "string"
+      },
+      "textColor": {
+        "type": "string"
+      },
+      "buttonColor": {
+        "type": "string",
+        "default": "#ffffff"
+      },
+      "showButton": {
+        "type": "bool",
+        "default": true
+      },
+      "buttonBackgroundColor": {
+        "type": "string",
+        "default": "#bc0d0d"
+      },
+      "buttonText": {
+        "type": "string",
+        "default": "Click Here"
+      },
+      "buttonURL": {
+        "type": "string",
+        "default": ""
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "editor-blocks/wrapper",
+    "title": "Wrapper (EB)",
+    "icon": {
+      "src": "editor-contract"
+    },
+    "category": "editor-blocks",
+    "keywords": [
+      "wrapper",
+      "Editor Blocks",
+      "EB"
+    ],
+    "attributes": {
+      "align": {
+        "type": "string",
+        "default": "full"
+      },
+      "position": {
+        "type": "string"
+      },
+      "fullWidthBackground": {
+        "type": "bool",
+        "default": true
+      },
+      "maxWidth": {
+        "type": "number"
+      },
+      "paddingTop": {
+        "type": "number",
+        "default": 50
+      },
+      "paddingRight": {
+        "type": "number",
+        "default": 0
+      },
+      "paddingBottom": {
+        "type": "number",
+        "default": 50
+      },
+      "paddingLeft": {
+        "type": "number",
+        "default": 0
+      },
+      "marginTop": {
+        "type": "number",
+        "default": 50
+      },
+      "marginRight": {
+        "type": "number"
+      },
+      "marginBottom": {
+        "type": "number",
+        "default": 50
+      },
+      "marginLeft": {
+        "type": "number"
+      },
+      "backgroundColor": {
+        "type": "string"
+      },
+      "backgroundImage": {
+        "type": "string"
+      },
+      "backgroundOpacity": {
+        "type": "number",
+        "default": 0
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[10][\"attributes\"]"
+        }
+      }
+    ]
+  }
+]

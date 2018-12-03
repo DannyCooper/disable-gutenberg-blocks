@@ -1,0 +1,449 @@
+[
+	{
+    "name": "advanced-gutenberg-blocks/notice",
+    "title": "Notice",
+    "description": "Put forward a tips or a warning",
+    "category": "common",
+    "icon": {
+      "background": "#D56561",
+      "foreground": "#fff",
+      "src": "warning",
+      "shadowColor": "rgba(213, 101, 97, 0.3)"
+    },
+    "keywords": [
+      "warning",
+      "information",
+      "tips"
+    ],
+    "attributes": {
+      "type": {
+        "source": "attribute",
+        "selector": ".wp-block-advanced-gutenberg-blocks-notice",
+        "attribute": "data-type",
+        "default": "advice"
+      },
+      "title": {
+        "source": "text",
+        "type": "string",
+        "selector": ".wp-block-advanced-gutenberg-blocks-notice__title",
+        "default": "Advice"
+      },
+      "content": {
+        "type": "array",
+        "source": "children",
+        "selector": ".wp-block-advanced-gutenberg-blocks-notice__content"
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "advanced-gutenberg-blocks/plugin",
+    "title": "Plugin",
+    "description": "Display informations from a WordPress plugin",
+    "category": "common",
+    "icon": {
+      "background": "#D56561",
+      "foreground": "#fff",
+      "src": "admin-plugins",
+      "shadowColor": "rgba(213, 101, 97, 0.3)"
+    },
+    "keywords": [
+      "plugin"
+    ],
+    "attributes": {
+      "slug": {
+        "type": "string",
+        "default": false
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "advanced-gutenberg-blocks/ad",
+    "title": "Advertisement",
+    "description": "Put forward a tips or a warning",
+    "category": "common",
+    "icon": {
+      "background": "#D56561",
+      "foreground": "#fff",
+      "src": "megaphone",
+      "shadowColor": "rgba(213, 101, 97, 0.3)"
+    },
+    "keywords": [
+      "ad",
+      "advertising",
+      "banner"
+    ],
+    "attributes": {
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "advanced-gutenberg-blocks/adtext",
+    "title": "Text + Ad",
+    "description": "Display a text on the left and a rectangle ad on the right",
+    "category": "common",
+    "icon": {
+      "background": "#D56561",
+      "foreground": "#fff",
+      "src": "align-right",
+      "shadowColor": "rgba(213, 101, 97, 0.3)"
+    },
+    "keywords": [
+      "ad",
+      "advertising",
+      "publicity"
+    ],
+    "attributes": {
+      "content": {
+        "type": "array",
+        "source": "children",
+        "selector": ".wp-block-advanced-gutenberg-blocks-adtext__content"
+      },
+      "script": {
+        "type": "array",
+        "source": "children",
+        "selector": ".wp-block-advanced-gutenberg-blocks-adtext__ad"
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "advanced-gutenberg-blocks/card",
+    "title": "Website card preview",
+    "description": "Turn a simple url in a pretty card preview",
+    "category": "common",
+    "icon": {
+      "background": "#D56561",
+      "foreground": "#fff",
+      "src": "admin-links",
+      "shadowColor": "rgba(213, 101, 97, 0.3)"
+    },
+    "keywords": [
+      "url",
+      "link"
+    ],
+    "attributes": {
+      "title": {
+        "source": "text",
+        "selector": ".wp-block-advanced-gutenberg-blocks-card__title",
+        "default": ""
+      },
+      "description": {
+        "source": "text",
+        "selector": ".wp-block-advanced-gutenberg-blocks-card__description"
+      },
+      "image": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "img",
+        "attribute": "src"
+      },
+      "url": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "a",
+        "attribute": "href"
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "advanced-gutenberg-blocks/post",
+    "title": "Post",
+    "description": "Display a pretty post link (from any post type)",
+    "category": "common",
+    "icon": {
+      "background": "#D56561",
+      "foreground": "#fff",
+      "src": "admin-post",
+      "shadowColor": "rgba(213, 101, 97, 0.3)"
+    },
+    "keywords": [
+      "link"
+    ],
+    "attributes": {
+      "postID": {
+        "type": "string",
+        "default": false
+      },
+      "postType": {
+        "type": "string"
+      },
+      "showCategory": {
+        "type": "boolean",
+        "default": true
+      },
+      "showAuthor": {
+        "type": "boolean",
+        "default": true
+      },
+      "showImage": {
+        "type": "boolean",
+        "default": true
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "advanced-gutenberg-blocks/testimonial",
+    "title": "Testimonial",
+    "description": "Display a testimonial with a picture, text, name and company",
+    "category": "common",
+    "icon": {
+      "background": "#D56561",
+      "foreground": "#fff",
+      "src": "format-status",
+      "shadowColor": "rgba(213, 101, 97, 0.3)"
+    },
+    "keywords": [
+      "review"
+    ],
+    "attributes": {
+      "image": {
+        "type": "string"
+      },
+      "content": {
+        "type": "array",
+        "source": "children",
+        "selector": ".wp-block-advanced-gutenberg-blocks-testimonial__content"
+      },
+      "name": {
+        "type": "array",
+        "source": "children",
+        "selector": ".wp-block-advanced-gutenberg-blocks-testimonial__name"
+      },
+      "company": {
+        "type": "array",
+        "source": "children",
+        "selector": ".wp-block-advanced-gutenberg-blocks-testimonial__company"
+      },
+      "showCompany": {
+        "type": "boolean",
+        "default": true
+      },
+      "showImage": {
+        "type": "boolean",
+        "default": true
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "advanced-gutenberg-blocks/gmap",
+    "title": "Google Map",
+    "description": "Display a customizable Google map",
+    "category": "common",
+    "icon": {
+      "background": "#D56561",
+      "foreground": "#fff",
+      "src": "location-alt",
+      "shadowColor": "rgba(213, 101, 97, 0.3)"
+    },
+    "keywords": [
+      "gmap"
+    ],
+    "attributes": {
+      "address": {
+        "type": "string",
+        "default": "Paris"
+      },
+      "name": {
+        "type": "string",
+        "default": ""
+      },
+      "latitude": {
+        "type": "float",
+        "default": 48.8566
+      },
+      "longitude": {
+        "type": "float",
+        "default": 2.3522
+      },
+      "zoom": {
+        "type": "integer",
+        "default": 15
+      },
+      "height": {
+        "type": "integer",
+        "default": 400
+      },
+      "style": {
+        "type": "string",
+        "default": "default"
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "useOnce": true
+  },
+  {
+    "name": "advanced-gutenberg-blocks/clicktotweet",
+    "title": "Click to tweet",
+    "description": "Display a nice click to tweet box so your user can easily share your most meaningful sentences",
+    "category": "common",
+    "icon": {
+      "background": "#D56561",
+      "foreground": "#fff",
+      "src": "twitter",
+      "shadowColor": "rgba(213, 101, 97, 0.3)"
+    },
+    "keywords": [
+      "twitter"
+    ],
+    "attributes": {
+      "content": {
+        "type": "string"
+      },
+      "hashtags": {
+        "type": "string"
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "advanced-gutenberg-blocks/summary",
+    "title": "Table of contents",
+    "description": "Display an auto generated, dynamic table of contents",
+    "category": "common",
+    "icon": {
+      "background": "#D56561",
+      "foreground": "#fff",
+      "src": "book-alt",
+      "shadowColor": "rgba(213, 101, 97, 0.3)"
+    },
+    "keywords": [
+      "summary"
+    ],
+    "attributes": {
+      "title": {
+        "source": "text",
+        "type": "string",
+        "selector": ".wp-block-advanced-gutenberg-blocks-summary__title",
+        "default": "Table of contents"
+      },
+      "summary": {
+        "source": "html",
+        "selector": ".wp-block-advanced-gutenberg-blocks-summary__list"
+      },
+      "ordered": {
+        "type": "boolean",
+        "default": true
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "advanced-gutenberg-blocks/intro",
+    "title": "Intro",
+    "description": "Display a nice introduction text at the beginning of your post",
+    "category": "common",
+    "icon": {
+      "background": "#D56561",
+      "foreground": "#fff",
+      "src": "editor-textcolor",
+      "shadowColor": "rgba(213, 101, 97, 0.3)"
+    },
+    "keywords": [
+      "introduction",
+      "subhead",
+      "chapo"
+    ],
+    "attributes": {
+      "content": {
+        "type": "array",
+        "source": "children",
+        "selector": ".wp-block-advanced-gutenberg-blocks-intro__content"
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "useOnce": true
+  },
+	{
+		"name": "advanced-gutenberg-blocks/addtocart",
+		"title": "Add to cart button",
+		"description": "This button allow a customer to quickly add a product to cart",
+		"category": "common",
+		"icon": {
+			"background": "#D56561",
+			"foreground": "#fff",
+			"src": "cart",
+			"shadowColor": "rgba(213, 101, 97, 0.3)"
+		},
+		"keywords": [
+			"purchase"
+		],
+		"attributes": {
+			"productID": {
+				"type": "integer"
+			},
+			"hasIcon": {
+				"type": "boolean",
+				"default": true
+			},
+			"icon": {
+				"type": "string"
+			},
+			"backgroundColor": {
+				"type": "string"
+			},
+			"label": {
+				"type": "string",
+				"default": "Add to cart"
+			},
+			"className": {
+				"type": "string"
+			}
+		}
+	},
+	{
+		"name": "advanced-gutenberg-blocks/product",
+		"title": "Product",
+		"description": "Display WooCommerce Product in your post",
+		"category": "common",
+		"icon": {
+			"background": "#D56561",
+			"foreground": "#fff",
+			"src": "products",
+			"shadowColor": "rgba(213, 101, 97, 0.3)"
+		},
+		"keywords": [
+			"woocommerce"
+		],
+		"attributes": {
+			"productID": {
+				"type": "integer"
+			},
+			"priceColor": {
+				"type": "string"
+			},
+			"buttonBackgroundColor": {
+				"type": "string"
+			},
+			"className": {
+				"type": "string"
+			}
+		}
+	}
+]

@@ -1,0 +1,676 @@
+[
+	{
+    "name": "bokez/blockquote",
+    "title": "Blockquote",
+    "description": "Add quoted text",
+    "keywords": [
+      "blockquote",
+      "quote"
+    ],
+    "icon": {},
+    "category": "bokez",
+    "attributes": {
+      "quote": {
+        "type": "array",
+        "source": "children",
+        "selector": "p",
+        "default": "Great things in business are never done by one person. They're done by a team of people."
+      },
+      "cite": {
+        "type": "array",
+        "source": "children",
+        "selector": "cite",
+        "default": "Steve Jobs"
+      },
+      "alignment": {
+        "type": "string"
+      },
+      "borderColor": {
+        "type": "string",
+        "default": "#F9583B"
+      },
+      "borderSize": {
+        "type": "string",
+        "default": "4"
+      },
+      "borderPosition": {
+        "type": "string",
+        "default": "left"
+      },
+      "backgroundColor": {
+        "type": "string",
+        "default": "makeMeIgnored()"
+      },
+      "textColor": {
+        "type": "string",
+        "default": "makeMeIgnored()"
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "bokez/button",
+    "title": "Button",
+    "description": "Subscribe, buy, or read more? Add one now.",
+    "keywords": [
+      "button",
+      "link"
+    ],
+    "icon": {},
+    "category": "bokez",
+    "attributes": {
+      "text": {
+        "type": "string",
+        "default": "Buy Now"
+      },
+      "url": {
+        "type": "url",
+        "default": "http://delabon.com"
+      },
+      "alignment": {
+        "type": "string"
+      },
+      "color": {
+        "type": "string",
+        "default": "#e1e1e1"
+      },
+      "backgroundColor": {
+        "type": "string",
+        "default": "black"
+      },
+      "size": {
+        "type": "string",
+        "default": "default"
+      },
+      "type": {
+        "type": "string",
+        "default": "calltoaction"
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "bokez/cover-1",
+    "title": "Cover One",
+    "description": "Call to action or Cover ? We got you covered...",
+    "keywords": [
+      "call to action",
+      "cover",
+      "header"
+    ],
+    "icon": {},
+    "category": "bokez",
+    "attributes": {
+      "uid": {
+        "type": "string",
+        "default": ""
+      },
+      "alignment": {
+        "type": "string",
+        "default": "center"
+      },
+      "imageUrl": {
+        "type": "string"
+      },
+      "imageID": {
+        "type": "number"
+      },
+      "title": {
+        "type": "string",
+        "default": "John & Dina"
+      },
+      "subtitle": {
+        "type": "string",
+        "default": "We have combined many pre-designed blocks which you will need when building your pages."
+      },
+      "buttonText": {
+        "type": "string",
+        "default": "Buy Now"
+      },
+      "buttonUrl": {
+        "type": "string",
+        "default": "http://delabon.com"
+      },
+      "backgroundColor": {
+        "type": "string"
+      },
+      "textColor": {
+        "type": "string",
+        "default": "#010101"
+      },
+      "buttonColor": {
+        "type": "string",
+        "default": "#ffffff"
+      },
+      "buttonBGColor": {
+        "type": "string"
+      },
+      "showHero": {
+        "type": "boolean",
+        "default": true
+      },
+      "showButton": {
+        "type": "boolean",
+        "default": true
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "bokez/divider",
+    "title": "Divider",
+    "description": "Insert a horizontal line where you want to create a break between ideas.",
+    "keywords": [
+      "divider",
+      "separator"
+    ],
+    "icon": {},
+    "category": "bokez",
+    "attributes": {
+      "alignment": {
+        "type": "string"
+      },
+      "borderColor": {
+        "type": "string",
+        "default": "#e1e1e1"
+      },
+      "borderSize": {
+        "type": "number",
+        "default": 1
+      },
+      "borderType": {
+        "type": "string",
+        "default": "solid"
+      },
+      "width": {
+        "type": "number",
+        "default": 50
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "bokez/notification",
+    "title": "Notification",
+    "description": "Add beautiful notice for your visitors.",
+    "keywords": [
+      "alert",
+      "notification",
+      "error"
+    ],
+    "icon": {},
+    "category": "bokez",
+    "attributes": {
+      "message": {
+        "type": "string",
+        "source": "children",
+        "selector": ".bokez-notification > p",
+        "default": "This is an informational alert, have fun editing it."
+      },
+      "type": {
+        "type": "string",
+        "default": "warning"
+      },
+      "alignment": {
+        "type": "string"
+      },
+      "backgroundColor": {
+        "type": "string",
+        "default": "makeMeIgnored()"
+      },
+      "textColor": {
+        "type": "string",
+        "default": "makeMeIgnored()"
+      },
+      "borderRadius": {
+        "type": "string",
+        "default": "0"
+      },
+      "dismissible": {
+        "type": "boolean",
+        "default": false
+      },
+      "uid": {
+        "type": "string",
+        "default": ""
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "bokez/separator-heading",
+    "title": "Separator With Text",
+    "description": "Insert a horizontal line with text in the center.",
+    "keywords": [
+      "divider",
+      "separator"
+    ],
+    "icon": {},
+    "category": "bokez",
+    "attributes": {
+      "text": {
+        "type": "string",
+        "default": "Heading Goes Here",
+        "selector": "h3"
+      },
+      "textColor": {
+        "type": "string",
+        "default": "#2d2d2d"
+      },
+      "borderColor": {
+        "type": "string",
+        "default": "#e1e1e1"
+      },
+      "borderSize": {
+        "type": "number",
+        "default": 1
+      },
+      "borderType": {
+        "type": "string",
+        "default": "solid"
+      },
+      "width": {
+        "type": "number",
+        "default": 50
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "bokez/progress-bar",
+    "title": "Progress Bar",
+    "description": "Add beautiful customized progress bar.",
+    "keywords": [
+      "progress",
+      "bar",
+      "skill"
+    ],
+    "icon": {},
+    "category": "bokez",
+    "attributes": {
+      "progress": {
+        "type": "string",
+        "default": "50%"
+      },
+      "backgroundColor": {
+        "type": "string",
+        "default": "#f5f5f5"
+      },
+      "progressColor": {
+        "type": "string",
+        "default": "rgb(23,44,60)"
+      },
+      "tooltipColor": {
+        "type": "string",
+        "default": "rgb(23,44,66)"
+      },
+      "tooltipBackgroundColor": {
+        "type": "string",
+        "default": "#eebf3f"
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "bokez/share",
+    "title": "Share",
+    "description": "Make your visitors share your content.",
+    "keywords": [
+      "share",
+      "facebook",
+      "twitter"
+    ],
+    "icon": {},
+    "category": "bokez",
+    "attributes": {
+      "showFb": {
+        "type": "boolean",
+        "default": true
+      },
+      "showTwitter": {
+        "type": "boolean",
+        "default": true
+      },
+      "showGoogle": {
+        "type": "boolean",
+        "default": true
+      },
+      "showReddit": {
+        "type": "boolean",
+        "default": true
+      },
+      "showLinkedin": {
+        "type": "boolean",
+        "default": true
+      },
+      "showEmail": {
+        "type": "boolean",
+        "default": true
+      },
+      "alignment": {
+        "type": "string",
+        "default": "center"
+      },
+      "bgColor": {
+        "type": "string",
+        "default": ""
+      },
+      "iconColor": {
+        "type": "string",
+        "default": ""
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "bokez/profile",
+    "title": "Profile",
+    "description": "Add beautiful customized profile.",
+    "keywords": [
+      "profile",
+      "author"
+    ],
+    "icon": {},
+    "category": "bokez",
+    "attributes": {
+      "message": {
+        "type": "string",
+        "default": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+      },
+      "name": {
+        "type": "string",
+        "default": "John Doe"
+      },
+      "job": {
+        "type": "string",
+        "default": "Designer"
+      },
+      "imageUrl": {
+        "type": "string"
+      },
+      "imageID": {
+        "type": "number"
+      },
+      "backgroundColor": {
+        "type": "string",
+        "default": "makeMeIgnored()"
+      },
+      "textColor": {
+        "type": "string",
+        "default": "makeMeIgnored()"
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "bokez/posts-grid",
+    "attributes": {
+      "postsNumber": {
+        "type": "number",
+        "default": 3
+      },
+      "columns": {
+        "type": "number",
+        "default": 3
+      },
+      "category": {
+        "type": "number",
+        "default": 0
+      },
+      "bgColor": {
+        "type": "string",
+        "default": ""
+      },
+      "textColor": {
+        "type": "string",
+        "default": ""
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "title": "Posts Grid",
+    "description": "Add beautiful posts grid.",
+    "keywords": [
+      "post",
+      "grid",
+      "posts"
+    ],
+    "icon": {},
+    "category": "bokez"
+  },
+  {
+    "name": "bokez/faq",
+    "title": "FAQ / Accordion",
+    "description": "Easily create an accordion for your post / page.",
+    "keywords": [
+      "accordion",
+      "list",
+      "faq"
+    ],
+    "icon": {},
+    "category": "bokez",
+    "attributes": {
+      "items": {
+        "type": "array",
+        "default": [
+          {
+            "header": "Header 1",
+            "body": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+          },
+          {
+            "header": "Header 2",
+            "body": "Body 2"
+          },
+          {
+            "header": "Header 3",
+            "body": "Body 3"
+          }
+        ]
+      },
+      "alignment": {
+        "type": "string",
+        "default": "left"
+      },
+      "headerTextColor": {
+        "type": "string",
+        "default": ""
+      },
+      "headerBgColor": {
+        "type": "string",
+        "default": ""
+      },
+      "bodyTextColor": {
+        "type": "string",
+        "default": ""
+      },
+      "bodyBgColor": {
+        "type": "string",
+        "default": ""
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "bokez/testimonial",
+    "title": "Testimonial",
+    "description": "Add a multiple testimonials with a name, title and text.",
+    "keywords": [
+      "testimonial",
+      "user"
+    ],
+    "icon": {},
+    "category": "bokez",
+    "attributes": {
+      "items": {
+        "type": "array",
+        "default": [
+          {
+            "message": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+            "name": "John Doe",
+            "job": "Designer",
+            "imageUrl": "",
+            "imageID": 0
+          }
+        ]
+      },
+      "showPoints": {
+        "type": "boolean",
+        "default": true
+      },
+      "showArrows": {
+        "type": "boolean",
+        "default": true
+      },
+      "alignment": {
+        "type": "string",
+        "default": "center"
+      },
+      "backgroundColor": {
+        "type": "string",
+        "default": "makeMeIgnored()"
+      },
+      "textColor": {
+        "type": "string",
+        "default": "makeMeIgnored()"
+      },
+      "arrowsColor": {
+        "type": "string",
+        "default": ""
+      },
+      "pointsColor": {
+        "type": "string",
+        "default": ""
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "bokez/pricing-table",
+    "title": "Pricing Table",
+    "description": "Add Pricing Boxes.",
+    "keywords": [
+      "price",
+      "table",
+      "tag"
+    ],
+    "icon": {},
+    "category": "bokez",
+    "attributes": {
+      "ID": {
+        "type": "string",
+        "default": ""
+      },
+      "items": {
+        "type": "array",
+        "default": [
+          {
+            "imageUrl": "",
+            "imageID": 0,
+            "header": "SMALL TEAM",
+            "features": "\n                            <li>Custom Domains</li> \n                            <li>5 Users</li>\n                            <li>10 Projects</li>\n                    ",
+            "price": "$49",
+            "buttonName": "Free Trial",
+            "buttonUrl": "http://delabon.com/"
+          }
+        ]
+      },
+      "backgroundColor": {
+        "type": "string",
+        "default": ""
+      },
+      "titleColor": {
+        "type": "string",
+        "default": ""
+      },
+      "featuresColor": {
+        "type": "string",
+        "default": ""
+      },
+      "priceColor": {
+        "type": "string",
+        "default": ""
+      },
+      "buttonColor": {
+        "type": "string",
+        "default": ""
+      },
+      "buttonBGColor": {
+        "type": "string",
+        "default": ""
+      },
+      "buttonColorHover": {
+        "type": "string",
+        "default": ""
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "bokez/video-popup",
+    "title": "Video Popup",
+    "description": "Video popup block. use youtube or vimeo videos",
+    "keywords": [
+      "video",
+      "popup",
+      "youtube"
+    ],
+    "icon": {},
+    "category": "bokez",
+    "attributes": {
+      "url": {
+        "type": "url",
+        "default": "https://vimeo.com/50522981"
+      },
+      "videoSite": {
+        "type": "string",
+        "default": "vimeo"
+      },
+      "videoId": {
+        "type": "string",
+        "default": "50522981"
+      },
+      "color": {
+        "type": "string",
+        "default": "white"
+      },
+      "backgroundColor": {
+        "type": "string",
+        "default": "#1d1d1d"
+      },
+      "imageUrl": {
+        "type": "string"
+      },
+      "imageID": {
+        "type": "number"
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  }
+]

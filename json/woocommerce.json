@@ -1,0 +1,40 @@
+[
+  {
+    "name": "woocommerce/products",
+    "title": "Products",
+    "icon": {
+      "src": "screenoptions"
+    },
+    "category": "widgets",
+    "description": "Display a grid of products from a variety of sources.",
+    "attributes": {
+      "columns": {
+        "type": "number",
+        "default": "4"
+      },
+      "rows": {
+        "type": "number",
+        "default": "4"
+      },
+      "display": {
+        "type": "string",
+        "default": ""
+      },
+      "display_setting": {
+        "type": "array",
+        "default": []
+      },
+      "orderby": {
+        "type": "string",
+        "default": "date"
+      },
+      "edit_mode": {
+        "type": "boolean",
+        "default": true
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  }
+]

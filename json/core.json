@@ -1,0 +1,4781 @@
+[
+  {
+    "name": "core/image",
+    "title": "Image",
+    "description": "Insert an image to make a visual statement.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "xmlns": "http://www.w3.org/2000/svg",
+          "children": [
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "M0,0h24v24H0V0z",
+                "fill": "none"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "m19 5v14h-14v-14h14m0-2h-14c-1.1 0-2 0.9-2 2v14c0 1.1 0.9 2 2 2h14c1.1 0 2-0.9 2-2v-14c0-1.1-0.9-2-2-2z"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "m14.14 11.86l-3 3.87-2.14-2.59-3 3.86h12l-3.86-5.14z"
+              },
+              "_owner": null
+            }
+          ]
+        },
+        "_owner": null
+      }
+    },
+    "category": "common",
+    "keywords": [
+      "img",
+      "photo"
+    ],
+    "attributes": {
+      "url": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "img",
+        "attribute": "src"
+      },
+      "alt": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "img",
+        "attribute": "alt",
+        "default": ""
+      },
+      "caption": {
+        "type": "string",
+        "source": "html",
+        "selector": "figcaption"
+      },
+      "href": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "figure > a",
+        "attribute": "href"
+      },
+      "rel": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "figure > a",
+        "attribute": "rel"
+      },
+      "linkClass": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "figure > a",
+        "attribute": "class"
+      },
+      "id": {
+        "type": "number"
+      },
+      "align": {
+        "type": "string"
+      },
+      "width": {
+        "type": "number"
+      },
+      "height": {
+        "type": "number"
+      },
+      "linkDestination": {
+        "type": "string",
+        "default": "none"
+      },
+      "linkTarget": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "figure > a",
+        "attribute": "target"
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "transforms": {
+      "from": [
+        {
+          "type": "raw",
+          "schema": {
+            "figure": {
+              "require": [
+                "img"
+              ],
+              "children": {
+                "img": {
+                  "attributes": [
+                    "src",
+                    "alt"
+                  ],
+                  "classes": [
+                    "alignleft",
+                    "aligncenter",
+                    "alignright",
+                    "alignnone",
+                    {}
+                  ]
+                },
+                "a": {
+                  "attributes": [
+                    "href",
+                    "rel",
+                    "target"
+                  ],
+                  "children": {
+                    "img": {
+                      "$ref": "$[4][\"transforms\"][\"from\"][0][\"schema\"][\"figure\"][\"children\"][\"img\"]"
+                    }
+                  }
+                },
+                "figcaption": {
+                  "children": {
+                    "$ref": "$[3][\"transforms\"][\"from\"][0][\"schema\"][\"p\"][\"children\"]"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "files"
+        },
+        {
+          "type": "shortcode",
+          "tag": "caption",
+          "attributes": {
+            "url": {
+              "type": "string",
+              "source": "attribute",
+              "attribute": "src",
+              "selector": "img"
+            },
+            "alt": {
+              "type": "string",
+              "source": "attribute",
+              "attribute": "alt",
+              "selector": "img"
+            },
+            "caption": {},
+            "href": {
+              "type": "string",
+              "source": "attribute",
+              "attribute": "href",
+              "selector": "a"
+            },
+            "rel": {
+              "type": "string",
+              "source": "attribute",
+              "attribute": "rel",
+              "selector": "a"
+            },
+            "linkClass": {
+              "type": "string",
+              "source": "attribute",
+              "attribute": "class",
+              "selector": "a"
+            },
+            "id": {
+              "type": "number"
+            },
+            "align": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[4][\"attributes\"]"
+        }
+      },
+      {
+        "attributes": {
+          "$ref": "$[4][\"attributes\"]"
+        }
+      },
+      {
+        "attributes": {
+          "$ref": "$[4][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core/heading",
+    "title": "Heading",
+    "description": "Introduce new sections and organize content to help visitors (and search engines) understand the structure of your content.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "xmlns": "http://www.w3.org/2000/svg",
+          "viewBox": "0 0 24 24",
+          "children": [
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "M5 4v3h5.5v12h3V7H19V4z"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "fill": "none",
+                "d": "M0 0h24v24H0V0z"
+              },
+              "_owner": null
+            }
+          ]
+        },
+        "_owner": null
+      }
+    },
+    "category": "common",
+    "keywords": [
+      "title",
+      "subtitle"
+    ],
+    "supports": {
+      "className": false,
+      "anchor": true
+    },
+    "attributes": {
+      "content": {
+        "type": "string",
+        "source": "html",
+        "selector": "h1,h2,h3,h4,h5,h6",
+        "default": ""
+      },
+      "level": {
+        "type": "number",
+        "default": 2
+      },
+      "align": {
+        "type": "string"
+      },
+      "placeholder": {
+        "type": "string"
+      },
+      "anchor": {
+        "type": "string",
+        "source": "attribute",
+        "attribute": "id",
+        "selector": "*"
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "transforms": {
+      "from": [
+        {
+          "type": "block",
+          "blocks": [
+            "core/paragraph"
+          ]
+        },
+        {
+          "type": "raw",
+          "selector": "h1,h2,h3,h4,h5,h6",
+          "schema": {
+            "h1": {
+              "children": {
+                "$ref": "$[3][\"transforms\"][\"from\"][0][\"schema\"][\"p\"][\"children\"]"
+              }
+            },
+            "h2": {
+              "children": {
+                "$ref": "$[3][\"transforms\"][\"from\"][0][\"schema\"][\"p\"][\"children\"]"
+              }
+            },
+            "h3": {
+              "children": {
+                "$ref": "$[3][\"transforms\"][\"from\"][0][\"schema\"][\"p\"][\"children\"]"
+              }
+            },
+            "h4": {
+              "children": {
+                "$ref": "$[3][\"transforms\"][\"from\"][0][\"schema\"][\"p\"][\"children\"]"
+              }
+            },
+            "h5": {
+              "children": {
+                "$ref": "$[3][\"transforms\"][\"from\"][0][\"schema\"][\"p\"][\"children\"]"
+              }
+            },
+            "h6": {
+              "children": {
+                "$ref": "$[3][\"transforms\"][\"from\"][0][\"schema\"][\"p\"][\"children\"]"
+              }
+            }
+          }
+        },
+        {
+          "type": "prefix",
+          "prefix": "##"
+        },
+        {
+          "type": "prefix",
+          "prefix": "###"
+        },
+        {
+          "type": "prefix",
+          "prefix": "####"
+        },
+        {
+          "type": "prefix",
+          "prefix": "#####"
+        },
+        {
+          "type": "prefix",
+          "prefix": "######"
+        }
+      ],
+      "to": [
+        {
+          "type": "block",
+          "blocks": [
+            "core/paragraph"
+          ]
+        }
+      ]
+    },
+    "deprecated": [
+      {
+        "supports": {
+          "$ref": "$[5][\"supports\"]"
+        },
+        "attributes": {
+          "content": {
+            "$ref": "$[5][\"attributes\"][\"content\"]"
+          },
+          "align": {
+            "$ref": "$[5][\"attributes\"][\"align\"]"
+          },
+          "placeholder": {
+            "$ref": "$[5][\"attributes\"][\"placeholder\"]"
+          },
+          "nodeName": {
+            "type": "string",
+            "source": "property",
+            "selector": "h1,h2,h3,h4,h5,h6",
+            "property": "nodeName",
+            "default": "H2"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "core/gallery",
+    "title": "Gallery",
+    "description": "Display multiple images in a rich gallery.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "xmlns": "http://www.w3.org/2000/svg",
+          "children": [
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "fill": "none",
+                "d": "M0 0h24v24H0V0z"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": [
+                  {
+                    "key": null,
+                    "ref": null,
+                    "props": {
+                      "d": "M20 4v12H8V4h12m0-2H8L6 4v12l2 2h12l2-2V4l-2-2z"
+                    },
+                    "_owner": null
+                  },
+                  {
+                    "key": null,
+                    "ref": null,
+                    "props": {
+                      "d": "M12 12l1 2 3-3 3 4H9z"
+                    },
+                    "_owner": null
+                  },
+                  {
+                    "key": null,
+                    "ref": null,
+                    "props": {
+                      "d": "M2 6v14l2 2h14v-2H4V6H2z"
+                    },
+                    "_owner": null
+                  }
+                ]
+              },
+              "_owner": null
+            }
+          ]
+        },
+        "_owner": null
+      }
+    },
+    "category": "common",
+    "keywords": [
+      "images",
+      "photos"
+    ],
+    "attributes": {
+      "images": {
+        "type": "array",
+        "default": [],
+        "source": "query",
+        "selector": "ul.wp-block-gallery .blocks-gallery-item",
+        "query": {
+          "url": {
+            "source": "attribute",
+            "selector": "img",
+            "attribute": "src"
+          },
+          "link": {
+            "source": "attribute",
+            "selector": "img",
+            "attribute": "data-link"
+          },
+          "alt": {
+            "source": "attribute",
+            "selector": "img",
+            "attribute": "alt",
+            "default": ""
+          },
+          "id": {
+            "source": "attribute",
+            "selector": "img",
+            "attribute": "data-id"
+          },
+          "caption": {
+            "type": "string",
+            "source": "html",
+            "selector": "figcaption"
+          }
+        }
+      },
+      "ids": {
+        "type": "array",
+        "default": []
+      },
+      "columns": {
+        "type": "number"
+      },
+      "imageCrop": {
+        "type": "boolean",
+        "default": true
+      },
+      "linkTo": {
+        "type": "string",
+        "default": "none"
+      },
+      "align": {
+        "type": "string"
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "supports": {
+      "align": true
+    },
+    "transforms": {
+      "from": [
+        {
+          "type": "block",
+          "isMultiBlock": true,
+          "blocks": [
+            "core/image"
+          ]
+        },
+        {
+          "type": "shortcode",
+          "tag": "gallery",
+          "attributes": {
+            "images": {
+              "type": "array"
+            },
+            "ids": {
+              "type": "array"
+            },
+            "columns": {
+              "type": "number"
+            },
+            "linkTo": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "files"
+        }
+      ],
+      "to": [
+        {
+          "type": "block",
+          "blocks": [
+            "core/image"
+          ]
+        }
+      ]
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[6][\"attributes\"]"
+        }
+      },
+      {
+        "attributes": {
+          "$ref": "$[6][\"attributes\"]"
+        }
+      },
+      {
+        "attributes": {
+          "images": {
+            "type": "array",
+            "default": {
+              "$ref": "$[6][\"attributes\"][\"images\"][\"default\"]"
+            },
+            "source": "query",
+            "selector": "div.wp-block-gallery figure.blocks-gallery-image img",
+            "query": {
+              "$ref": "$[6][\"attributes\"][\"images\"][\"query\"]"
+            }
+          },
+          "ids": {
+            "$ref": "$[6][\"attributes\"][\"ids\"]"
+          },
+          "columns": {
+            "$ref": "$[6][\"attributes\"][\"columns\"]"
+          },
+          "imageCrop": {
+            "$ref": "$[6][\"attributes\"][\"imageCrop\"]"
+          },
+          "linkTo": {
+            "$ref": "$[6][\"attributes\"][\"linkTo\"]"
+          },
+          "align": {
+            "type": "string",
+            "default": "none"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "core/list",
+    "title": "List",
+    "description": "Create a bulleted or numbered list.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "xmlns": "http://www.w3.org/2000/svg",
+          "children": {
+            "key": null,
+            "ref": null,
+            "props": {
+              "children": {
+                "key": null,
+                "ref": null,
+                "props": {
+                  "d": "M9 19h12v-2H9v2zm0-6h12v-2H9v2zm0-8v2h12V5H9zm-4-.5c-.828 0-1.5.672-1.5 1.5S4.172 7.5 5 7.5 6.5 6.828 6.5 6 5.828 4.5 5 4.5zm0 6c-.828 0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5 1.5-.672 1.5-1.5-.672-1.5-1.5-1.5zm0 6c-.828 0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5 1.5-.672 1.5-1.5-.672-1.5-1.5-1.5z"
+                },
+                "_owner": null
+              }
+            },
+            "_owner": null
+          }
+        },
+        "_owner": null
+      }
+    },
+    "category": "common",
+    "keywords": [
+      "bullet list",
+      "ordered list",
+      "numbered list"
+    ],
+    "attributes": {
+      "ordered": {
+        "type": "boolean",
+        "default": false
+      },
+      "values": {
+        "type": "string",
+        "source": "html",
+        "selector": "ol,ul",
+        "multiline": "li",
+        "default": ""
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "supports": {
+      "className": false
+    },
+    "transforms": {
+      "from": [
+        {
+          "type": "block",
+          "isMultiBlock": true,
+          "blocks": [
+            "core/paragraph"
+          ]
+        },
+        {
+          "type": "block",
+          "blocks": [
+            "core/quote"
+          ]
+        },
+        {
+          "type": "raw",
+          "selector": "ol,ul",
+          "schema": {
+            "ol": {
+              "attributes": [
+                "type"
+              ],
+              "children": {
+                "li": {
+                  "children": {
+                    "strong": {
+                      "$ref": "$[3][\"transforms\"][\"from\"][0][\"schema\"][\"p\"][\"children\"][\"strong\"]"
+                    },
+                    "em": {
+                      "$ref": "$[3][\"transforms\"][\"from\"][0][\"schema\"][\"p\"][\"children\"][\"strong\"][\"children\"][\"em\"]"
+                    },
+                    "del": {
+                      "$ref": "$[3][\"transforms\"][\"from\"][0][\"schema\"][\"p\"][\"children\"][\"strong\"][\"children\"][\"em\"][\"children\"][\"del\"]"
+                    },
+                    "ins": {
+                      "$ref": "$[3][\"transforms\"][\"from\"][0][\"schema\"][\"p\"][\"children\"][\"strong\"][\"children\"][\"em\"][\"children\"][\"del\"][\"children\"][\"ins\"]"
+                    },
+                    "a": {
+                      "$ref": "$[3][\"transforms\"][\"from\"][0][\"schema\"][\"p\"][\"children\"][\"strong\"][\"children\"][\"em\"][\"children\"][\"del\"][\"children\"][\"ins\"][\"children\"][\"a\"]"
+                    },
+                    "code": {
+                      "$ref": "$[3][\"transforms\"][\"from\"][0][\"schema\"][\"p\"][\"children\"][\"strong\"][\"children\"][\"em\"][\"children\"][\"del\"][\"children\"][\"ins\"][\"children\"][\"a\"][\"children\"][\"code\"]"
+                    },
+                    "abbr": {
+                      "$ref": "$[3][\"transforms\"][\"from\"][0][\"schema\"][\"p\"][\"children\"][\"strong\"][\"children\"][\"em\"][\"children\"][\"del\"][\"children\"][\"ins\"][\"children\"][\"a\"][\"children\"][\"code\"][\"children\"][\"abbr\"]"
+                    },
+                    "sub": {
+                      "$ref": "$[3][\"transforms\"][\"from\"][0][\"schema\"][\"p\"][\"children\"][\"strong\"][\"children\"][\"em\"][\"children\"][\"del\"][\"children\"][\"ins\"][\"children\"][\"a\"][\"children\"][\"code\"][\"children\"][\"abbr\"][\"children\"][\"sub\"]"
+                    },
+                    "sup": {
+                      "$ref": "$[3][\"transforms\"][\"from\"][0][\"schema\"][\"p\"][\"children\"][\"strong\"][\"children\"][\"em\"][\"children\"][\"del\"][\"children\"][\"ins\"][\"children\"][\"a\"][\"children\"][\"code\"][\"children\"][\"abbr\"][\"children\"][\"sub\"][\"children\"][\"sup\"]"
+                    },
+                    "br": {
+                      "$ref": "$[3][\"transforms\"][\"from\"][0][\"schema\"][\"p\"][\"children\"][\"strong\"][\"children\"][\"em\"][\"children\"][\"del\"][\"children\"][\"ins\"][\"children\"][\"a\"][\"children\"][\"code\"][\"children\"][\"abbr\"][\"children\"][\"sub\"][\"children\"][\"sup\"][\"children\"][\"br\"]"
+                    },
+                    "#text": {
+                      "$ref": "$[3][\"transforms\"][\"from\"][0][\"schema\"][\"p\"][\"children\"][\"strong\"][\"children\"][\"em\"][\"children\"][\"del\"][\"children\"][\"ins\"][\"children\"][\"a\"][\"children\"][\"code\"][\"children\"][\"abbr\"][\"children\"][\"sub\"][\"children\"][\"sup\"][\"children\"][\"#text\"]"
+                    },
+                    "ul": {
+                      "children": {
+                        "li": {
+                          "children": {
+                            "$ref": "$[7][\"transforms\"][\"from\"][2][\"schema\"][\"ol\"][\"children\"][\"li\"][\"children\"]"
+                          }
+                        }
+                      }
+                    },
+                    "ol": {
+                      "$ref": "$[7][\"transforms\"][\"from\"][2][\"schema\"][\"ol\"]"
+                    }
+                  }
+                }
+              }
+            },
+            "ul": {
+              "$ref": "$[7][\"transforms\"][\"from\"][2][\"schema\"][\"ol\"][\"children\"][\"li\"][\"children\"][\"ul\"]"
+            }
+          }
+        },
+        {
+          "type": "prefix",
+          "prefix": "*"
+        },
+        {
+          "type": "prefix",
+          "prefix": "-"
+        },
+        {
+          "type": "prefix",
+          "prefix": "1."
+        },
+        {
+          "type": "prefix",
+          "prefix": "1)"
+        }
+      ],
+      "to": [
+        {
+          "type": "block",
+          "blocks": [
+            "core/paragraph"
+          ]
+        },
+        {
+          "type": "block",
+          "blocks": [
+            "core/quote"
+          ]
+        }
+      ]
+    },
+    "deprecated": [
+      {
+        "supports": {
+          "$ref": "$[7][\"supports\"]"
+        },
+        "attributes": {
+          "values": {
+            "$ref": "$[7][\"attributes\"][\"values\"]"
+          },
+          "nodeName": {
+            "type": "string",
+            "source": "property",
+            "selector": "ol,ul",
+            "property": "nodeName",
+            "default": "UL"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "core/quote",
+    "title": "Quote",
+    "description": "Give quoted text visual emphasis. \"In quoting others, we cite ourselves.\" — Julio Cortázar",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "xmlns": "http://www.w3.org/2000/svg",
+          "children": [
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "fill": "none",
+                "d": "M0 0h24v24H0V0z"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": {
+                  "key": null,
+                  "ref": null,
+                  "props": {
+                    "d": "M19 18h-6l2-4h-2V6h8v7l-2 5zm-2-2l2-3V8h-4v4h4l-2 4zm-8 2H3l2-4H3V6h8v7l-2 5zm-2-2l2-3V8H5v4h4l-2 4z"
+                  },
+                  "_owner": null
+                }
+              },
+              "_owner": null
+            }
+          ]
+        },
+        "_owner": null
+      }
+    },
+    "category": "common",
+    "keywords": [
+      "blockquote"
+    ],
+    "attributes": {
+      "value": {
+        "type": "string",
+        "source": "html",
+        "selector": "blockquote",
+        "multiline": "p",
+        "default": ""
+      },
+      "citation": {
+        "type": "string",
+        "source": "html",
+        "selector": "cite",
+        "default": ""
+      },
+      "align": {
+        "type": "string"
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "styles": [
+      {
+        "name": "default",
+        "label": "Regular",
+        "isDefault": true
+      },
+      {
+        "name": "large",
+        "label": "Large"
+      }
+    ],
+    "transforms": {
+      "from": [
+        {
+          "type": "block",
+          "isMultiBlock": true,
+          "blocks": [
+            "core/paragraph"
+          ]
+        },
+        {
+          "type": "block",
+          "blocks": [
+            "core/heading"
+          ]
+        },
+        {
+          "type": "block",
+          "blocks": [
+            "core/pullquote"
+          ]
+        },
+        {
+          "type": "prefix",
+          "prefix": ">"
+        },
+        {
+          "type": "raw",
+          "schema": {
+            "blockquote": {
+              "children": {
+                "p": {
+                  "children": {
+                    "$ref": "$[3][\"transforms\"][\"from\"][0][\"schema\"][\"p\"][\"children\"]"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "to": [
+        {
+          "type": "block",
+          "blocks": [
+            "core/paragraph"
+          ]
+        },
+        {
+          "type": "block",
+          "blocks": [
+            "core/heading"
+          ]
+        },
+        {
+          "type": "block",
+          "blocks": [
+            "core/pullquote"
+          ]
+        }
+      ]
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "value": {
+            "$ref": "$[8][\"attributes\"][\"value\"]"
+          },
+          "citation": {
+            "$ref": "$[8][\"attributes\"][\"citation\"]"
+          },
+          "align": {
+            "$ref": "$[8][\"attributes\"][\"align\"]"
+          },
+          "style": {
+            "type": "number",
+            "default": 1
+          }
+        }
+      },
+      {
+        "attributes": {
+          "value": {
+            "$ref": "$[8][\"attributes\"][\"value\"]"
+          },
+          "citation": {
+            "type": "string",
+            "source": "html",
+            "selector": "footer",
+            "default": ""
+          },
+          "align": {
+            "$ref": "$[8][\"attributes\"][\"align\"]"
+          },
+          "style": {
+            "type": "number",
+            "default": 1
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "core/shortcode",
+    "title": "Shortcode",
+    "description": "Insert additional custom elements with a WordPress shortcode.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "xmlns": "http://www.w3.org/2000/svg",
+          "children": {
+            "key": null,
+            "ref": null,
+            "props": {
+              "d": "M8.5,21.4l1.9,0.5l5.2-19.3l-1.9-0.5L8.5,21.4z M3,19h4v-2H5V7h2V5H3V19z M17,5v2h2v10h-2v2h4V5H17z"
+            },
+            "_owner": null
+          }
+        },
+        "_owner": null
+      }
+    },
+    "category": "widgets",
+    "attributes": {
+      "text": {
+        "type": "string",
+        "source": "text"
+      }
+    },
+    "transforms": {
+      "from": [
+        {
+          "type": "shortcode",
+          "tag": "[a-z][a-z0-9_-]*",
+          "attributes": {
+            "text": {
+              "type": "string"
+            }
+          },
+          "priority": 20
+        }
+      ]
+    },
+    "supports": {
+      "customClassName": false,
+      "className": false,
+      "html": false
+    }
+  },
+  {
+    "name": "core/archives",
+    "attributes": {
+      "align": {
+        "type": "string"
+      },
+      "className": {
+        "type": "string"
+      },
+      "displayAsDropdown": {
+        "type": "boolean",
+        "default": false
+      },
+      "showPostCounts": {
+        "type": "boolean",
+        "default": false
+      }
+    },
+    "title": "Archives",
+    "description": "Display a monthly archive of your posts.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "xmlns": "http://www.w3.org/2000/svg",
+          "children": [
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "fill": "none",
+                "d": "M0 0h24v24H0V0z"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": {
+                  "key": null,
+                  "ref": null,
+                  "props": {
+                    "d": "M7 11h2v2H7v-2zm14-5v14l-2 2H5l-2-2V6l2-2h1V2h2v2h8V2h2v2h1l2 2zM5 8h14V6H5v2zm14 12V10H5v10h14zm-4-7h2v-2h-2v2zm-4 0h2v-2h-2v2z"
+                  },
+                  "_owner": null
+                }
+              },
+              "_owner": null
+            }
+          ]
+        },
+        "_owner": null
+      }
+    },
+    "category": "widgets",
+    "supports": {
+      "html": false
+    }
+  },
+  {
+    "name": "core/audio",
+    "title": "Audio",
+    "description": "Embed a simple audio player.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "xmlns": "http://www.w3.org/2000/svg",
+          "children": [
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "M0,0h24v24H0V0z",
+                "fill": "none"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "m12 3l0.01 10.55c-0.59-0.34-1.27-0.55-2-0.55-2.22 0-4.01 1.79-4.01 4s1.79 4 4.01 4 3.99-1.79 3.99-4v-10h4v-4h-6zm-1.99 16c-1.1 0-2-0.9-2-2s0.9-2 2-2 2 0.9 2 2-0.9 2-2 2z"
+              },
+              "_owner": null
+            }
+          ]
+        },
+        "_owner": null
+      }
+    },
+    "category": "common",
+    "attributes": {
+      "src": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "audio",
+        "attribute": "src"
+      },
+      "caption": {
+        "type": "string",
+        "source": "html",
+        "selector": "figcaption"
+      },
+      "id": {
+        "type": "number"
+      },
+      "autoplay": {
+        "type": "boolean",
+        "source": "attribute",
+        "selector": "audio",
+        "attribute": "autoplay"
+      },
+      "loop": {
+        "type": "boolean",
+        "source": "attribute",
+        "selector": "audio",
+        "attribute": "loop"
+      },
+      "preload": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "audio",
+        "attribute": "preload"
+      },
+      "align": {
+        "type": "string"
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "transforms": {
+      "from": [
+        {
+          "type": "files"
+        }
+      ]
+    },
+    "supports": {
+      "align": true
+    }
+  },
+  {
+    "name": "core/button",
+    "title": "Button",
+    "description": "Prompt visitors to take action with a custom button.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "xmlns": "http://www.w3.org/2000/svg",
+          "children": [
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "fill": "none",
+                "d": "M0 0h24v24H0V0z"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": {
+                  "key": null,
+                  "ref": null,
+                  "props": {
+                    "d": "M19 6H5L3 8v8l2 2h14l2-2V8l-2-2zm0 10H5V8h14v8z"
+                  },
+                  "_owner": null
+                }
+              },
+              "_owner": null
+            }
+          ]
+        },
+        "_owner": null
+      }
+    },
+    "category": "layout",
+    "attributes": {
+      "url": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "a",
+        "attribute": "href"
+      },
+      "title": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "a",
+        "attribute": "title"
+      },
+      "text": {
+        "type": "string",
+        "source": "html",
+        "selector": "a"
+      },
+      "backgroundColor": {
+        "type": "string"
+      },
+      "textColor": {
+        "type": "string"
+      },
+      "customBackgroundColor": {
+        "type": "string"
+      },
+      "customTextColor": {
+        "type": "string"
+      },
+      "align": {
+        "type": "string"
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "supports": {
+      "align": true,
+      "alignWide": false
+    },
+    "styles": [
+      {
+        "name": "default",
+        "label": "Rounded",
+        "isDefault": true
+      },
+      {
+        "name": "outline",
+        "label": "Outline"
+      },
+      {
+        "name": "squared",
+        "label": "Squared"
+      }
+    ],
+    "deprecated": [
+      {
+        "attributes": {
+          "url": {
+            "$ref": "$[12][\"attributes\"][\"url\"]"
+          },
+          "title": {
+            "$ref": "$[12][\"attributes\"][\"title\"]"
+          },
+          "text": {
+            "$ref": "$[12][\"attributes\"][\"text\"]"
+          },
+          "color": {
+            "type": "string"
+          },
+          "textColor": {
+            "type": "string"
+          },
+          "align": {
+            "type": "string",
+            "default": "none"
+          }
+        }
+      },
+      {
+        "attributes": {
+          "url": {
+            "$ref": "$[12][\"attributes\"][\"url\"]"
+          },
+          "title": {
+            "$ref": "$[12][\"attributes\"][\"title\"]"
+          },
+          "text": {
+            "$ref": "$[12][\"attributes\"][\"text\"]"
+          },
+          "color": {
+            "type": "string"
+          },
+          "textColor": {
+            "type": "string"
+          },
+          "align": {
+            "type": "string",
+            "default": "none"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "core/categories",
+    "title": "Categories",
+    "description": "Display a list of all categories.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "xmlns": "http://www.w3.org/2000/svg",
+          "children": [
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "M0,0h24v24H0V0z",
+                "fill": "none"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "M12,2l-5.5,9h11L12,2z M12,5.84L13.93,9h-3.87L12,5.84z"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "m17.5 13c-2.49 0-4.5 2.01-4.5 4.5s2.01 4.5 4.5 4.5 4.5-2.01 4.5-4.5-2.01-4.5-4.5-4.5zm0 7c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "m3 21.5h8v-8h-8v8zm2-6h4v4h-4v-4z"
+              },
+              "_owner": null
+            }
+          ]
+        },
+        "_owner": null
+      }
+    },
+    "category": "widgets",
+    "attributes": {
+      "align": {
+        "type": "string"
+      },
+      "displayAsDropdown": {
+        "type": "boolean",
+        "default": false
+      },
+      "showHierarchy": {
+        "type": "boolean",
+        "default": false
+      },
+      "showPostCounts": {
+        "type": "boolean",
+        "default": false
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "supports": {
+      "html": false
+    }
+  },
+  {
+    "name": "core/code",
+    "title": "Code",
+    "description": "Display code snippets that respect your spacing and tabs.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "xmlns": "http://www.w3.org/2000/svg",
+          "children": [
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "M0,0h24v24H0V0z",
+                "fill": "none"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "M9.4,16.6L4.8,12l4.6-4.6L8,6l-6,6l6,6L9.4,16.6z M14.6,16.6l4.6-4.6l-4.6-4.6L16,6l6,6l-6,6L14.6,16.6z"
+              },
+              "_owner": null
+            }
+          ]
+        },
+        "_owner": null
+      }
+    },
+    "category": "formatting",
+    "attributes": {
+      "content": {
+        "type": "string",
+        "source": "text",
+        "selector": "code"
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "supports": {
+      "html": false
+    },
+    "transforms": {
+      "from": [
+        {
+          "type": "enter",
+          "regExp": {}
+        },
+        {
+          "type": "raw",
+          "schema": {
+            "pre": {
+              "children": {
+                "code": {
+                  "children": {
+                    "#text": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "core/columns",
+    "title": "Columns",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "xmlns": "http://www.w3.org/2000/svg",
+          "children": [
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "fill": "none",
+                "d": "M0 0h24v24H0V0z"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": {
+                  "key": null,
+                  "ref": null,
+                  "props": {
+                    "d": "M21 4H3L2 5v14l1 1h18l1-1V5l-1-1zM8 18H4V6h4v12zm6 0h-4V6h4v12zm6 0h-4V6h4v12z"
+                  },
+                  "_owner": null
+                }
+              },
+              "_owner": null
+            }
+          ]
+        },
+        "_owner": null
+      }
+    },
+    "category": "layout",
+    "attributes": {
+      "columns": {
+        "type": "number",
+        "default": 2
+      },
+      "align": {
+        "type": "string"
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "description": "Add a block that displays content in multiple columns, then add whatever content blocks you’d like.",
+    "supports": {
+      "align": [
+        "wide",
+        "full"
+      ],
+      "html": false
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "columns": {
+            "type": "number",
+            "default": 2
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "core/column",
+    "title": "Column",
+    "parent": [
+      "core/columns"
+    ],
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "xmlns": "http://www.w3.org/2000/svg",
+          "viewBox": "0 0 24 24",
+          "children": [
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "fill": "none",
+                "d": "M0 0h24v24H0V0z"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "M11.99 18.54l-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16zm0-11.47L17.74 9 12 13.47 6.26 9 12 4.53z"
+              },
+              "_owner": null
+            }
+          ]
+        },
+        "_owner": null
+      }
+    },
+    "description": "A single column within a columns block.",
+    "category": "common",
+    "supports": {
+      "inserter": false,
+      "reusable": false,
+      "html": false
+    },
+    "attributes": {
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "core/cover",
+    "title": "Cover",
+    "description": "Add an image or video with a text overlay — great for headers.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "xmlns": "http://www.w3.org/2000/svg",
+          "viewBox": "0 0 24 24",
+          "children": [
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "M4 4h7V2H4c-1.1 0-2 .9-2 2v7h2V4zm6 9l-4 5h12l-3-4-2.03 2.71L10 13zm7-4.5c0-.83-.67-1.5-1.5-1.5S14 7.67 14 8.5s.67 1.5 1.5 1.5S17 9.33 17 8.5zM20 2h-7v2h7v7h2V4c0-1.1-.9-2-2-2zm0 18h-7v2h7c1.1 0 2-.9 2-2v-7h-2v7zM4 13H2v7c0 1.1.9 2 2 2h7v-2H4v-7z"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "M0 0h24v24H0z",
+                "fill": "none"
+              },
+              "_owner": null
+            }
+          ]
+        },
+        "_owner": null
+      }
+    },
+    "category": "common",
+    "attributes": {
+      "title": {
+        "type": "string",
+        "source": "html",
+        "selector": "p"
+      },
+      "url": {
+        "type": "string"
+      },
+      "align": {
+        "type": "string"
+      },
+      "contentAlign": {
+        "type": "string",
+        "default": "center"
+      },
+      "id": {
+        "type": "number"
+      },
+      "hasParallax": {
+        "type": "boolean",
+        "default": false
+      },
+      "dimRatio": {
+        "type": "number",
+        "default": 50
+      },
+      "overlayColor": {
+        "type": "string"
+      },
+      "customOverlayColor": {
+        "type": "string"
+      },
+      "backgroundType": {
+        "type": "string",
+        "default": "image"
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "transforms": {
+      "from": [
+        {
+          "type": "block",
+          "blocks": [
+            "core/heading"
+          ]
+        },
+        {
+          "type": "block",
+          "blocks": [
+            "core/image"
+          ]
+        },
+        {
+          "type": "block",
+          "blocks": [
+            "core/video"
+          ]
+        }
+      ],
+      "to": [
+        {
+          "type": "block",
+          "blocks": [
+            "core/heading"
+          ]
+        },
+        {
+          "type": "block",
+          "blocks": [
+            "core/image"
+          ]
+        },
+        {
+          "type": "block",
+          "blocks": [
+            "core/video"
+          ]
+        }
+      ]
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "title": {
+            "$ref": "$[17][\"attributes\"][\"title\"]"
+          },
+          "url": {
+            "$ref": "$[17][\"attributes\"][\"url\"]"
+          },
+          "align": {
+            "$ref": "$[17][\"attributes\"][\"align\"]"
+          },
+          "contentAlign": {
+            "$ref": "$[17][\"attributes\"][\"contentAlign\"]"
+          },
+          "id": {
+            "$ref": "$[17][\"attributes\"][\"id\"]"
+          },
+          "hasParallax": {
+            "$ref": "$[17][\"attributes\"][\"hasParallax\"]"
+          },
+          "dimRatio": {
+            "$ref": "$[17][\"attributes\"][\"dimRatio\"]"
+          },
+          "overlayColor": {
+            "$ref": "$[17][\"attributes\"][\"overlayColor\"]"
+          },
+          "customOverlayColor": {
+            "$ref": "$[17][\"attributes\"][\"customOverlayColor\"]"
+          },
+          "backgroundType": {
+            "$ref": "$[17][\"attributes\"][\"backgroundType\"]"
+          }
+        },
+        "supports": {
+          "className": false
+        }
+      },
+      {
+        "attributes": {
+          "title": {
+            "type": "string",
+            "source": "html",
+            "selector": "h2"
+          },
+          "url": {
+            "$ref": "$[17][\"attributes\"][\"url\"]"
+          },
+          "align": {
+            "$ref": "$[17][\"attributes\"][\"align\"]"
+          },
+          "contentAlign": {
+            "$ref": "$[17][\"attributes\"][\"contentAlign\"]"
+          },
+          "id": {
+            "$ref": "$[17][\"attributes\"][\"id\"]"
+          },
+          "hasParallax": {
+            "$ref": "$[17][\"attributes\"][\"hasParallax\"]"
+          },
+          "dimRatio": {
+            "$ref": "$[17][\"attributes\"][\"dimRatio\"]"
+          },
+          "overlayColor": {
+            "$ref": "$[17][\"attributes\"][\"overlayColor\"]"
+          },
+          "customOverlayColor": {
+            "$ref": "$[17][\"attributes\"][\"customOverlayColor\"]"
+          },
+          "backgroundType": {
+            "$ref": "$[17][\"attributes\"][\"backgroundType\"]"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "core/embed",
+    "title": "Embed",
+    "description": "Embed videos, images, tweets, audio, and other content from external sources.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "xmlns": "http://www.w3.org/2000/svg",
+          "children": [
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "M0,0h24v24H0V0z",
+                "fill": "none"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "M19,4H5C3.89,4,3,4.9,3,6v12c0,1.1,0.89,2,2,2h14c1.1,0,2-0.9,2-2V6C21,4.9,20.11,4,19,4z M19,18H5V8h14V18z"
+              },
+              "_owner": null
+            }
+          ]
+        },
+        "_owner": null
+      }
+    },
+    "category": "embed",
+    "keywords": [],
+    "attributes": {
+      "url": {
+        "type": "string"
+      },
+      "caption": {
+        "type": "string",
+        "source": "html",
+        "selector": "figcaption"
+      },
+      "type": {
+        "type": "string"
+      },
+      "providerNameSlug": {
+        "type": "string"
+      },
+      "allowResponsive": {
+        "type": "boolean",
+        "default": true
+      },
+      "align": {
+        "type": "string"
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "supports": {
+      "align": true
+    },
+    "transforms": {
+      "from": [
+        {
+          "type": "raw"
+        }
+      ]
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/twitter",
+    "title": "Twitter",
+    "description": "Embed a tweet.",
+    "icon": {
+      "foreground": "#1da1f2",
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "xmlns": "http://www.w3.org/2000/svg",
+          "viewBox": "0 0 24 24",
+          "children": {
+            "key": null,
+            "ref": null,
+            "props": {
+              "children": {
+                "key": null,
+                "ref": null,
+                "props": {
+                  "d": "M22.23 5.924c-.736.326-1.527.547-2.357.646.847-.508 1.498-1.312 1.804-2.27-.793.47-1.67.812-2.606.996C18.325 4.498 17.258 4 16.078 4c-2.266 0-4.103 1.837-4.103 4.103 0 .322.036.635.106.935-3.41-.17-6.433-1.804-8.457-4.287-.353.607-.556 1.312-.556 2.064 0 1.424.724 2.68 1.825 3.415-.673-.022-1.305-.207-1.86-.514v.052c0 1.988 1.415 3.647 3.293 4.023-.344.095-.707.145-1.08.145-.265 0-.522-.026-.773-.074.522 1.63 2.038 2.817 3.833 2.85-1.404 1.1-3.174 1.757-5.096 1.757-.332 0-.66-.02-.98-.057 1.816 1.164 3.973 1.843 6.29 1.843 7.547 0 11.675-6.252 11.675-11.675 0-.178-.004-.355-.012-.53.802-.578 1.497-1.3 2.047-2.124z"
+                },
+                "_owner": null
+              }
+            },
+            "_owner": null
+          }
+        },
+        "_owner": null
+      }
+    },
+    "category": "embed",
+    "keywords": [
+      "tweet"
+    ],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/youtube",
+    "title": "YouTube",
+    "description": "Embed a YouTube video.",
+    "icon": {
+      "foreground": "#ff0000",
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "children": {
+            "key": null,
+            "ref": null,
+            "props": {
+              "d": "M21.8 8s-.195-1.377-.795-1.984c-.76-.797-1.613-.8-2.004-.847-2.798-.203-6.996-.203-6.996-.203h-.01s-4.197 0-6.996.202c-.39.046-1.242.05-2.003.846C2.395 6.623 2.2 8 2.2 8S2 9.62 2 11.24v1.517c0 1.618.2 3.237.2 3.237s.195 1.378.795 1.985c.76.797 1.76.77 2.205.855 1.6.153 6.8.2 6.8.2s4.203-.005 7-.208c.392-.047 1.244-.05 2.005-.847.6-.607.795-1.985.795-1.985s.2-1.618.2-3.237v-1.517C22 9.62 21.8 8 21.8 8zM9.935 14.595v-5.62l5.403 2.82-5.403 2.8z"
+            },
+            "_owner": null
+          }
+        },
+        "_owner": null
+      }
+    },
+    "category": "embed",
+    "keywords": [
+      "music",
+      "video"
+    ],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/facebook",
+    "title": "Facebook",
+    "description": "Embed a Facebook post.",
+    "icon": {
+      "foreground": "#3b5998",
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "children": {
+            "key": null,
+            "ref": null,
+            "props": {
+              "d": "M20 3H4c-.6 0-1 .4-1 1v16c0 .5.4 1 1 1h8.6v-7h-2.3v-2.7h2.3v-2c0-2.3 1.4-3.6 3.5-3.6 1 0 1.8.1 2.1.1v2.4h-1.4c-1.1 0-1.3.5-1.3 1.3v1.7h2.7l-.4 2.8h-2.3v7H20c.5 0 1-.4 1-1V4c0-.6-.4-1-1-1z"
+            },
+            "_owner": null
+          }
+        },
+        "_owner": null
+      }
+    },
+    "category": "embed",
+    "keywords": [],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/instagram",
+    "title": "Instagram",
+    "description": "Embed an Instagram post.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "children": {
+            "key": null,
+            "ref": null,
+            "props": {
+              "children": {
+                "key": null,
+                "ref": null,
+                "props": {
+                  "d": "M12 4.622c2.403 0 2.688.01 3.637.052.877.04 1.354.187 1.67.31.42.163.72.358 1.036.673.315.315.51.615.673 1.035.123.317.27.794.31 1.67.043.95.052 1.235.052 3.638s-.01 2.688-.052 3.637c-.04.877-.187 1.354-.31 1.67-.163.42-.358.72-.673 1.036-.315.315-.615.51-1.035.673-.317.123-.794.27-1.67.31-.95.043-1.234.052-3.638.052s-2.688-.01-3.637-.052c-.877-.04-1.354-.187-1.67-.31-.42-.163-.72-.358-1.036-.673-.315-.315-.51-.615-.673-1.035-.123-.317-.27-.794-.31-1.67-.043-.95-.052-1.235-.052-3.638s.01-2.688.052-3.637c.04-.877.187-1.354.31-1.67.163-.42.358-.72.673-1.036.315-.315.615-.51 1.035-.673.317-.123.794-.27 1.67-.31.95-.043 1.235-.052 3.638-.052M12 3c-2.444 0-2.75.01-3.71.054s-1.613.196-2.185.418c-.592.23-1.094.538-1.594 1.04-.5.5-.807 1-1.037 1.593-.223.572-.375 1.226-.42 2.184C3.01 9.25 3 9.555 3 12s.01 2.75.054 3.71.196 1.613.418 2.186c.23.592.538 1.094 1.038 1.594s1.002.808 1.594 1.038c.572.222 1.227.375 2.185.418.96.044 1.266.054 3.71.054s2.75-.01 3.71-.054 1.613-.196 2.186-.418c.592-.23 1.094-.538 1.594-1.038s.808-1.002 1.038-1.594c.222-.572.375-1.227.418-2.185.044-.96.054-1.266.054-3.71s-.01-2.75-.054-3.71-.196-1.613-.418-2.186c-.23-.592-.538-1.094-1.038-1.594s-1.002-.808-1.594-1.038c-.572-.222-1.227-.375-2.185-.418C14.75 3.01 14.445 3 12 3zm0 4.378c-2.552 0-4.622 2.07-4.622 4.622s2.07 4.622 4.622 4.622 4.622-2.07 4.622-4.622S14.552 7.378 12 7.378zM12 15c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3zm4.804-8.884c-.596 0-1.08.484-1.08 1.08s.484 1.08 1.08 1.08c.596 0 1.08-.484 1.08-1.08s-.483-1.08-1.08-1.08z"
+                },
+                "_owner": null
+              }
+            },
+            "_owner": null
+          }
+        },
+        "_owner": null
+      }
+    },
+    "category": "embed",
+    "keywords": [
+      "image"
+    ],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/wordpress",
+    "title": "WordPress",
+    "description": "Embed a WordPress post.",
+    "icon": {
+      "foreground": "#0073AA",
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "children": {
+            "key": null,
+            "ref": null,
+            "props": {
+              "children": {
+                "key": null,
+                "ref": null,
+                "props": {
+                  "d": "M12.158 12.786l-2.698 7.84c.806.236 1.657.365 2.54.365 1.047 0 2.05-.18 2.986-.51-.024-.037-.046-.078-.065-.123l-2.762-7.57zM3.008 12c0 3.56 2.07 6.634 5.068 8.092L3.788 8.342c-.5 1.117-.78 2.354-.78 3.658zm15.06-.454c0-1.112-.398-1.88-.74-2.48-.456-.74-.883-1.368-.883-2.11 0-.825.627-1.595 1.51-1.595.04 0 .078.006.116.008-1.598-1.464-3.73-2.36-6.07-2.36-3.14 0-5.904 1.613-7.512 4.053.21.008.41.012.58.012.94 0 2.395-.114 2.395-.114.484-.028.54.684.057.74 0 0-.487.058-1.03.086l3.275 9.74 1.968-5.902-1.4-3.838c-.485-.028-.944-.085-.944-.085-.486-.03-.43-.77.056-.742 0 0 1.484.114 2.368.114.94 0 2.397-.114 2.397-.114.486-.028.543.684.058.74 0 0-.488.058-1.03.086l3.25 9.665.897-2.997c.456-1.17.684-2.137.684-2.907zm1.82-3.86c.04.286.06.593.06.924 0 .912-.17 1.938-.683 3.22l-2.746 7.94c2.672-1.558 4.47-4.454 4.47-7.77 0-1.564-.4-3.033-1.1-4.314zM12 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"
+                },
+                "_owner": null
+              }
+            },
+            "_owner": null
+          }
+        },
+        "_owner": null
+      }
+    },
+    "category": "embed",
+    "keywords": [
+      "post",
+      "blog"
+    ],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/soundcloud",
+    "title": "SoundCloud",
+    "description": "Embed SoundCloud content.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "xmlns": "http://www.w3.org/2000/svg",
+          "children": [
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "fill": "none",
+                "d": "M0 0h24v24H0V0z"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "M21 3H3L1 5v14l2 2h18l2-2V5l-2-2zm0 16H3V5h18v14zM8 15a3 3 0 0 1 4-3V6h5v2h-3v7a3 3 0 0 1-6 0z"
+              },
+              "_owner": null
+            }
+          ]
+        },
+        "_owner": null
+      }
+    },
+    "category": "embed",
+    "keywords": [
+      "music",
+      "audio"
+    ],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/spotify",
+    "title": "Spotify",
+    "description": "Embed Spotify content.",
+    "icon": {
+      "foreground": "#1db954",
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "children": {
+            "key": null,
+            "ref": null,
+            "props": {
+              "d": "M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2m4.586 14.424c-.18.295-.563.387-.857.207-2.35-1.434-5.305-1.76-8.786-.963-.335.077-.67-.133-.746-.47-.077-.334.132-.67.47-.745 3.808-.87 7.076-.496 9.712 1.115.293.18.386.563.206.857M17.81 13.7c-.226.367-.706.482-1.072.257-2.687-1.652-6.785-2.13-9.965-1.166-.413.127-.848-.106-.973-.517-.125-.413.108-.848.52-.973 3.632-1.102 8.147-.568 11.234 1.328.366.226.48.707.256 1.072m.105-2.835C14.692 8.95 9.375 8.775 6.297 9.71c-.493.15-1.016-.13-1.166-.624-.148-.495.13-1.017.625-1.167 3.532-1.073 9.404-.866 13.115 1.337.445.264.59.838.327 1.282-.264.443-.838.59-1.282.325"
+            },
+            "_owner": null
+          }
+        },
+        "_owner": null
+      }
+    },
+    "category": "embed",
+    "keywords": [
+      "music",
+      "audio"
+    ],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/flickr",
+    "title": "Flickr",
+    "description": "Embed Flickr content.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "children": {
+            "key": null,
+            "ref": null,
+            "props": {
+              "d": "m6.5 7c-2.75 0-5 2.25-5 5s2.25 5 5 5 5-2.25 5-5-2.25-5-5-5zm11 0c-2.75 0-5 2.25-5 5s2.25 5 5 5 5-2.25 5-5-2.25-5-5-5z"
+            },
+            "_owner": null
+          }
+        },
+        "_owner": null
+      }
+    },
+    "category": "embed",
+    "keywords": [
+      "image"
+    ],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/vimeo",
+    "title": "Vimeo",
+    "description": "Embed a Vimeo video.",
+    "icon": {
+      "foreground": "#1ab7ea",
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "xmlns": "http://www.w3.org/2000/svg",
+          "viewBox": "0 0 24 24",
+          "children": {
+            "key": null,
+            "ref": null,
+            "props": {
+              "children": {
+                "key": null,
+                "ref": null,
+                "props": {
+                  "d": "M22.396 7.164c-.093 2.026-1.507 4.8-4.245 8.32C15.323 19.16 12.93 21 10.97 21c-1.214 0-2.24-1.12-3.08-3.36-.56-2.052-1.118-4.105-1.68-6.158-.622-2.24-1.29-3.36-2.004-3.36-.156 0-.7.328-1.634.98l-.978-1.26c1.027-.903 2.04-1.806 3.037-2.71C6 3.95 7.03 3.328 7.716 3.265c1.62-.156 2.616.95 2.99 3.32.404 2.558.685 4.148.84 4.77.468 2.12.982 3.18 1.543 3.18.435 0 1.09-.687 1.963-2.064.872-1.376 1.34-2.422 1.402-3.142.125-1.187-.343-1.782-1.4-1.782-.5 0-1.013.115-1.542.34 1.023-3.35 2.977-4.976 5.862-4.883 2.14.063 3.148 1.45 3.024 4.16z"
+                },
+                "_owner": null
+              }
+            },
+            "_owner": null
+          }
+        },
+        "_owner": null
+      }
+    },
+    "category": "embed",
+    "keywords": [
+      "video"
+    ],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/animoto",
+    "title": "Animoto",
+    "description": "Embed an Animoto video.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "xmlns": "http://www.w3.org/2000/svg",
+          "children": [
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "M0,0h24v24H0V0z",
+                "fill": "none"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "m10 8v8l5-4-5-4zm9-5h-14c-1.1 0-2 0.9-2 2v14c0 1.1 0.9 2 2 2h14c1.1 0 2-0.9 2-2v-14c0-1.1-0.9-2-2-2zm0 16h-14v-14h14v14z"
+              },
+              "_owner": null
+            }
+          ]
+        },
+        "_owner": null
+      }
+    },
+    "category": "embed",
+    "keywords": [],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/cloudup",
+    "title": "Cloudup",
+    "description": "Embed Cloudup content.",
+    "icon": {
+      "src": {
+        "$ref": "$[18][\"icon\"][\"src\"]"
+      }
+    },
+    "category": "embed",
+    "keywords": [],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/collegehumor",
+    "title": "CollegeHumor",
+    "description": "Embed CollegeHumor content.",
+    "icon": {
+      "src": {
+        "$ref": "$[28][\"icon\"][\"src\"]"
+      }
+    },
+    "category": "embed",
+    "keywords": [],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/dailymotion",
+    "title": "Dailymotion",
+    "description": "Embed a Dailymotion video.",
+    "icon": {
+      "src": {
+        "$ref": "$[28][\"icon\"][\"src\"]"
+      }
+    },
+    "category": "embed",
+    "keywords": [],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/funnyordie",
+    "title": "Funny or Die",
+    "description": "Embed Funny or Die content.",
+    "icon": {
+      "src": {
+        "$ref": "$[28][\"icon\"][\"src\"]"
+      }
+    },
+    "category": "embed",
+    "keywords": [],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/hulu",
+    "title": "Hulu",
+    "description": "Embed Hulu content.",
+    "icon": {
+      "src": {
+        "$ref": "$[28][\"icon\"][\"src\"]"
+      }
+    },
+    "category": "embed",
+    "keywords": [],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/imgur",
+    "title": "Imgur",
+    "description": "Embed Imgur content.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "xmlns": "http://www.w3.org/2000/svg",
+          "children": [
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "M0,0h24v24H0V0z",
+                "fill": "none"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "M21,4H3C1.9,4,1,4.9,1,6v12c0,1.1,0.9,2,2,2h18c1.1,0,2-0.9,2-2V6C23,4.9,22.1,4,21,4z M21,18H3V6h18V18z"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "points": "14.5 11 11 15.51 8.5 12.5 5 17 19 17"
+              },
+              "_owner": null
+            }
+          ]
+        },
+        "_owner": null
+      }
+    },
+    "category": "embed",
+    "keywords": [],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/issuu",
+    "title": "Issuu",
+    "description": "Embed Issuu content.",
+    "icon": {
+      "src": {
+        "$ref": "$[18][\"icon\"][\"src\"]"
+      }
+    },
+    "category": "embed",
+    "keywords": [],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/kickstarter",
+    "title": "Kickstarter",
+    "description": "Embed Kickstarter content.",
+    "icon": {
+      "src": {
+        "$ref": "$[18][\"icon\"][\"src\"]"
+      }
+    },
+    "category": "embed",
+    "keywords": [],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/meetup-com",
+    "title": "Meetup.com",
+    "description": "Embed Meetup.com content.",
+    "icon": {
+      "src": {
+        "$ref": "$[18][\"icon\"][\"src\"]"
+      }
+    },
+    "category": "embed",
+    "keywords": [],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/mixcloud",
+    "title": "Mixcloud",
+    "description": "Embed Mixcloud content.",
+    "icon": {
+      "src": {
+        "$ref": "$[24][\"icon\"][\"src\"]"
+      }
+    },
+    "category": "embed",
+    "keywords": [
+      "music",
+      "audio"
+    ],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/photobucket",
+    "title": "Photobucket",
+    "description": "Embed a Photobucket image.",
+    "icon": {
+      "src": {
+        "$ref": "$[34][\"icon\"][\"src\"]"
+      }
+    },
+    "category": "embed",
+    "keywords": [],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/polldaddy",
+    "title": "Polldaddy",
+    "description": "Embed Polldaddy content.",
+    "icon": {
+      "src": {
+        "$ref": "$[18][\"icon\"][\"src\"]"
+      }
+    },
+    "category": "embed",
+    "keywords": [],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/reddit",
+    "title": "Reddit",
+    "description": "Embed a Reddit thread.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "children": {
+            "key": null,
+            "ref": null,
+            "props": {
+              "d": "M22 11.816c0-1.256-1.02-2.277-2.277-2.277-.593 0-1.122.24-1.526.613-1.48-.965-3.455-1.594-5.647-1.69l1.17-3.702 3.18.75c.01 1.027.847 1.86 1.877 1.86 1.035 0 1.877-.84 1.877-1.877 0-1.035-.842-1.877-1.877-1.877-.77 0-1.43.466-1.72 1.13L13.55 3.92c-.204-.047-.4.067-.46.26l-1.35 4.27c-2.317.037-4.412.67-5.97 1.67-.402-.355-.917-.58-1.493-.58C3.02 9.54 2 10.56 2 11.815c0 .814.433 1.523 1.078 1.925-.037.222-.06.445-.06.673 0 3.292 4.01 5.97 8.94 5.97s8.94-2.678 8.94-5.97c0-.214-.02-.424-.052-.632.687-.39 1.154-1.12 1.154-1.964zm-3.224-7.422c.606 0 1.1.493 1.1 1.1s-.493 1.1-1.1 1.1-1.1-.494-1.1-1.1.493-1.1 1.1-1.1zm-16 7.422c0-.827.673-1.5 1.5-1.5.313 0 .598.103.838.27-.85.675-1.477 1.478-1.812 2.36-.32-.274-.525-.676-.525-1.13zm9.183 7.79c-4.502 0-8.165-2.33-8.165-5.193S7.457 9.22 11.96 9.22s8.163 2.33 8.163 5.193-3.663 5.193-8.164 5.193zM20.635 13c-.326-.89-.948-1.7-1.797-2.383.247-.186.55-.3.882-.3.827 0 1.5.672 1.5 1.5 0 .482-.23.91-.586 1.184zm-11.64 1.704c-.76 0-1.397-.616-1.397-1.376 0-.76.636-1.397 1.396-1.397.76 0 1.376.638 1.376 1.398 0 .76-.616 1.376-1.376 1.376zm7.405-1.376c0 .76-.615 1.376-1.375 1.376s-1.4-.616-1.4-1.376c0-.76.64-1.397 1.4-1.397.76 0 1.376.638 1.376 1.398zm-1.17 3.38c.15.152.15.398 0 .55-.675.674-1.728 1.002-3.22 1.002l-.01-.002-.012.002c-1.492 0-2.544-.328-3.218-1.002-.152-.152-.152-.398 0-.55.152-.152.4-.15.55 0 .52.52 1.394.775 2.67.775l.01.002.01-.002c1.276 0 2.15-.253 2.67-.775.15-.152.398-.152.55 0z"
+            },
+            "_owner": null
+          }
+        },
+        "_owner": null
+      }
+    },
+    "category": "embed",
+    "keywords": [],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/reverbnation",
+    "title": "ReverbNation",
+    "description": "Embed ReverbNation content.",
+    "icon": {
+      "src": {
+        "$ref": "$[24][\"icon\"][\"src\"]"
+      }
+    },
+    "category": "embed",
+    "keywords": [],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/screencast",
+    "title": "Screencast",
+    "description": "Embed Screencast content.",
+    "icon": {
+      "src": {
+        "$ref": "$[28][\"icon\"][\"src\"]"
+      }
+    },
+    "category": "embed",
+    "keywords": [],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/scribd",
+    "title": "Scribd",
+    "description": "Embed Scribd content.",
+    "icon": {
+      "src": {
+        "$ref": "$[18][\"icon\"][\"src\"]"
+      }
+    },
+    "category": "embed",
+    "keywords": [],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/slideshare",
+    "title": "Slideshare",
+    "description": "Embed Slideshare content.",
+    "icon": {
+      "src": {
+        "$ref": "$[18][\"icon\"][\"src\"]"
+      }
+    },
+    "category": "embed",
+    "keywords": [],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/smugmug",
+    "title": "SmugMug",
+    "description": "Embed SmugMug content.",
+    "icon": {
+      "src": {
+        "$ref": "$[34][\"icon\"][\"src\"]"
+      }
+    },
+    "category": "embed",
+    "keywords": [],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/speaker",
+    "title": "Speaker",
+    "description": "Add a block that displays content pulled from other sites, like Twitter, Instagram or YouTube.",
+    "icon": {
+      "src": {
+        "$ref": "$[24][\"icon\"][\"src\"]"
+      }
+    },
+    "category": "embed",
+    "keywords": [],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true,
+      "inserter": false
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/speaker-deck",
+    "title": "Speaker Deck",
+    "description": "Embed Speaker Deck content.",
+    "icon": {
+      "src": {
+        "$ref": "$[18][\"icon\"][\"src\"]"
+      }
+    },
+    "category": "embed",
+    "keywords": [],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/ted",
+    "title": "TED",
+    "description": "Embed a TED video.",
+    "icon": {
+      "src": {
+        "$ref": "$[28][\"icon\"][\"src\"]"
+      }
+    },
+    "category": "embed",
+    "keywords": [],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/tumblr",
+    "title": "Tumblr",
+    "description": "Embed a Tumblr post.",
+    "icon": {
+      "foreground": "#35465c",
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "children": {
+            "key": null,
+            "ref": null,
+            "props": {
+              "d": "M19 3H5c-1.105 0-2 .895-2 2v14c0 1.105.895 2 2 2h14c1.105 0 2-.895 2-2V5c0-1.105-.895-2-2-2zm-5.57 14.265c-2.445.042-3.37-1.742-3.37-2.998V10.6H8.922V9.15c1.703-.615 2.113-2.15 2.21-3.026.006-.06.053-.084.08-.084h1.645V8.9h2.246v1.7H12.85v3.495c.008.476.182 1.13 1.08 1.107.3-.008.698-.094.907-.194l.54 1.6c-.205.297-1.12.642-1.946.657z"
+            },
+            "_owner": null
+          }
+        },
+        "_owner": null
+      }
+    },
+    "category": "embed",
+    "keywords": [],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/videopress",
+    "title": "VideoPress",
+    "description": "Embed a VideoPress video.",
+    "icon": {
+      "src": {
+        "$ref": "$[28][\"icon\"][\"src\"]"
+      }
+    },
+    "category": "embed",
+    "keywords": [
+      "video"
+    ],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core-embed/wordpress-tv",
+    "title": "WordPress.tv",
+    "description": "Embed a WordPress.tv video.",
+    "icon": {
+      "src": {
+        "$ref": "$[28][\"icon\"][\"src\"]"
+      }
+    },
+    "category": "embed",
+    "keywords": [],
+    "attributes": {
+      "$ref": "$[18][\"attributes\"]"
+    },
+    "supports": {
+      "align": true
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[18][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core/file",
+    "title": "File",
+    "description": "Add a link to a downloadable file.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "xmlns": "http://www.w3.org/2000/svg",
+          "children": [
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "fill": "none",
+                "d": "M0 0h24v24H0V0z"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "M9 6l2 2h9v10H4V6h5m1-2H4L2 6v12l2 2h16l2-2V8l-2-2h-8l-2-2z"
+              },
+              "_owner": null
+            }
+          ]
+        },
+        "_owner": null
+      }
+    },
+    "category": "common",
+    "keywords": [
+      "document",
+      "pdf"
+    ],
+    "attributes": {
+      "id": {
+        "type": "number"
+      },
+      "href": {
+        "type": "string"
+      },
+      "fileName": {
+        "type": "string",
+        "source": "html",
+        "selector": "a:not([download])"
+      },
+      "textLinkHref": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "a:not([download])",
+        "attribute": "href"
+      },
+      "textLinkTarget": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "a:not([download])",
+        "attribute": "target"
+      },
+      "showDownloadButton": {
+        "type": "boolean",
+        "default": true
+      },
+      "downloadButtonText": {
+        "type": "string",
+        "source": "html",
+        "selector": "a[download]",
+        "default": "Download"
+      },
+      "align": {
+        "type": "string"
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "supports": {
+      "align": true
+    },
+    "transforms": {
+      "from": [
+        {
+          "type": "files",
+          "priority": 15
+        },
+        {
+          "type": "block",
+          "blocks": [
+            "core/audio"
+          ]
+        },
+        {
+          "type": "block",
+          "blocks": [
+            "core/video"
+          ]
+        },
+        {
+          "type": "block",
+          "blocks": [
+            "core/image"
+          ]
+        }
+      ],
+      "to": [
+        {
+          "type": "block",
+          "blocks": [
+            "core/audio"
+          ]
+        },
+        {
+          "type": "block",
+          "blocks": [
+            "core/video"
+          ]
+        },
+        {
+          "type": "block",
+          "blocks": [
+            "core/image"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "core/freeform",
+    "title": "Classic",
+    "description": "Use the classic WordPress editor.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "xmlns": "http://www.w3.org/2000/svg",
+          "children": [
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "M0,0h24v24H0V0z M0,0h24v24H0V0z",
+                "fill": "none"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "m20 7v10h-16v-10h16m0-2h-16c-1.1 0-1.99 0.9-1.99 2l-0.01 10c0 1.1 0.9 2 2 2h16c1.1 0 2-0.9 2-2v-10c0-1.1-0.9-2-2-2z"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "x": "11",
+                "y": "8",
+                "width": "2",
+                "height": "2"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "x": "11",
+                "y": "11",
+                "width": "2",
+                "height": "2"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "x": "8",
+                "y": "8",
+                "width": "2",
+                "height": "2"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "x": "8",
+                "y": "11",
+                "width": "2",
+                "height": "2"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "x": "5",
+                "y": "11",
+                "width": "2",
+                "height": "2"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "x": "5",
+                "y": "8",
+                "width": "2",
+                "height": "2"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "x": "8",
+                "y": "14",
+                "width": "8",
+                "height": "2"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "x": "14",
+                "y": "11",
+                "width": "2",
+                "height": "2"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "x": "14",
+                "y": "8",
+                "width": "2",
+                "height": "2"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "x": "17",
+                "y": "11",
+                "width": "2",
+                "height": "2"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "x": "17",
+                "y": "8",
+                "width": "2",
+                "height": "2"
+              },
+              "_owner": null
+            }
+          ]
+        },
+        "_owner": null
+      }
+    },
+    "category": "formatting",
+    "attributes": {
+      "content": {
+        "type": "string",
+        "source": "html"
+      }
+    },
+    "supports": {
+      "className": false,
+      "customClassName": false,
+      "reusable": false
+    }
+  },
+  {
+    "name": "core/html",
+    "title": "Custom HTML",
+    "description": "Add custom HTML code and preview it as you edit.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "xmlns": "http://www.w3.org/2000/svg",
+          "children": {
+            "key": null,
+            "ref": null,
+            "props": {
+              "d": "M4.5,11h-2V9H1v6h1.5v-2.5h2V15H6V9H4.5V11z M7,10.5h1.5V15H10v-4.5h1.5V9H7V10.5z M14.5,10l-1-1H12v6h1.5v-3.9  l1,1l1-1V15H17V9h-1.5L14.5,10z M19.5,13.5V9H18v6h5v-1.5H19.5z"
+            },
+            "_owner": null
+          }
+        },
+        "_owner": null
+      }
+    },
+    "category": "formatting",
+    "keywords": [
+      "embed"
+    ],
+    "supports": {
+      "customClassName": false,
+      "className": false,
+      "html": false
+    },
+    "attributes": {
+      "content": {
+        "type": "string",
+        "source": "html"
+      }
+    },
+    "transforms": {
+      "from": [
+        {
+          "type": "raw",
+          "schema": {
+            "figure": {
+              "require": [
+                "iframe"
+              ],
+              "children": {
+                "iframe": {
+                  "attributes": [
+                    "src",
+                    "allowfullscreen",
+                    "height",
+                    "width"
+                  ]
+                },
+                "figcaption": {
+                  "children": {
+                    "$ref": "$[3][\"transforms\"][\"from\"][0][\"schema\"][\"p\"][\"children\"]"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "core/media-text",
+    "title": "Media & Text",
+    "description": "Set media and words side-by-side for a richer layout.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "xmlns": "http://www.w3.org/2000/svg",
+          "viewBox": "0 0 24 24",
+          "children": {
+            "key": null,
+            "ref": null,
+            "props": {
+              "d": "M13 17h8v-2h-8v2zM3 19h8V5H3v14zM13 9h8V7h-8v2zm0 4h8v-2h-8v2z"
+            },
+            "_owner": null
+          }
+        },
+        "_owner": null
+      }
+    },
+    "category": "layout",
+    "keywords": [
+      "image",
+      "video"
+    ],
+    "attributes": {
+      "align": {
+        "type": "string",
+        "default": "wide"
+      },
+      "backgroundColor": {
+        "type": "string"
+      },
+      "customBackgroundColor": {
+        "type": "string"
+      },
+      "mediaAlt": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "figure img",
+        "attribute": "alt",
+        "default": ""
+      },
+      "mediaPosition": {
+        "type": "string",
+        "default": "left"
+      },
+      "mediaId": {
+        "type": "number"
+      },
+      "mediaUrl": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "figure video,figure img",
+        "attribute": "src"
+      },
+      "mediaType": {
+        "type": "string"
+      },
+      "mediaWidth": {
+        "type": "number",
+        "default": 50
+      },
+      "isStackedOnMobile": {
+        "type": "boolean",
+        "default": false
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "supports": {
+      "align": [
+        "wide",
+        "full"
+      ]
+    },
+    "transforms": {
+      "from": [
+        {
+          "type": "block",
+          "blocks": [
+            "core/image"
+          ]
+        },
+        {
+          "type": "block",
+          "blocks": [
+            "core/video"
+          ]
+        }
+      ],
+      "to": [
+        {
+          "type": "block",
+          "blocks": [
+            "core/image"
+          ]
+        },
+        {
+          "type": "block",
+          "blocks": [
+            "core/video"
+          ]
+        }
+      ]
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "$ref": "$[56][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "core/latest-comments",
+    "attributes": {
+      "className": {
+        "type": "string"
+      },
+      "commentsToShow": {
+        "type": "number",
+        "default": 5,
+        "minimum": 1,
+        "maximum": 100
+      },
+      "displayAvatar": {
+        "type": "boolean",
+        "default": true
+      },
+      "displayDate": {
+        "type": "boolean",
+        "default": true
+      },
+      "displayExcerpt": {
+        "type": "boolean",
+        "default": true
+      },
+      "align": {
+        "type": "string",
+        "enum": [
+          "center",
+          "left",
+          "right",
+          "wide",
+          "full",
+          ""
+        ]
+      }
+    },
+    "title": "Latest Comments",
+    "description": "Display a list of your most recent comments.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "xmlns": "http://www.w3.org/2000/svg",
+          "children": [
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "fill": "none",
+                "d": "M0 0h24v24H0V0z"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": [
+                  {
+                    "key": null,
+                    "ref": null,
+                    "props": {
+                      "d": "M22 4l-2-2H4L2 4v12l2 2h14l4 4V4zm-2 0v13l-1-1H4V4h16z"
+                    },
+                    "_owner": null
+                  },
+                  {
+                    "key": null,
+                    "ref": null,
+                    "props": {
+                      "d": "M6 12h12v2H6zM6 9h12v2H6zM6 6h12v2H6z"
+                    },
+                    "_owner": null
+                  }
+                ]
+              },
+              "_owner": null
+            }
+          ]
+        },
+        "_owner": null
+      }
+    },
+    "category": "widgets",
+    "keywords": [
+      "recent comments"
+    ],
+    "supports": {
+      "html": false
+    }
+  },
+  {
+    "name": "core/latest-posts",
+    "attributes": {
+      "categories": {
+        "type": "string"
+      },
+      "className": {
+        "type": "string"
+      },
+      "postsToShow": {
+        "type": "number",
+        "default": 5
+      },
+      "displayPostDate": {
+        "type": "boolean",
+        "default": false
+      },
+      "postLayout": {
+        "type": "string",
+        "default": "list"
+      },
+      "columns": {
+        "type": "number",
+        "default": 3
+      },
+      "align": {
+        "type": "string"
+      },
+      "order": {
+        "type": "string",
+        "default": "desc"
+      },
+      "orderBy": {
+        "type": "string",
+        "default": "date"
+      }
+    },
+    "title": "Latest Posts",
+    "description": "Display a list of your most recent posts.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "xmlns": "http://www.w3.org/2000/svg",
+          "children": [
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "M0,0h24v24H0V0z",
+                "fill": "none"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "x": "11",
+                "y": "7",
+                "width": "6",
+                "height": "2"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "x": "11",
+                "y": "11",
+                "width": "6",
+                "height": "2"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "x": "11",
+                "y": "15",
+                "width": "6",
+                "height": "2"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "x": "7",
+                "y": "7",
+                "width": "2",
+                "height": "2"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "x": "7",
+                "y": "11",
+                "width": "2",
+                "height": "2"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "x": "7",
+                "y": "15",
+                "width": "2",
+                "height": "2"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "M20.1,3H3.9C3.4,3,3,3.4,3,3.9v16.2C3,20.5,3.4,21,3.9,21h16.2c0.4,0,0.9-0.5,0.9-0.9V3.9C21,3.4,20.5,3,20.1,3z M19,19H5V5h14V19z"
+              },
+              "_owner": null
+            }
+          ]
+        },
+        "_owner": null
+      }
+    },
+    "category": "widgets",
+    "keywords": [
+      "recent posts"
+    ],
+    "supports": {
+      "html": false
+    }
+  },
+  {
+    "name": "core/missing",
+    "category": "common",
+    "title": "Unrecognized Block",
+    "description": "Your site doesn’t include support for this block.",
+    "supports": {
+      "className": false,
+      "customClassName": false,
+      "inserter": false,
+      "html": false,
+      "reusable": false
+    },
+    "attributes": {
+      "originalName": {
+        "type": "string"
+      },
+      "originalUndelimitedContent": {
+        "type": "string"
+      },
+      "originalContent": {
+        "type": "string",
+        "source": "html"
+      }
+    },
+    "icon": {
+      "src": "block-default"
+    }
+  },
+  {
+    "name": "core/more",
+    "title": "More",
+    "description": "Mark the excerpt of this content. Content before this block will be shown in the excerpt on your archives page.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "xmlns": "http://www.w3.org/2000/svg",
+          "children": [
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "fill": "none",
+                "d": "M0 0h24v24H0V0z"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": {
+                  "key": null,
+                  "ref": null,
+                  "props": {
+                    "d": "M2 9v2h19V9H2zm0 6h5v-2H2v2zm7 0h5v-2H9v2zm7 0h5v-2h-5v2z"
+                  },
+                  "_owner": null
+                }
+              },
+              "_owner": null
+            }
+          ]
+        },
+        "_owner": null
+      }
+    },
+    "category": "layout",
+    "supports": {
+      "customClassName": false,
+      "className": false,
+      "html": false,
+      "multiple": false
+    },
+    "attributes": {
+      "customText": {
+        "type": "string"
+      },
+      "noTeaser": {
+        "type": "boolean",
+        "default": false
+      }
+    },
+    "transforms": {
+      "from": [
+        {
+          "type": "raw",
+          "schema": {
+            "wp-block": {
+              "attributes": [
+                "data-block"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "core/nextpage",
+    "title": "Page Break",
+    "description": "Separate your content into a multi-page experience.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "xmlns": "http://www.w3.org/2000/svg",
+          "viewBox": "0 0 24 24",
+          "children": {
+            "key": null,
+            "ref": null,
+            "props": {
+              "children": {
+                "key": null,
+                "ref": null,
+                "props": {
+                  "d": "M9 12h6v-2H9zm-7 0h5v-2H2zm15 0h5v-2h-5zm3 2v2l-6 6H6a2 2 0 0 1-2-2v-6h2v6h6v-4a2 2 0 0 1 2-2h6zM4 8V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4h-2V4H6v4z"
+                },
+                "_owner": null
+              }
+            },
+            "_owner": null
+          }
+        },
+        "_owner": null
+      }
+    },
+    "category": "layout",
+    "keywords": [
+      "next page",
+      "pagination"
+    ],
+    "supports": {
+      "customClassName": false,
+      "className": false,
+      "html": false
+    },
+    "attributes": {},
+    "transforms": {
+      "from": [
+        {
+          "type": "raw",
+          "schema": {
+            "wp-block": {
+              "attributes": [
+                "data-block"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "core/preformatted",
+    "title": "Preformatted",
+    "description": "Add text that respects your spacing and tabs, and also allows styling.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "xmlns": "http://www.w3.org/2000/svg",
+          "children": [
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "M0,0h24v24H0V0z",
+                "fill": "none"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "M20,4H4C2.9,4,2,4.9,2,6v12c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V6C22,4.9,21.1,4,20,4z M20,18H4V6h16V18z"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "x": "6",
+                "y": "10",
+                "width": "2",
+                "height": "2"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "x": "6",
+                "y": "14",
+                "width": "8",
+                "height": "2"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "x": "16",
+                "y": "14",
+                "width": "2",
+                "height": "2"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "x": "10",
+                "y": "10",
+                "width": "8",
+                "height": "2"
+              },
+              "_owner": null
+            }
+          ]
+        },
+        "_owner": null
+      }
+    },
+    "category": "formatting",
+    "attributes": {
+      "content": {
+        "type": "string",
+        "source": "html",
+        "selector": "pre",
+        "default": ""
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "transforms": {
+      "from": [
+        {
+          "type": "block",
+          "blocks": [
+            "core/code",
+            "core/paragraph"
+          ]
+        },
+        {
+          "type": "raw",
+          "schema": {
+            "pre": {
+              "children": {
+                "$ref": "$[3][\"transforms\"][\"from\"][0][\"schema\"][\"p\"][\"children\"]"
+              }
+            }
+          }
+        }
+      ],
+      "to": [
+        {
+          "type": "block",
+          "blocks": [
+            "core/paragraph"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "core/pullquote",
+    "title": "Pullquote",
+    "description": "Give special visual emphasis to a quote from your text.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "xmlns": "http://www.w3.org/2000/svg",
+          "children": [
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "M0,0h24v24H0V0z",
+                "fill": "none"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "points": "21 18 2 18 2 20 21 20"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "m19 10v4h-15v-4h15m1-2h-17c-0.55 0-1 0.45-1 1v6c0 0.55 0.45 1 1 1h17c0.55 0 1-0.45 1-1v-6c0-0.55-0.45-1-1-1z"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "points": "21 4 2 4 2 6 21 6"
+              },
+              "_owner": null
+            }
+          ]
+        },
+        "_owner": null
+      }
+    },
+    "category": "formatting",
+    "attributes": {
+      "value": {
+        "type": "string",
+        "source": "html",
+        "selector": "blockquote",
+        "multiline": "p"
+      },
+      "citation": {
+        "type": "string",
+        "source": "html",
+        "selector": "cite",
+        "default": ""
+      },
+      "mainColor": {
+        "type": "string"
+      },
+      "customMainColor": {
+        "type": "string"
+      },
+      "textColor": {
+        "type": "string"
+      },
+      "customTextColor": {
+        "type": "string"
+      },
+      "align": {
+        "type": "string"
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "styles": [
+      {
+        "name": "default",
+        "label": "Regular",
+        "isDefault": true
+      },
+      {
+        "name": "solid-color",
+        "label": "Solid Color"
+      }
+    ],
+    "supports": {
+      "align": [
+        "left",
+        "right",
+        "wide",
+        "full"
+      ]
+    },
+    "deprecated": [
+      {
+        "attributes": {
+          "value": {
+            "$ref": "$[63][\"attributes\"][\"value\"]"
+          },
+          "citation": {
+            "$ref": "$[63][\"attributes\"][\"citation\"]"
+          },
+          "mainColor": {
+            "$ref": "$[63][\"attributes\"][\"mainColor\"]"
+          },
+          "customMainColor": {
+            "$ref": "$[63][\"attributes\"][\"customMainColor\"]"
+          },
+          "textColor": {
+            "$ref": "$[63][\"attributes\"][\"textColor\"]"
+          },
+          "customTextColor": {
+            "$ref": "$[63][\"attributes\"][\"customTextColor\"]"
+          }
+        }
+      },
+      {
+        "attributes": {
+          "value": {
+            "$ref": "$[63][\"attributes\"][\"value\"]"
+          },
+          "citation": {
+            "type": "string",
+            "source": "html",
+            "selector": "footer"
+          },
+          "mainColor": {
+            "$ref": "$[63][\"attributes\"][\"mainColor\"]"
+          },
+          "customMainColor": {
+            "$ref": "$[63][\"attributes\"][\"customMainColor\"]"
+          },
+          "textColor": {
+            "$ref": "$[63][\"attributes\"][\"textColor\"]"
+          },
+          "customTextColor": {
+            "$ref": "$[63][\"attributes\"][\"customTextColor\"]"
+          },
+          "align": {
+            "type": "string",
+            "default": "none"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "core/separator",
+    "title": "Separator",
+    "description": "Create a break between ideas or sections with a horizontal separator.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "xmlns": "http://www.w3.org/2000/svg",
+          "children": [
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "fill": "none",
+                "d": "M0 0h24v24H0V0z"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "M19 13H5v-2h14v2z"
+              },
+              "_owner": null
+            }
+          ]
+        },
+        "_owner": null
+      }
+    },
+    "category": "layout",
+    "keywords": [
+      "horizontal-line",
+      "hr",
+      "divider"
+    ],
+    "styles": [
+      {
+        "name": "default",
+        "label": "Short Line",
+        "isDefault": true
+      },
+      {
+        "name": "wide",
+        "label": "Wide Line"
+      },
+      {
+        "name": "dots",
+        "label": "Dots"
+      }
+    ],
+    "transforms": {
+      "from": [
+        {
+          "type": "enter",
+          "regExp": {}
+        },
+        {
+          "type": "raw",
+          "selector": "hr",
+          "schema": {
+            "hr": {}
+          }
+        }
+      ]
+    },
+    "attributes": {
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "core/block",
+    "attributes": {
+      "ref": {
+        "type": "number"
+      }
+    },
+    "title": "Reusable Block",
+    "category": "reusable",
+    "description": "Create content, and save it for you and other contributors to reuse across your site. Update the block, and the changes apply everywhere it’s used.",
+    "supports": {
+      "customClassName": false,
+      "html": false,
+      "inserter": false
+    },
+    "icon": {
+      "src": "block-default"
+    }
+  },
+  {
+    "name": "core/spacer",
+    "title": "Spacer",
+    "description": "Add white space between blocks and customize its height.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "xmlns": "http://www.w3.org/2000/svg",
+          "children": {
+            "key": null,
+            "ref": null,
+            "props": {
+              "children": {
+                "key": null,
+                "ref": null,
+                "props": {
+                  "d": "M13 4v2h3.59L6 16.59V13H4v7h7v-2H7.41L18 7.41V11h2V4h-7"
+                },
+                "_owner": null
+              }
+            },
+            "_owner": null
+          }
+        },
+        "_owner": null
+      }
+    },
+    "category": "layout",
+    "attributes": {
+      "height": {
+        "type": "number",
+        "default": 100
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "core/subhead",
+    "title": "Subheading (deprecated)",
+    "description": "This block is deprecated. Please use the Paragraph block instead.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "xmlns": "http://www.w3.org/2000/svg",
+          "viewBox": "0 0 24 24",
+          "children": {
+            "key": null,
+            "ref": null,
+            "props": {
+              "d": "M7.1 6l-.5 3h4.5L9.4 19h3l1.8-10h4.5l.5-3H7.1z"
+            },
+            "_owner": null
+          }
+        },
+        "_owner": null
+      }
+    },
+    "category": "common",
+    "supports": {
+      "inserter": false,
+      "multiple": false
+    },
+    "attributes": {
+      "content": {
+        "type": "string",
+        "source": "html",
+        "selector": "p"
+      },
+      "align": {
+        "type": "string"
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "transforms": {
+      "to": [
+        {
+          "type": "block",
+          "blocks": [
+            "core/paragraph"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "core/table",
+    "title": "Table",
+    "description": "Insert a table — perfect for sharing charts and data.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "xmlns": "http://www.w3.org/2000/svg",
+          "children": [
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "fill": "none",
+                "d": "M0 0h24v24H0V0z"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": {
+                  "key": null,
+                  "ref": null,
+                  "props": {
+                    "d": "M20 3H5L3 5v14l2 2h15l2-2V5l-2-2zm0 2v3H5V5h15zm-5 14h-5v-9h5v9zM5 10h3v9H5v-9zm12 9v-9h3v9h-3z"
+                  },
+                  "_owner": null
+                }
+              },
+              "_owner": null
+            }
+          ]
+        },
+        "_owner": null
+      }
+    },
+    "category": "formatting",
+    "attributes": {
+      "hasFixedLayout": {
+        "type": "boolean",
+        "default": false
+      },
+      "head": {
+        "type": "array",
+        "default": [],
+        "source": "query",
+        "selector": "thead tr",
+        "query": {
+          "cells": {
+            "type": "array",
+            "default": [],
+            "source": "query",
+            "selector": "td,th",
+            "query": {
+              "content": {
+                "type": "string",
+                "source": "html"
+              },
+              "tag": {
+                "type": "string",
+                "default": "td",
+                "source": "tag"
+              }
+            }
+          }
+        }
+      },
+      "body": {
+        "type": "array",
+        "default": [],
+        "source": "query",
+        "selector": "tbody tr",
+        "query": {
+          "cells": {
+            "type": "array",
+            "default": [],
+            "source": "query",
+            "selector": "td,th",
+            "query": {
+              "content": {
+                "type": "string",
+                "source": "html"
+              },
+              "tag": {
+                "type": "string",
+                "default": "td",
+                "source": "tag"
+              }
+            }
+          }
+        }
+      },
+      "foot": {
+        "type": "array",
+        "default": [],
+        "source": "query",
+        "selector": "tfoot tr",
+        "query": {
+          "cells": {
+            "type": "array",
+            "default": [],
+            "source": "query",
+            "selector": "td,th",
+            "query": {
+              "content": {
+                "type": "string",
+                "source": "html"
+              },
+              "tag": {
+                "type": "string",
+                "default": "td",
+                "source": "tag"
+              }
+            }
+          }
+        }
+      },
+      "align": {
+        "type": "string"
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "styles": [
+      {
+        "name": "regular",
+        "label": "Regular",
+        "isDefault": true
+      },
+      {
+        "name": "stripes",
+        "label": "Stripes"
+      }
+    ],
+    "supports": {
+      "align": true
+    },
+    "transforms": {
+      "from": [
+        {
+          "type": "raw",
+          "selector": "table",
+          "schema": {
+            "table": {
+              "children": {
+                "thead": {
+                  "children": {
+                    "tr": {
+                      "children": {
+                        "th": {
+                          "children": {
+                            "$ref": "$[3][\"transforms\"][\"from\"][0][\"schema\"][\"p\"][\"children\"]"
+                          }
+                        },
+                        "td": {
+                          "children": {
+                            "$ref": "$[3][\"transforms\"][\"from\"][0][\"schema\"][\"p\"][\"children\"]"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "tfoot": {
+                  "children": {
+                    "$ref": "$[68][\"transforms\"][\"from\"][0][\"schema\"][\"table\"][\"children\"][\"thead\"][\"children\"]"
+                  }
+                },
+                "tbody": {
+                  "children": {
+                    "$ref": "$[68][\"transforms\"][\"from\"][0][\"schema\"][\"table\"][\"children\"][\"thead\"][\"children\"]"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "core/template",
+    "title": "Reusable Template",
+    "category": "reusable",
+    "description": "Template block used as a container.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "xmlns": "http://www.w3.org/2000/svg",
+          "viewBox": "0 0 24 24",
+          "children": [
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "x": "0",
+                "fill": "none",
+                "width": "24",
+                "height": "24"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": {
+                  "key": null,
+                  "ref": null,
+                  "props": {
+                    "d": "M19 3H5c-1.105 0-2 .895-2 2v14c0 1.105.895 2 2 2h14c1.105 0 2-.895 2-2V5c0-1.105-.895-2-2-2zM6 6h5v5H6V6zm4.5 13C9.12 19 8 17.88 8 16.5S9.12 14 10.5 14s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zm3-6l3-5 3 5h-6z"
+                  },
+                  "_owner": null
+                }
+              },
+              "_owner": null
+            }
+          ]
+        },
+        "_owner": null
+      }
+    },
+    "supports": {
+      "customClassName": false,
+      "html": false,
+      "inserter": false
+    }
+  },
+  {
+    "name": "core/text-columns",
+    "supports": {
+      "inserter": false
+    },
+    "title": "Text Columns (deprecated)",
+    "description": "This block is deprecated. Please use the Columns block instead.",
+    "icon": {
+      "src": "columns"
+    },
+    "category": "layout",
+    "attributes": {
+      "content": {
+        "type": "array",
+        "source": "query",
+        "selector": "p",
+        "query": {
+          "children": {
+            "type": "string",
+            "source": "html"
+          }
+        },
+        "default": [
+          {},
+          {}
+        ]
+      },
+      "columns": {
+        "type": "number",
+        "default": 2
+      },
+      "width": {
+        "type": "string"
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "transforms": {
+      "to": [
+        {
+          "type": "block",
+          "blocks": [
+            "core/columns"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "core/verse",
+    "title": "Verse",
+    "description": "Insert poetry. Use special spacing formats. Or quote song lyrics.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "xmlns": "http://www.w3.org/2000/svg",
+          "children": [
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "fill": "none",
+                "d": "M0 0h24v24H0V0z"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "M3 17v4h4l11-11-4-4L3 17zm3 2H5v-1l9-9 1 1-9 9zM21 6l-3-3h-1l-2 2 4 4 2-2V6z"
+              },
+              "_owner": null
+            }
+          ]
+        },
+        "_owner": null
+      }
+    },
+    "category": "formatting",
+    "keywords": [
+      "poetry"
+    ],
+    "attributes": {
+      "content": {
+        "type": "string",
+        "source": "html",
+        "selector": "pre",
+        "default": ""
+      },
+      "textAlign": {
+        "type": "string"
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "transforms": {
+      "from": [
+        {
+          "type": "block",
+          "blocks": [
+            "core/paragraph"
+          ]
+        }
+      ],
+      "to": [
+        {
+          "type": "block",
+          "blocks": [
+            "core/paragraph"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "core/video",
+    "title": "Video",
+    "description": "Embed a video from your media library or upload a new one.",
+    "icon": {
+      "src": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "viewBox": "0 0 24 24",
+          "xmlns": "http://www.w3.org/2000/svg",
+          "children": [
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "fill": "none",
+                "d": "M0 0h24v24H0V0z"
+              },
+              "_owner": null
+            },
+            {
+              "key": null,
+              "ref": null,
+              "props": {
+                "d": "M4 6l2 4h14v8H4V6m18-2h-4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4L2 6v12l2 2h16l2-2V4z"
+              },
+              "_owner": null
+            }
+          ]
+        },
+        "_owner": null
+      }
+    },
+    "keywords": [
+      "movie"
+    ],
+    "category": "common",
+    "attributes": {
+      "autoplay": {
+        "type": "boolean",
+        "source": "attribute",
+        "selector": "video",
+        "attribute": "autoplay"
+      },
+      "caption": {
+        "type": "string",
+        "source": "html",
+        "selector": "figcaption"
+      },
+      "controls": {
+        "type": "boolean",
+        "source": "attribute",
+        "selector": "video",
+        "attribute": "controls",
+        "default": true
+      },
+      "id": {
+        "type": "number"
+      },
+      "loop": {
+        "type": "boolean",
+        "source": "attribute",
+        "selector": "video",
+        "attribute": "loop"
+      },
+      "muted": {
+        "type": "boolean",
+        "source": "attribute",
+        "selector": "video",
+        "attribute": "muted"
+      },
+      "poster": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "video",
+        "attribute": "poster"
+      },
+      "preload": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "video",
+        "attribute": "preload",
+        "default": "metadata"
+      },
+      "src": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "video",
+        "attribute": "src"
+      },
+      "align": {
+        "type": "string"
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "transforms": {
+      "from": [
+        {
+          "type": "files"
+        }
+      ]
+    },
+    "supports": {
+      "align": true
+    }
+  }
+]

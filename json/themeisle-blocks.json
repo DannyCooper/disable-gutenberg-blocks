@@ -1,0 +1,761 @@
+[
+  {
+    "name": "themeisle-blocks/about-author",
+    "title": "About Author",
+    "description": "About Author block is the easiest way to add a author bio below your posts.",
+    "icon": {
+      "src": "admin-users"
+    },
+    "category": "themeisle-blocks",
+    "keywords": [
+      "about",
+      "author",
+      "profile"
+    ],
+    "attributes": {
+      "id": {
+        "type": "number"
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "supports": {
+      "html": false
+    }
+  },
+  {
+    "name": "themeisle-blocks/accordion-area",
+    "title": "Accordion",
+    "description": "Accordion block allows you to add beautiful accordions in your posts.",
+    "icon": {
+      "src": "menu"
+    },
+    "category": "themeisle-blocks",
+    "keywords": [
+      "accordion",
+      "collapsible",
+      "orbitfox"
+    ],
+    "attributes": {
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "themeisle-blocks/accordion-block",
+    "title": "Accordion Item",
+    "description": "Accordion block allows you to add beautiful accordions in your posts.",
+    "parent": [
+      "themeisle-blocks/accordion-area"
+    ],
+    "icon": {
+      "src": "menu"
+    },
+    "category": "themeisle-blocks",
+    "keywords": [
+      "accordion",
+      "collapsible",
+      "orbitfox"
+    ],
+    "attributes": {
+      "heading": {
+        "type": "array",
+        "source": "children",
+        "selector": ".accordion-heading"
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "themeisle-blocks/chart-pie",
+    "title": "Pie Chart",
+    "description": "Display a beautiful Pie Chart on your blog post with Pie Chart block.",
+    "icon": {
+      "src": "chart-pie"
+    },
+    "category": "themeisle-blocks",
+    "keywords": [
+      "pie",
+      "chart",
+      "orbitfox"
+    ],
+    "attributes": {
+      "data": {
+        "type": "string",
+        "default": "[[\"Label\",\"Data\"],[\"Dogs\",40],[\"Cats\",30],[\"Racoons\",20],[\"Monkeys\",10]]"
+      },
+      "options": {
+        "type": "object",
+        "default": {
+          "title": "Animals",
+          "is3D": true
+        }
+      },
+      "id": {
+        "type": "string",
+        "default": ""
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "themeisle-blocks/font-awesome-icons",
+    "title": "Font Awesome Icons",
+    "description": "Share buttons for your website visitors to share content on any social sharing service.",
+    "icon": {
+      "src": "smiley"
+    },
+    "category": "themeisle-blocks",
+    "keywords": [
+      "font awesome",
+      "dashicons",
+      "icons"
+    ],
+    "attributes": {
+      "prefix": {
+        "type": "string",
+        "default": "fab"
+      },
+      "icon": {
+        "type": "string",
+        "default": "themeisle"
+      },
+      "fontSize": {
+        "type": "number",
+        "default": 16
+      },
+      "padding": {
+        "type": "number",
+        "default": 5
+      },
+      "margin": {
+        "type": "number",
+        "default": 5
+      },
+      "backgroundColor": {
+        "type": "string"
+      },
+      "textColor": {
+        "type": "string"
+      },
+      "borderColor": {
+        "type": "string"
+      },
+      "borderSize": {
+        "type": "number",
+        "default": 0
+      },
+      "borderRadius": {
+        "type": "number",
+        "default": 0
+      },
+      "align": {
+        "type": "string"
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "supports": {
+      "align": [
+        "left",
+        "center",
+        "right"
+      ]
+    }
+  },
+  {
+    "name": "themeisle-blocks/google-map",
+    "title": "Google Map",
+    "description": "Display a Google Map on your website with Google Map block.",
+    "icon": {
+      "src": "admin-site"
+    },
+    "category": "themeisle-blocks",
+    "keywords": [
+      "map",
+      "google",
+      "orbitfox"
+    ],
+    "attributes": {
+      "location": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string",
+        "default": "roadmap"
+      },
+      "zoom": {
+        "type": "number",
+        "default": 10
+      },
+      "height": {
+        "type": "string",
+        "default": "400px"
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "supports": {
+      "html": false
+    }
+  },
+  {
+    "name": "themeisle-blocks/notice",
+    "title": "Notice",
+    "description": "Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.",
+    "icon": {
+      "src": "info"
+    },
+    "category": "themeisle-blocks",
+    "keywords": [
+      "notice",
+      "info"
+    ],
+    "attributes": {
+      "content": {
+        "type": "array",
+        "source": "children",
+        "selector": ".components-notice__content"
+      },
+      "align": {
+        "type": "string"
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "supports": {
+      "align": [
+        "wide",
+        "full"
+      ]
+    },
+    "styles": [
+      {
+        "name": "sucess",
+        "label": "Success",
+        "isDefault": true
+      },
+      {
+        "name": "info",
+        "label": "Info"
+      },
+      {
+        "name": "warning",
+        "label": "Warning"
+      },
+      {
+        "name": "error",
+        "label": "Error"
+      }
+    ]
+  },
+  {
+    "name": "themeisle-blocks/plugin-cards",
+    "title": "Plugin Card",
+    "description": "Plugin Card block lets you display plugins data in your blog posts.",
+    "icon": {
+      "src": "admin-plugins"
+    },
+    "category": "themeisle-blocks",
+    "keywords": [
+      "plugin",
+      "card",
+      "orbitfox"
+    ],
+    "attributes": {
+      "slug": {
+        "type": "string"
+      },
+      "pluginIcon": {
+        "type": "string"
+      },
+      "pluginName": {
+        "type": "string"
+      },
+      "pluginAuthor": {
+        "type": "string"
+      },
+      "pluginRating": {
+        "type": "number"
+      },
+      "pluginDescription": {
+        "type": "string"
+      },
+      "pluginInstalls": {
+        "type": "number"
+      },
+      "pluginVersion": {
+        "type": "string"
+      },
+      "pluginTested": {
+        "type": "string"
+      },
+      "pluginLink": {
+        "type": "string"
+      },
+      "align": {
+        "type": "string"
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "supports": {
+      "html": false,
+      "align": [
+        "left",
+        "center",
+        "right"
+      ]
+    }
+  },
+  {
+    "name": "themeisle-blocks/posts-grid",
+    "title": "Posts Grid",
+    "description": "Display a list of your most recent posts in a beautiful grid.",
+    "icon": {
+      "src": "screenoptions"
+    },
+    "category": "themeisle-blocks",
+    "keywords": [
+      "posts",
+      "grid",
+      "orbitfox"
+    ],
+    "attributes": {
+      "grid": {
+        "type": "boolean",
+        "default": false
+      },
+      "columns": {
+        "type": "number",
+        "default": 3
+      },
+      "categories": {
+        "type": "string"
+      },
+      "postsToShow": {
+        "type": "number",
+        "default": 5
+      },
+      "order": {
+        "type": "string",
+        "default": "desc"
+      },
+      "orderBy": {
+        "type": "string",
+        "default": "date"
+      },
+      "displayFeaturedImage": {
+        "type": "boolean",
+        "default": true
+      },
+      "displayCategory": {
+        "type": "boolean",
+        "default": true
+      },
+      "displayDate": {
+        "type": "boolean",
+        "default": true
+      },
+      "displayAuthor": {
+        "type": "boolean",
+        "default": true
+      },
+      "excerptLength": {
+        "type": "number",
+        "default": 200
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "themeisle-blocks/pricing-table",
+    "title": "Pricing Table",
+    "description": "Pricing tables are a critical part in showcasing your services, prices and overall offerings.",
+    "icon": {
+      "src": "slides"
+    },
+    "category": "themeisle-blocks",
+    "keywords": [
+      "pricing",
+      "table",
+      "orbitfox"
+    ],
+    "attributes": {
+      "backgroundType": {
+        "type": "string",
+        "default": "color"
+      },
+      "backgroundColor": {
+        "type": "string",
+        "default": "#ffffff"
+      },
+      "backgroundImageID": {
+        "type": "string"
+      },
+      "backgroundImageURL": {
+        "type": "string"
+      },
+      "backgroundDimmed": {
+        "type": "boolean",
+        "default": true
+      },
+      "backgroundParallax": {
+        "type": "boolean",
+        "default": false
+      },
+      "align": {
+        "type": "string"
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "supports": {
+      "align": [
+        "wide",
+        "full"
+      ]
+    }
+  },
+  {
+    "name": "themeisle-blocks/pricing-block",
+    "title": "Pricing Block",
+    "description": "Pricing tables are a critical part in showcasing your services, prices and overall offerings.",
+    "parent": [
+      "themeisle-blocks/pricing-table"
+    ],
+    "icon": {
+      "src": "slides"
+    },
+    "category": "themeisle-blocks",
+    "keywords": [
+      "pricing",
+      "table",
+      "orbitfox"
+    ],
+    "attributes": {
+      "featured": {
+        "type": "boolean",
+        "default": false
+      },
+      "backgroundColor": {
+        "type": "string",
+        "default": "#ffffff"
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "themeisle-blocks/services",
+    "title": "Our Services",
+    "description": "Use this Services table to showcase services your website offers.",
+    "icon": {
+      "src": "columns"
+    },
+    "category": "themeisle-blocks",
+    "keywords": [
+      "services",
+      "features",
+      "orbitfox"
+    ],
+    "attributes": {
+      "backgroundType": {
+        "type": "string",
+        "default": "color"
+      },
+      "backgroundColor": {
+        "type": "string",
+        "default": "#ffffff"
+      },
+      "backgroundImageID": {
+        "type": "string"
+      },
+      "backgroundImageURL": {
+        "type": "string"
+      },
+      "backgroundDimmed": {
+        "type": "boolean",
+        "default": true
+      },
+      "backgroundParallax": {
+        "type": "boolean",
+        "default": false
+      },
+      "align": {
+        "type": "string"
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "supports": {
+      "align": [
+        "wide",
+        "full"
+      ]
+    }
+  },
+  {
+    "name": "themeisle-blocks/service-block",
+    "title": "Service Block",
+    "description": "Use this Services table to showcase services your website offers.",
+    "parent": [
+      "themeisle-blocks/services"
+    ],
+    "icon": {
+      "src": "slides"
+    },
+    "category": "themeisle-blocks",
+    "keywords": [
+      "pricing",
+      "table",
+      "orbitfox"
+    ],
+    "attributes": {
+      "backgroundColor": {
+        "type": "string",
+        "default": "#ffffff"
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "themeisle-blocks/sharing-icons",
+    "title": "Sharing Icons",
+    "description": "Share buttons for your website visitors to share content on any social sharing service.",
+    "icon": {
+      "src": "networking"
+    },
+    "category": "themeisle-blocks",
+    "keywords": [
+      "social media",
+      "sharing",
+      "icons"
+    ],
+    "attributes": {
+      "facebook": {
+        "type": "boolean",
+        "default": true
+      },
+      "twitter": {
+        "type": "boolean",
+        "default": true
+      },
+      "googleplus": {
+        "type": "boolean",
+        "default": true
+      },
+      "linkedin": {
+        "type": "boolean",
+        "default": true
+      },
+      "pinterest": {
+        "type": "boolean",
+        "default": false
+      },
+      "tumblr": {
+        "type": "boolean",
+        "default": false
+      },
+      "reddit": {
+        "type": "boolean",
+        "default": false
+      },
+      "align": {
+        "type": "string"
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "supports": {
+      "html": true,
+      "align": [
+        "left",
+        "center",
+        "right"
+      ]
+    },
+    "styles": [
+      {
+        "name": "default",
+        "label": "Regular",
+        "isDefault": true
+      },
+      {
+        "name": "icons",
+        "label": "Icons Only"
+      }
+    ]
+  },
+  {
+    "name": "themeisle-blocks/testimonials-area",
+    "title": "Testimonials Area",
+    "description": "Display kudos from customers and clients and display them on your website.",
+    "icon": {
+      "src": "testimonial"
+    },
+    "category": "themeisle-blocks",
+    "keywords": [
+      "testimonials",
+      "clients",
+      "quotes"
+    ],
+    "attributes": {
+      "backgroundType": {
+        "type": "string",
+        "default": "color"
+      },
+      "backgroundColor": {
+        "type": "string",
+        "default": "#ffffff"
+      },
+      "backgroundImageID": {
+        "type": "string"
+      },
+      "backgroundImageURL": {
+        "type": "string"
+      },
+      "backgroundDimmed": {
+        "type": "boolean",
+        "default": true
+      },
+      "backgroundParallax": {
+        "type": "boolean",
+        "default": false
+      },
+      "align": {
+        "type": "string"
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "supports": {
+      "align": [
+        "wide",
+        "full"
+      ]
+    }
+  },
+  {
+    "name": "themeisle-blocks/testimonials-block",
+    "title": "Testimonials Block",
+    "description": "Display kudos from customers and clients and display them on your website.",
+    "parent": [
+      "themeisle-blocks/testimonials-area"
+    ],
+    "icon": {
+      "src": "testimonial"
+    },
+    "category": "themeisle-blocks",
+    "keywords": [
+      "testimonials",
+      "clients",
+      "quotes"
+    ],
+    "attributes": {
+      "backgroundColor": {
+        "type": "string",
+        "default": "#ffffff"
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "themeisle-blocks/tweetable",
+    "title": "Click To Tweet",
+    "description": "Click to Tweet allows visitors to easily share your content on Twitter.",
+    "icon": {
+      "src": "twitter"
+    },
+    "category": "themeisle-blocks",
+    "keywords": [
+      "twitter",
+      "tweet",
+      "orbitfox"
+    ],
+    "attributes": {
+      "quote": {
+        "type": "string",
+        "source": "children",
+        "selector": "p",
+        "default": []
+      },
+      "permalink": {
+        "type": "url"
+      },
+      "via": {
+        "type": "string"
+      },
+      "buttonText": {
+        "type": "string",
+        "default": "Click to Tweet"
+      },
+      "className": {
+        "type": "string"
+      }
+    },
+    "transforms": {
+      "from": [
+        {
+          "type": "block",
+          "blocks": [
+            "core/paragraph"
+          ]
+        },
+        {
+          "type": "block",
+          "blocks": [
+            "core/quote"
+          ]
+        },
+        {
+          "type": "block",
+          "blocks": [
+            "core/pullquote"
+          ]
+        }
+      ],
+      "to": [
+        {
+          "type": "block",
+          "blocks": [
+            "core/paragraph"
+          ]
+        },
+        {
+          "type": "block",
+          "blocks": [
+            "core/quote"
+          ]
+        },
+        {
+          "type": "block",
+          "blocks": [
+            "core/pullquote"
+          ]
+        }
+      ]
+    }
+  }
+]

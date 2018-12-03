@@ -1,0 +1,3484 @@
+[
+	{
+    "name": "ghostkit/grid",
+    "title": "Grid",
+    "description": "Add a block that displays content in responsive grid columns, then add whatever content blocks you'd like.",
+    "icon": {},
+    "category": "ghostkit",
+    "keywords": [
+      "grid",
+      "row",
+      "ghostkit"
+    ],
+    "supports": {
+      "html": false,
+      "className": false,
+      "anchor": true,
+      "align": [
+        "wide",
+        "full"
+      ],
+      "ghostkitStyles": true,
+      "ghostkitSpacings": true,
+      "ghostkitDisplay": true,
+      "ghostkitSR": true
+    },
+    "attributes": {
+      "variant": {
+        "type": "string",
+        "default": "default"
+      },
+      "columns": {
+        "type": "number",
+        "default": 0
+      },
+      "gap": {
+        "type": "string",
+        "default": "md"
+      },
+      "verticalAlign": {
+        "type": "string"
+      },
+      "horizontalAlign": {
+        "type": "string"
+      },
+      "columnsSettings": {
+        "type": "object",
+        "default": {}
+      },
+      "align": {
+        "type": "string"
+      },
+      "anchor": {
+        "type": "string",
+        "source": "attribute",
+        "attribute": "id",
+        "selector": "*"
+      },
+      "className": {
+        "type": "string"
+      },
+      "ghostkitStyles": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitClassname": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitId": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitSpacings": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitIndents": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitDisplay": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitSR": {
+        "type": "string",
+        "default": ""
+      }
+    },
+    "deprecated": [
+      {
+        "supports": {
+          "html": false,
+          "className": false,
+          "align": [
+            "wide",
+            "full"
+          ],
+          "ghostkitStyles": true,
+          "ghostkitSpacings": true,
+          "ghostkitDisplay": true,
+          "ghostkitSR": true
+        },
+        "attributes": {
+          "variant": {
+            "type": "string",
+            "default": "default"
+          },
+          "columns": {
+            "type": "number",
+            "default": 2
+          },
+          "gap": {
+            "type": "string",
+            "default": "md"
+          },
+          "verticalAlign": {
+            "type": "string"
+          },
+          "horizontalAlign": {
+            "type": "string"
+          },
+          "columnsSettings": {
+            "type": "object",
+            "default": {}
+          },
+          "ghostkitStyles": {
+            "$ref": "$[11][\"attributes\"][\"ghostkitStyles\"]"
+          },
+          "ghostkitClassname": {
+            "$ref": "$[11][\"attributes\"][\"ghostkitClassname\"]"
+          },
+          "ghostkitId": {
+            "$ref": "$[11][\"attributes\"][\"ghostkitId\"]"
+          },
+          "ghostkitSpacings": {
+            "$ref": "$[11][\"attributes\"][\"ghostkitSpacings\"]"
+          },
+          "ghostkitIndents": {
+            "$ref": "$[11][\"attributes\"][\"ghostkitIndents\"]"
+          },
+          "ghostkitDisplay": {
+            "$ref": "$[11][\"attributes\"][\"ghostkitDisplay\"]"
+          },
+          "ghostkitSR": {
+            "$ref": "$[11][\"attributes\"][\"ghostkitSR\"]"
+          }
+        }
+      },
+      {
+        "supports": {
+          "html": false,
+          "ghostkitStyles": true,
+          "ghostkitSpacings": true,
+          "ghostkitDisplay": true,
+          "ghostkitSR": true
+        },
+        "attributes": {
+          "variant": {
+            "type": "string",
+            "default": "default"
+          },
+          "columns": {
+            "type": "number",
+            "default": 2
+          },
+          "columnsSettings": {
+            "type": "object",
+            "default": {}
+          },
+          "gap": {
+            "type": "string",
+            "default": "md"
+          },
+          "verticalAlign": {
+            "type": "string"
+          },
+          "horizontalAlign": {
+            "type": "string"
+          },
+          "align": {
+            "type": "string"
+          },
+          "ghostkitStyles": {
+            "$ref": "$[11][\"attributes\"][\"ghostkitStyles\"]"
+          },
+          "ghostkitClassname": {
+            "$ref": "$[11][\"attributes\"][\"ghostkitClassname\"]"
+          },
+          "ghostkitId": {
+            "$ref": "$[11][\"attributes\"][\"ghostkitId\"]"
+          },
+          "ghostkitSpacings": {
+            "$ref": "$[11][\"attributes\"][\"ghostkitSpacings\"]"
+          },
+          "ghostkitIndents": {
+            "$ref": "$[11][\"attributes\"][\"ghostkitIndents\"]"
+          },
+          "ghostkitDisplay": {
+            "$ref": "$[11][\"attributes\"][\"ghostkitDisplay\"]"
+          },
+          "ghostkitSR": {
+            "$ref": "$[11][\"attributes\"][\"ghostkitSR\"]"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "ghostkit/grid-column",
+    "title": "Column",
+    "parent": [
+      "ghostkit/grid"
+    ],
+    "description": "A single column within a grid block.",
+    "icon": {},
+    "category": "ghostkit",
+    "supports": {
+      "html": false,
+      "className": false,
+      "anchor": true,
+      "ghostkitStyles": true,
+      "ghostkitSpacings": true,
+      "ghostkitDisplay": true,
+      "ghostkitSR": true
+    },
+    "attributes": {
+      "variant": {
+        "type": "string",
+        "default": "default"
+      },
+      "sm_size": {
+        "type": "string",
+        "default": ""
+      },
+      "sm_order": {
+        "type": "string",
+        "default": ""
+      },
+      "md_size": {
+        "type": "string",
+        "default": ""
+      },
+      "md_order": {
+        "type": "string",
+        "default": ""
+      },
+      "lg_size": {
+        "type": "string",
+        "default": ""
+      },
+      "lg_order": {
+        "type": "string",
+        "default": ""
+      },
+      "xl_size": {
+        "type": "string",
+        "default": ""
+      },
+      "xl_order": {
+        "type": "string",
+        "default": ""
+      },
+      "size": {
+        "type": "string",
+        "default": "auto"
+      },
+      "order": {
+        "type": "string",
+        "default": ""
+      },
+      "stickyContent": {
+        "type": "boolean",
+        "default": false
+      },
+      "stickyContentTop": {
+        "type": "number",
+        "default": 40
+      },
+      "stickyContentBottom": {
+        "type": "number",
+        "default": ""
+      },
+      "anchor": {
+        "type": "string",
+        "source": "attribute",
+        "attribute": "id",
+        "selector": "*"
+      },
+      "className": {
+        "type": "string"
+      },
+      "ghostkitStyles": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitClassname": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitId": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitStylesCallback": {
+        "type": "function"
+      },
+      "ghostkitSpacings": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitIndents": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitDisplay": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitSR": {
+        "type": "string",
+        "default": ""
+      }
+    }
+  },
+  {
+    "name": "ghostkit/divider",
+    "title": "Divider",
+    "description": "Content divider.",
+    "icon": {},
+    "category": "ghostkit",
+    "keywords": [
+      "divider",
+      "spacer",
+      "ghostkit"
+    ],
+    "supports": {
+      "html": false,
+      "className": false,
+      "anchor": true,
+      "align": [
+        "wide",
+        "full"
+      ],
+      "ghostkitStyles": true,
+      "ghostkitSpacings": true,
+      "ghostkitDisplay": true,
+      "ghostkitSR": true
+    },
+    "attributes": {
+      "variant": {
+        "type": "string",
+        "default": "default"
+      },
+      "type": {
+        "type": "string",
+        "default": "solid"
+      },
+      "size": {
+        "type": "number",
+        "default": 2
+      },
+      "icon": {
+        "type": "string",
+        "default": ""
+      },
+      "iconSize": {
+        "type": "number",
+        "default": 10
+      },
+      "color": {
+        "type": "string",
+        "default": "#a7a9ab"
+      },
+      "iconColor": {
+        "type": "string",
+        "default": "#a7a9ab"
+      },
+      "hoverColor": {
+        "type": "string"
+      },
+      "hoverIconColor": {
+        "type": "string"
+      },
+      "align": {
+        "type": "string"
+      },
+      "anchor": {
+        "type": "string",
+        "source": "attribute",
+        "attribute": "id",
+        "selector": "*"
+      },
+      "className": {
+        "type": "string"
+      },
+      "ghostkitStyles": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitClassname": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitId": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitStylesCallback": {
+        "type": "function"
+      },
+      "ghostkitSpacings": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitIndents": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitDisplay": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitSR": {
+        "type": "string",
+        "default": ""
+      }
+    }
+  },
+  {
+    "name": "ghostkit/button",
+    "title": "Buttons",
+    "description": "Add button wrapper block with inner buttons.",
+    "icon": {},
+    "category": "ghostkit",
+    "keywords": [
+      "btn",
+      "button",
+      "ghostkit"
+    ],
+    "supports": {
+      "html": false,
+      "className": false,
+      "anchor": true,
+      "ghostkitStyles": true,
+      "ghostkitSpacings": true,
+      "ghostkitDisplay": true,
+      "ghostkitSR": true
+    },
+    "attributes": {
+      "variant": {
+        "type": "string",
+        "default": "default"
+      },
+      "align": {
+        "type": "string",
+        "default": "none"
+      },
+      "count": {
+        "type": "number",
+        "default": 1
+      },
+      "gap": {
+        "type": "string",
+        "default": "md"
+      },
+      "url": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "a",
+        "attribute": "href"
+      },
+      "title": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "a",
+        "attribute": "title"
+      },
+      "text": {
+        "type": "array",
+        "source": "children",
+        "selector": ".ghostkit-button",
+        "default": "Button"
+      },
+      "size": {
+        "type": "string",
+        "default": "md"
+      },
+      "color": {
+        "type": "string",
+        "default": "#0366d6"
+      },
+      "textColor": {
+        "type": "string",
+        "default": "#ffffff"
+      },
+      "borderRadius": {
+        "type": "number",
+        "default": 2
+      },
+      "borderWeight": {
+        "type": "number",
+        "default": 0
+      },
+      "borderColor": {
+        "type": "string",
+        "default": "#00669b"
+      },
+      "hoverColor": {
+        "type": "string"
+      },
+      "hoverTextColor": {
+        "type": "string"
+      },
+      "hoverBorderColor": {
+        "type": "string"
+      },
+      "anchor": {
+        "type": "string",
+        "source": "attribute",
+        "attribute": "id",
+        "selector": "*"
+      },
+      "className": {
+        "type": "string"
+      },
+      "ghostkitStyles": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitClassname": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitId": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitSpacings": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitIndents": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitDisplay": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitSR": {
+        "type": "string",
+        "default": ""
+      }
+    },
+    "deprecated": [
+      {
+        "supports": {
+          "html": false,
+          "className": false,
+          "anchor": true,
+          "align": [
+            "wide",
+            "full"
+          ],
+          "ghostkitStyles": true,
+          "ghostkitSpacings": true,
+          "ghostkitDisplay": true,
+          "ghostkitSR": true
+        },
+        "attributes": {
+          "variant": {
+            "type": "string",
+            "default": "default"
+          },
+          "url": {
+            "type": "string",
+            "source": "attribute",
+            "selector": "a",
+            "attribute": "href"
+          },
+          "title": {
+            "type": "string",
+            "source": "attribute",
+            "selector": "a",
+            "attribute": "title"
+          },
+          "text": {
+            "type": "array",
+            "source": "children",
+            "selector": ".ghostkit-button",
+            "default": "Button"
+          },
+          "align": {
+            "type": "string",
+            "default": "none"
+          },
+          "size": {
+            "type": "string",
+            "default": "md"
+          },
+          "color": {
+            "type": "string",
+            "default": "#0366d6"
+          },
+          "textColor": {
+            "type": "string",
+            "default": "#ffffff"
+          },
+          "borderRadius": {
+            "type": "number",
+            "default": 2
+          },
+          "borderWeight": {
+            "type": "number",
+            "default": 0
+          },
+          "borderColor": {
+            "type": "string",
+            "default": "#00669b"
+          },
+          "hoverColor": {
+            "type": "string"
+          },
+          "hoverTextColor": {
+            "type": "string"
+          },
+          "hoverBorderColor": {
+            "type": "string"
+          },
+          "ghostkitStyles": {
+            "$ref": "$[14][\"attributes\"][\"ghostkitStyles\"]"
+          },
+          "ghostkitClassname": {
+            "$ref": "$[14][\"attributes\"][\"ghostkitClassname\"]"
+          },
+          "ghostkitId": {
+            "$ref": "$[14][\"attributes\"][\"ghostkitId\"]"
+          },
+          "ghostkitSpacings": {
+            "$ref": "$[14][\"attributes\"][\"ghostkitSpacings\"]"
+          },
+          "ghostkitIndents": {
+            "$ref": "$[14][\"attributes\"][\"ghostkitIndents\"]"
+          },
+          "ghostkitDisplay": {
+            "$ref": "$[14][\"attributes\"][\"ghostkitDisplay\"]"
+          },
+          "ghostkitSR": {
+            "$ref": "$[14][\"attributes\"][\"ghostkitSR\"]"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "ghostkit/button-single",
+    "title": "Button",
+    "parent": [
+      "ghostkit/button"
+    ],
+    "description": "A single button within a buttons wrapper block.",
+    "icon": {},
+    "category": "ghostkit",
+    "supports": {
+      "html": false,
+      "className": false,
+      "anchor": true,
+      "ghostkitStyles": true,
+      "ghostkitSpacings": true,
+      "ghostkitDisplay": true,
+      "ghostkitSR": true
+    },
+    "attributes": {
+      "variant": {
+        "type": "string",
+        "default": "default"
+      },
+      "url": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "a.ghostkit-button",
+        "attribute": "href"
+      },
+      "title": {
+        "type": "string",
+        "source": "attribute",
+        "selector": ".ghostkit-button",
+        "attribute": "title"
+      },
+      "text": {
+        "type": "array",
+        "source": "children",
+        "selector": ".ghostkit-button",
+        "default": "Button"
+      },
+      "size": {
+        "type": "string",
+        "default": "md"
+      },
+      "color": {
+        "type": "string",
+        "default": "#0366d6"
+      },
+      "textColor": {
+        "type": "string",
+        "default": "#ffffff"
+      },
+      "borderRadius": {
+        "type": "number",
+        "default": 2
+      },
+      "borderWeight": {
+        "type": "number",
+        "default": 0
+      },
+      "borderColor": {
+        "type": "string",
+        "default": "#00669b"
+      },
+      "hoverColor": {
+        "type": "string"
+      },
+      "hoverTextColor": {
+        "type": "string"
+      },
+      "hoverBorderColor": {
+        "type": "string"
+      },
+      "anchor": {
+        "type": "string",
+        "source": "attribute",
+        "attribute": "id",
+        "selector": "*"
+      },
+      "className": {
+        "type": "string"
+      },
+      "ghostkitStyles": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitClassname": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitId": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitStylesCallback": {
+        "type": "function"
+      },
+      "ghostkitSpacings": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitIndents": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitDisplay": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitSR": {
+        "type": "string",
+        "default": ""
+      }
+    }
+  },
+  {
+    "name": "ghostkit/progress",
+    "title": "Progress",
+    "description": "Progress bar.",
+    "icon": {},
+    "category": "ghostkit",
+    "keywords": [
+      "progress",
+      "bar",
+      "ghostkit"
+    ],
+    "supports": {
+      "html": false,
+      "className": false,
+      "anchor": true,
+      "align": [
+        "wide",
+        "full"
+      ],
+      "ghostkitStyles": true,
+      "ghostkitSpacings": true,
+      "ghostkitDisplay": true,
+      "ghostkitSR": true
+    },
+    "attributes": {
+      "variant": {
+        "type": "string",
+        "default": "default"
+      },
+      "caption": {
+        "type": "array",
+        "source": "children",
+        "selector": ".ghostkit-progress-caption",
+        "default": "Progress Caption"
+      },
+      "height": {
+        "type": "number",
+        "default": 15
+      },
+      "percent": {
+        "type": "number",
+        "default": 75
+      },
+      "borderRadius": {
+        "type": "number",
+        "default": 2
+      },
+      "striped": {
+        "type": "boolean",
+        "default": true
+      },
+      "animateInViewport": {
+        "type": "boolean",
+        "default": false
+      },
+      "showCount": {
+        "type": "boolean",
+        "default": false
+      },
+      "countPrefix": {
+        "type": "string",
+        "default": ""
+      },
+      "countSuffix": {
+        "type": "string",
+        "default": "%"
+      },
+      "color": {
+        "type": "string",
+        "default": "#0366d6"
+      },
+      "backgroundColor": {
+        "type": "string",
+        "default": "#f3f4f5"
+      },
+      "hoverColor": {
+        "type": "string"
+      },
+      "hoverBackgroundColor": {
+        "type": "string"
+      },
+      "align": {
+        "type": "string"
+      },
+      "anchor": {
+        "type": "string",
+        "source": "attribute",
+        "attribute": "id",
+        "selector": "*"
+      },
+      "className": {
+        "type": "string"
+      },
+      "ghostkitStyles": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitClassname": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitId": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitStylesCallback": {
+        "type": "function"
+      },
+      "ghostkitSpacings": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitIndents": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitDisplay": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitSR": {
+        "type": "string",
+        "default": ""
+      }
+    },
+    "deprecated": [
+      {
+        "supports": {
+          "html": false,
+          "align": [
+            "wide",
+            "full"
+          ],
+          "ghostkitStyles": true,
+          "ghostkitSpacings": true,
+          "ghostkitDisplay": true,
+          "ghostkitSR": true
+        },
+        "attributes": {
+          "variant": {
+            "type": "string",
+            "default": "default"
+          },
+          "caption": {
+            "type": "array",
+            "source": "children",
+            "selector": ".ghostkit-progress-caption"
+          },
+          "height": {
+            "type": "number",
+            "default": 15
+          },
+          "percent": {
+            "type": "number",
+            "default": 75
+          },
+          "borderRadius": {
+            "type": "number",
+            "default": 2
+          },
+          "striped": {
+            "type": "boolean",
+            "default": true
+          },
+          "color": {
+            "type": "string",
+            "default": "#016c91"
+          },
+          "backgroundColor": {
+            "type": "string",
+            "default": "#f3f4f5"
+          },
+          "ghostkitStyles": {
+            "$ref": "$[16][\"attributes\"][\"ghostkitStyles\"]"
+          },
+          "ghostkitClassname": {
+            "$ref": "$[16][\"attributes\"][\"ghostkitClassname\"]"
+          },
+          "ghostkitId": {
+            "$ref": "$[16][\"attributes\"][\"ghostkitId\"]"
+          },
+          "ghostkitStylesCallback": {
+            "type": "function"
+          },
+          "ghostkitSpacings": {
+            "$ref": "$[16][\"attributes\"][\"ghostkitSpacings\"]"
+          },
+          "ghostkitIndents": {
+            "$ref": "$[16][\"attributes\"][\"ghostkitIndents\"]"
+          },
+          "ghostkitDisplay": {
+            "$ref": "$[16][\"attributes\"][\"ghostkitDisplay\"]"
+          },
+          "ghostkitSR": {
+            "$ref": "$[16][\"attributes\"][\"ghostkitSR\"]"
+          }
+        }
+      },
+      {
+        "supports": {
+          "html": false,
+          "align": [
+            "wide",
+            "full"
+          ],
+          "className": false,
+          "ghostkitStyles": true,
+          "ghostkitSpacings": true,
+          "ghostkitDisplay": true,
+          "ghostkitSR": true
+        },
+        "attributes": {
+          "variant": {
+            "type": "string",
+            "default": "default"
+          },
+          "caption": {
+            "type": "array",
+            "source": "children",
+            "selector": ".ghostkit-progress-caption",
+            "default": "Progress Caption"
+          },
+          "height": {
+            "type": "number",
+            "default": 15
+          },
+          "percent": {
+            "type": "number",
+            "default": 75
+          },
+          "borderRadius": {
+            "type": "number",
+            "default": 2
+          },
+          "striped": {
+            "type": "boolean",
+            "default": true
+          },
+          "animateInViewport": {
+            "type": "boolean",
+            "default": false
+          },
+          "showCount": {
+            "type": "boolean",
+            "default": false
+          },
+          "countPrefix": {
+            "type": "string",
+            "default": ""
+          },
+          "countSuffix": {
+            "type": "string",
+            "default": "%"
+          },
+          "color": {
+            "type": "string",
+            "default": "#016c91"
+          },
+          "backgroundColor": {
+            "type": "string",
+            "default": "#f3f4f5"
+          },
+          "ghostkitStyles": {
+            "$ref": "$[16][\"attributes\"][\"ghostkitStyles\"]"
+          },
+          "ghostkitClassname": {
+            "$ref": "$[16][\"attributes\"][\"ghostkitClassname\"]"
+          },
+          "ghostkitId": {
+            "$ref": "$[16][\"attributes\"][\"ghostkitId\"]"
+          },
+          "ghostkitStylesCallback": {
+            "type": "function"
+          },
+          "ghostkitSpacings": {
+            "$ref": "$[16][\"attributes\"][\"ghostkitSpacings\"]"
+          },
+          "ghostkitIndents": {
+            "$ref": "$[16][\"attributes\"][\"ghostkitIndents\"]"
+          },
+          "ghostkitDisplay": {
+            "$ref": "$[16][\"attributes\"][\"ghostkitDisplay\"]"
+          },
+          "ghostkitSR": {
+            "$ref": "$[16][\"attributes\"][\"ghostkitSR\"]"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "ghostkit/icon-box",
+    "title": "Icon Box",
+    "description": "Icon Box.",
+    "icon": {},
+    "category": "ghostkit",
+    "keywords": [
+      "icon",
+      "icon-box",
+      "ghostkit"
+    ],
+    "supports": {
+      "html": false,
+      "className": false,
+      "anchor": true,
+      "align": [
+        "wide",
+        "full"
+      ],
+      "ghostkitStyles": true,
+      "ghostkitSpacings": true,
+      "ghostkitDisplay": true,
+      "ghostkitSR": true
+    },
+    "attributes": {
+      "variant": {
+        "type": "string",
+        "default": "default"
+      },
+      "icon": {
+        "type": "string",
+        "default": "fab fa-wordpress-simple"
+      },
+      "iconPosition": {
+        "type": "string",
+        "default": "left"
+      },
+      "iconSize": {
+        "type": "number",
+        "default": 30
+      },
+      "iconColor": {
+        "type": "string",
+        "default": "#0366d6"
+      },
+      "hoverIconColor": {
+        "type": "string"
+      },
+      "align": {
+        "type": "string"
+      },
+      "anchor": {
+        "type": "string",
+        "source": "attribute",
+        "attribute": "id",
+        "selector": "*"
+      },
+      "className": {
+        "type": "string"
+      },
+      "ghostkitStyles": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitClassname": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitId": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitStylesCallback": {
+        "type": "function"
+      },
+      "ghostkitSpacings": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitIndents": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitDisplay": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitSR": {
+        "type": "string",
+        "default": ""
+      }
+    },
+    "deprecated": [
+      {
+        "supports": {
+          "html": false,
+          "align": [
+            "wide",
+            "full"
+          ],
+          "ghostkitStyles": true,
+          "ghostkitSpacings": true,
+          "ghostkitDisplay": true,
+          "ghostkitSR": true
+        },
+        "attributes": {
+          "variant": {
+            "type": "string",
+            "default": "default"
+          },
+          "icon": {
+            "type": "string",
+            "default": "fab fa-wordpress-simple"
+          },
+          "iconPosition": {
+            "type": "string",
+            "default": "left"
+          },
+          "iconSize": {
+            "type": "number",
+            "default": 30
+          },
+          "iconColor": {
+            "type": "string",
+            "default": "#016c91"
+          },
+          "ghostkitStyles": {
+            "$ref": "$[17][\"attributes\"][\"ghostkitStyles\"]"
+          },
+          "ghostkitClassname": {
+            "$ref": "$[17][\"attributes\"][\"ghostkitClassname\"]"
+          },
+          "ghostkitId": {
+            "$ref": "$[17][\"attributes\"][\"ghostkitId\"]"
+          },
+          "ghostkitStylesCallback": {
+            "type": "function"
+          },
+          "ghostkitSpacings": {
+            "$ref": "$[17][\"attributes\"][\"ghostkitSpacings\"]"
+          },
+          "ghostkitIndents": {
+            "$ref": "$[17][\"attributes\"][\"ghostkitIndents\"]"
+          },
+          "ghostkitDisplay": {
+            "$ref": "$[17][\"attributes\"][\"ghostkitDisplay\"]"
+          },
+          "ghostkitSR": {
+            "$ref": "$[17][\"attributes\"][\"ghostkitSR\"]"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "ghostkit/tabs",
+    "title": "Tabs",
+    "description": "Tabs.",
+    "icon": {},
+    "category": "ghostkit",
+    "keywords": [
+      "tabs",
+      "tab",
+      "ghostkit"
+    ],
+    "supports": {
+      "html": false,
+      "className": false,
+      "anchor": true,
+      "align": [
+        "wide",
+        "full"
+      ],
+      "ghostkitStyles": true,
+      "ghostkitSpacings": true,
+      "ghostkitDisplay": true,
+      "ghostkitSR": true
+    },
+    "attributes": {
+      "variant": {
+        "type": "string",
+        "default": "default"
+      },
+      "tabsCount": {
+        "type": "number",
+        "default": 2
+      },
+      "tabActive": {
+        "type": "number",
+        "default": 1
+      },
+      "tabsSettings": {
+        "type": "object",
+        "default": {}
+      },
+      "buttonsAlign": {
+        "type": "string",
+        "default": "start"
+      },
+      "align": {
+        "type": "string"
+      },
+      "anchor": {
+        "type": "string",
+        "source": "attribute",
+        "attribute": "id",
+        "selector": "*"
+      },
+      "className": {
+        "type": "string"
+      },
+      "ghostkitStyles": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitClassname": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitId": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitSpacings": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitIndents": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitDisplay": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitSR": {
+        "type": "string",
+        "default": ""
+      }
+    },
+    "deprecated": [
+      {
+        "supports": {
+          "html": false,
+          "ghostkitStyles": true,
+          "ghostkitSpacings": true,
+          "ghostkitDisplay": true,
+          "ghostkitSR": true
+        },
+        "attributes": {
+          "variant": {
+            "type": "string",
+            "default": "default"
+          },
+          "tabsCount": {
+            "type": "number",
+            "default": 2
+          },
+          "tabActive": {
+            "type": "number",
+            "default": 1
+          },
+          "tabsSettings": {
+            "type": "object",
+            "default": {}
+          },
+          "buttonsAlign": {
+            "type": "string",
+            "default": "start"
+          },
+          "align": {
+            "type": "string"
+          },
+          "ghostkitStyles": {
+            "$ref": "$[18][\"attributes\"][\"ghostkitStyles\"]"
+          },
+          "ghostkitClassname": {
+            "$ref": "$[18][\"attributes\"][\"ghostkitClassname\"]"
+          },
+          "ghostkitId": {
+            "$ref": "$[18][\"attributes\"][\"ghostkitId\"]"
+          },
+          "ghostkitSpacings": {
+            "$ref": "$[18][\"attributes\"][\"ghostkitSpacings\"]"
+          },
+          "ghostkitIndents": {
+            "$ref": "$[18][\"attributes\"][\"ghostkitIndents\"]"
+          },
+          "ghostkitDisplay": {
+            "$ref": "$[18][\"attributes\"][\"ghostkitDisplay\"]"
+          },
+          "ghostkitSR": {
+            "$ref": "$[18][\"attributes\"][\"ghostkitSR\"]"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "ghostkit/tabs-tab",
+    "title": "Tab",
+    "parent": [
+      "ghostkit/tabs"
+    ],
+    "description": "A single tab within a tabs block.",
+    "icon": {},
+    "category": "ghostkit",
+    "supports": {
+      "html": false,
+      "className": false,
+      "anchor": true,
+      "ghostkitStyles": true,
+      "ghostkitSpacings": true,
+      "ghostkitDisplay": true,
+      "ghostkitSR": true
+    },
+    "attributes": {
+      "variant": {
+        "type": "string",
+        "default": "default"
+      },
+      "tabNumber": {
+        "type": "number"
+      },
+      "anchor": {
+        "type": "string",
+        "source": "attribute",
+        "attribute": "id",
+        "selector": "*"
+      },
+      "className": {
+        "type": "string"
+      },
+      "ghostkitStyles": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitClassname": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitId": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitSpacings": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitIndents": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitDisplay": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitSR": {
+        "type": "string",
+        "default": ""
+      }
+    }
+  },
+  {
+    "name": "ghostkit/accordion",
+    "title": "Accordion",
+    "description": "Accordion.",
+    "icon": {},
+    "category": "ghostkit",
+    "keywords": [
+      "accordion",
+      "tab",
+      "ghostkit"
+    ],
+    "supports": {
+      "html": false,
+      "className": false,
+      "anchor": true,
+      "align": [
+        "wide",
+        "full"
+      ],
+      "ghostkitStyles": true,
+      "ghostkitSpacings": true,
+      "ghostkitDisplay": true,
+      "ghostkitSR": true
+    },
+    "attributes": {
+      "variant": {
+        "type": "string",
+        "default": "default"
+      },
+      "itemsCount": {
+        "type": "number",
+        "default": 2
+      },
+      "collapseOne": {
+        "type": "boolean",
+        "default": false
+      },
+      "align": {
+        "type": "string"
+      },
+      "anchor": {
+        "type": "string",
+        "source": "attribute",
+        "attribute": "id",
+        "selector": "*"
+      },
+      "className": {
+        "type": "string"
+      },
+      "ghostkitStyles": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitClassname": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitId": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitSpacings": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitIndents": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitDisplay": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitSR": {
+        "type": "string",
+        "default": ""
+      }
+    }
+  },
+  {
+    "name": "ghostkit/accordion-item",
+    "title": "Item",
+    "parent": [
+      "ghostkit/accordion"
+    ],
+    "description": "A single item within a accordion block.",
+    "icon": {},
+    "category": "ghostkit",
+    "supports": {
+      "html": false,
+      "className": false,
+      "anchor": true,
+      "align": [
+        "wide",
+        "full"
+      ],
+      "ghostkitStyles": true,
+      "ghostkitSpacings": true,
+      "ghostkitDisplay": true,
+      "ghostkitSR": true
+    },
+    "attributes": {
+      "variant": {
+        "type": "string",
+        "default": "default"
+      },
+      "heading": {
+        "type": "array",
+        "source": "children",
+        "selector": ".ghostkit-accordion-item-label",
+        "default": "Accordion Item"
+      },
+      "active": {
+        "type": "boolean",
+        "default": false
+      },
+      "itemNumber": {
+        "type": "number"
+      },
+      "align": {
+        "type": "string"
+      },
+      "anchor": {
+        "type": "string",
+        "source": "attribute",
+        "attribute": "id",
+        "selector": "*"
+      },
+      "className": {
+        "type": "string"
+      },
+      "ghostkitStyles": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitClassname": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitId": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitSpacings": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitIndents": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitDisplay": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitSR": {
+        "type": "string",
+        "default": ""
+      }
+    },
+    "deprecated": [
+      {
+        "supports": {
+          "html": false,
+          "className": false,
+          "ghostkitStyles": true,
+          "ghostkitSpacings": true,
+          "ghostkitDisplay": true,
+          "ghostkitSR": true
+        },
+        "attributes": {
+          "variant": {
+            "type": "string",
+            "default": "default"
+          },
+          "heading": {
+            "type": "array",
+            "default": "Accordion Item"
+          },
+          "active": {
+            "type": "boolean",
+            "default": false
+          },
+          "itemNumber": {
+            "type": "number"
+          },
+          "ghostkitStyles": {
+            "$ref": "$[21][\"attributes\"][\"ghostkitStyles\"]"
+          },
+          "ghostkitClassname": {
+            "$ref": "$[21][\"attributes\"][\"ghostkitClassname\"]"
+          },
+          "ghostkitId": {
+            "$ref": "$[21][\"attributes\"][\"ghostkitId\"]"
+          },
+          "ghostkitSpacings": {
+            "$ref": "$[21][\"attributes\"][\"ghostkitSpacings\"]"
+          },
+          "ghostkitIndents": {
+            "$ref": "$[21][\"attributes\"][\"ghostkitIndents\"]"
+          },
+          "ghostkitDisplay": {
+            "$ref": "$[21][\"attributes\"][\"ghostkitDisplay\"]"
+          },
+          "ghostkitSR": {
+            "$ref": "$[21][\"attributes\"][\"ghostkitSR\"]"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "ghostkit/counter-box",
+    "title": "Number Box",
+    "description": "Number Box.",
+    "icon": {},
+    "category": "ghostkit",
+    "keywords": [
+      "number",
+      "counter",
+      "ghostkit"
+    ],
+    "supports": {
+      "html": false,
+      "className": false,
+      "anchor": true,
+      "align": [
+        "wide",
+        "full"
+      ],
+      "ghostkitStyles": true,
+      "ghostkitSpacings": true,
+      "ghostkitDisplay": true,
+      "ghostkitSR": true
+    },
+    "attributes": {
+      "variant": {
+        "type": "string",
+        "default": "default"
+      },
+      "number": {
+        "type": "array",
+        "source": "children",
+        "selector": ".ghostkit-counter-box-number-wrap",
+        "default": "77"
+      },
+      "animateInViewport": {
+        "type": "boolean",
+        "default": false
+      },
+      "animateInViewportFrom": {
+        "type": "number",
+        "default": 0
+      },
+      "numberPosition": {
+        "type": "string",
+        "default": "top"
+      },
+      "numberSize": {
+        "type": "number",
+        "default": 50
+      },
+      "numberColor": {
+        "type": "string",
+        "default": "#0366d6"
+      },
+      "hoverNumberColor": {
+        "type": "string"
+      },
+      "align": {
+        "type": "string"
+      },
+      "anchor": {
+        "type": "string",
+        "source": "attribute",
+        "attribute": "id",
+        "selector": "*"
+      },
+      "className": {
+        "type": "string"
+      },
+      "ghostkitStyles": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitClassname": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitId": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitStylesCallback": {
+        "type": "function"
+      },
+      "ghostkitSpacings": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitIndents": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitDisplay": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitSR": {
+        "type": "string",
+        "default": ""
+      }
+    },
+    "deprecated": [
+      {
+        "supports": {
+          "html": false,
+          "className": false,
+          "anchor": true,
+          "align": [
+            "wide",
+            "full"
+          ],
+          "ghostkitStyles": true,
+          "ghostkitSpacings": true,
+          "ghostkitDisplay": true,
+          "ghostkitSR": true
+        },
+        "attributes": {
+          "variant": {
+            "type": "string",
+            "default": "default"
+          },
+          "number": {
+            "type": "array",
+            "source": "children",
+            "selector": ".ghostkit-counter-box-number",
+            "default": "77"
+          },
+          "animateInViewport": {
+            "type": "boolean",
+            "default": false
+          },
+          "animateInViewportFrom": {
+            "type": "number",
+            "default": 0
+          },
+          "numberPosition": {
+            "type": "string",
+            "default": "top"
+          },
+          "numberSize": {
+            "type": "number",
+            "default": 50
+          },
+          "numberColor": {
+            "type": "string",
+            "default": "#0366d6"
+          },
+          "hoverNumberColor": {
+            "type": "string"
+          },
+          "ghostkitStyles": {
+            "$ref": "$[22][\"attributes\"][\"ghostkitStyles\"]"
+          },
+          "ghostkitClassname": {
+            "$ref": "$[22][\"attributes\"][\"ghostkitClassname\"]"
+          },
+          "ghostkitId": {
+            "$ref": "$[22][\"attributes\"][\"ghostkitId\"]"
+          },
+          "ghostkitStylesCallback": {
+            "type": "function"
+          },
+          "ghostkitSpacings": {
+            "$ref": "$[22][\"attributes\"][\"ghostkitSpacings\"]"
+          },
+          "ghostkitIndents": {
+            "$ref": "$[22][\"attributes\"][\"ghostkitIndents\"]"
+          },
+          "ghostkitDisplay": {
+            "$ref": "$[22][\"attributes\"][\"ghostkitDisplay\"]"
+          },
+          "ghostkitSR": {
+            "$ref": "$[22][\"attributes\"][\"ghostkitSR\"]"
+          }
+        }
+      },
+      {
+        "supports": {
+          "html": false,
+          "align": [
+            "wide",
+            "full"
+          ],
+          "ghostkitStyles": true,
+          "ghostkitSpacings": true,
+          "ghostkitDisplay": true,
+          "ghostkitSR": true
+        },
+        "attributes": {
+          "variant": {
+            "type": "string",
+            "default": "default"
+          },
+          "number": {
+            "type": "array",
+            "source": "children",
+            "selector": ".ghostkit-counter-box-number",
+            "default": "77"
+          },
+          "numberPosition": {
+            "type": "string",
+            "default": "top"
+          },
+          "numberSize": {
+            "type": "number",
+            "default": 50
+          },
+          "numberColor": {
+            "type": "string",
+            "default": "#016c91"
+          },
+          "ghostkitStyles": {
+            "$ref": "$[22][\"attributes\"][\"ghostkitStyles\"]"
+          },
+          "ghostkitClassname": {
+            "$ref": "$[22][\"attributes\"][\"ghostkitClassname\"]"
+          },
+          "ghostkitId": {
+            "$ref": "$[22][\"attributes\"][\"ghostkitId\"]"
+          },
+          "ghostkitStylesCallback": {
+            "type": "function"
+          },
+          "ghostkitSpacings": {
+            "$ref": "$[22][\"attributes\"][\"ghostkitSpacings\"]"
+          },
+          "ghostkitIndents": {
+            "$ref": "$[22][\"attributes\"][\"ghostkitIndents\"]"
+          },
+          "ghostkitDisplay": {
+            "$ref": "$[22][\"attributes\"][\"ghostkitDisplay\"]"
+          },
+          "ghostkitSR": {
+            "$ref": "$[22][\"attributes\"][\"ghostkitSR\"]"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "ghostkit/alert",
+    "title": "Alert",
+    "description": "Alert.",
+    "icon": {},
+    "category": "ghostkit",
+    "keywords": [
+      "alert",
+      "notification",
+      "ghostkit"
+    ],
+    "supports": {
+      "html": false,
+      "className": false,
+      "anchor": true,
+      "align": [
+        "wide",
+        "full"
+      ],
+      "ghostkitStyles": true,
+      "ghostkitSpacings": true,
+      "ghostkitDisplay": true,
+      "ghostkitSR": true
+    },
+    "attributes": {
+      "variant": {
+        "type": "string",
+        "default": "default"
+      },
+      "color": {
+        "type": "string",
+        "default": "#E47F3B"
+      },
+      "hoverColor": {
+        "type": "string"
+      },
+      "icon": {
+        "type": "string",
+        "default": "fas fa-exclamation-circle"
+      },
+      "iconSize": {
+        "type": "number",
+        "default": 17
+      },
+      "hideButton": {
+        "type": "boolean",
+        "default": false
+      },
+      "align": {
+        "type": "string"
+      },
+      "anchor": {
+        "type": "string",
+        "source": "attribute",
+        "attribute": "id",
+        "selector": "*"
+      },
+      "className": {
+        "type": "string"
+      },
+      "ghostkitStyles": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitClassname": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitId": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitStylesCallback": {
+        "type": "function"
+      },
+      "ghostkitSpacings": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitIndents": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitDisplay": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitSR": {
+        "type": "string",
+        "default": ""
+      }
+    },
+    "deprecated": [
+      {
+        "supports": {
+          "html": false,
+          "align": [
+            "wide",
+            "full"
+          ],
+          "ghostkitStyles": true,
+          "ghostkitSpacings": true,
+          "ghostkitDisplay": true,
+          "ghostkitSR": true
+        },
+        "attributes": {
+          "variant": {
+            "type": "string",
+            "default": "default"
+          },
+          "color": {
+            "type": "string",
+            "default": "#d94f4f"
+          },
+          "icon": {
+            "type": "string",
+            "default": "fas fa-exclamation-triangle"
+          },
+          "iconSize": {
+            "type": "number",
+            "default": 30
+          },
+          "hideButton": {
+            "type": "boolean",
+            "default": false
+          },
+          "ghostkitStyles": {
+            "$ref": "$[23][\"attributes\"][\"ghostkitStyles\"]"
+          },
+          "ghostkitClassname": {
+            "$ref": "$[23][\"attributes\"][\"ghostkitClassname\"]"
+          },
+          "ghostkitId": {
+            "$ref": "$[23][\"attributes\"][\"ghostkitId\"]"
+          },
+          "ghostkitStylesCallback": {
+            "type": "function"
+          },
+          "ghostkitSpacings": {
+            "$ref": "$[23][\"attributes\"][\"ghostkitSpacings\"]"
+          },
+          "ghostkitIndents": {
+            "$ref": "$[23][\"attributes\"][\"ghostkitIndents\"]"
+          },
+          "ghostkitDisplay": {
+            "$ref": "$[23][\"attributes\"][\"ghostkitDisplay\"]"
+          },
+          "ghostkitSR": {
+            "$ref": "$[23][\"attributes\"][\"ghostkitSR\"]"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "ghostkit/carousel",
+    "title": "Carousel",
+    "description": "Add a block that displays content inside carousel, then add whatever content blocks you'd like.",
+    "icon": {},
+    "category": "ghostkit",
+    "keywords": [
+      "carousel",
+      "slider",
+      "ghostkit"
+    ],
+    "supports": {
+      "html": false,
+      "className": false,
+      "anchor": true,
+      "align": [
+        "wide",
+        "full"
+      ],
+      "ghostkitStyles": true,
+      "ghostkitSpacings": true,
+      "ghostkitDisplay": true,
+      "ghostkitSR": true
+    },
+    "attributes": {
+      "variant": {
+        "type": "string",
+        "default": "default"
+      },
+      "slides": {
+        "type": "number",
+        "default": 3
+      },
+      "effect": {
+        "type": "string",
+        "default": "slide"
+      },
+      "speed": {
+        "type": "number",
+        "default": 0.2
+      },
+      "autoplay": {
+        "type": "number",
+        "default": 4
+      },
+      "slidesPerView": {
+        "type": "number",
+        "default": 3
+      },
+      "centeredSlides": {
+        "type": "boolean",
+        "default": true
+      },
+      "loop": {
+        "type": "boolean",
+        "default": true
+      },
+      "freeScroll": {
+        "type": "boolean",
+        "default": false
+      },
+      "showArrows": {
+        "type": "boolean",
+        "default": true
+      },
+      "arrowPrevIcon": {
+        "type": "string",
+        "default": "fas fa-angle-left"
+      },
+      "arrowNextIcon": {
+        "type": "string",
+        "default": "fas fa-angle-right"
+      },
+      "showBullets": {
+        "type": "boolean",
+        "default": true
+      },
+      "dynamicBullets": {
+        "type": "boolean",
+        "default": true
+      },
+      "gap": {
+        "type": "number",
+        "default": 15
+      },
+      "align": {
+        "type": "string"
+      },
+      "anchor": {
+        "type": "string",
+        "source": "attribute",
+        "attribute": "id",
+        "selector": "*"
+      },
+      "className": {
+        "type": "string"
+      },
+      "ghostkitStyles": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitClassname": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitId": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitSpacings": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitIndents": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitDisplay": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitSR": {
+        "type": "string",
+        "default": ""
+      }
+    }
+  },
+  {
+    "name": "ghostkit/carousel-slide",
+    "title": "Slide",
+    "parent": [
+      "ghostkit/carousel"
+    ],
+    "description": "A single slide within a carousel block.",
+    "icon": {},
+    "category": "ghostkit",
+    "supports": {
+      "html": false,
+      "className": false,
+      "anchor": true,
+      "ghostkitStyles": true,
+      "ghostkitSpacings": true,
+      "ghostkitDisplay": true,
+      "ghostkitSR": true
+    },
+    "attributes": {
+      "variant": {
+        "type": "string",
+        "default": "default"
+      },
+      "anchor": {
+        "type": "string",
+        "source": "attribute",
+        "attribute": "id",
+        "selector": "*"
+      },
+      "className": {
+        "type": "string"
+      },
+      "ghostkitStyles": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitClassname": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitId": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitSpacings": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitIndents": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitDisplay": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitSR": {
+        "type": "string",
+        "default": ""
+      }
+    }
+  },
+  {
+    "name": "ghostkit/testimonial",
+    "title": "Testimonial",
+    "description": "Testimonial block.",
+    "icon": {},
+    "category": "ghostkit",
+    "keywords": [
+      "testimonial",
+      "quote",
+      "ghostkit"
+    ],
+    "supports": {
+      "html": false,
+      "className": false,
+      "anchor": true,
+      "align": [
+        "wide",
+        "full"
+      ],
+      "ghostkitStyles": true,
+      "ghostkitSpacings": true,
+      "ghostkitDisplay": true,
+      "ghostkitSR": true
+    },
+    "attributes": {
+      "variant": {
+        "type": "string",
+        "default": "default"
+      },
+      "icon": {
+        "type": "string",
+        "default": "fas fa-quote-left"
+      },
+      "photo": {
+        "type": "number",
+        "default": ""
+      },
+      "photoTag": {
+        "type": "string",
+        "default": ""
+      },
+      "photoSizes": {
+        "type": "object",
+        "default": ""
+      },
+      "photoSize": {
+        "type": "string",
+        "default": "thumbnail"
+      },
+      "name": {
+        "type": "array",
+        "source": "children",
+        "selector": ".ghostkit-testimonial-name",
+        "default": [
+          {
+            "props": {
+              "children": [
+                "Katrina Craft"
+              ]
+            },
+            "type": "strong"
+          }
+        ]
+      },
+      "source": {
+        "type": "array",
+        "source": "children",
+        "selector": ".ghostkit-testimonial-source",
+        "default": "Designer"
+      },
+      "align": {
+        "type": "string"
+      },
+      "anchor": {
+        "type": "string",
+        "source": "attribute",
+        "attribute": "id",
+        "selector": "*"
+      },
+      "className": {
+        "type": "string"
+      },
+      "ghostkitStyles": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitClassname": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitId": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitSpacings": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitIndents": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitDisplay": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitSR": {
+        "type": "string",
+        "default": ""
+      }
+    }
+  },
+  {
+    "name": "ghostkit/video",
+    "title": "Video",
+    "description": "YouTube/Vimeo video block.",
+    "icon": {},
+    "category": "ghostkit",
+    "keywords": [
+      "video",
+      "youtube",
+      "ghostkit"
+    ],
+    "supports": {
+      "html": false,
+      "className": false,
+      "anchor": true,
+      "align": [
+        "wide",
+        "full"
+      ],
+      "ghostkitStyles": true,
+      "ghostkitSpacings": true,
+      "ghostkitDisplay": true,
+      "ghostkitSR": true
+    },
+    "attributes": {
+      "variant": {
+        "type": "string",
+        "default": "default"
+      },
+      "type": {
+        "type": "string",
+        "default": "yt_vm_video"
+      },
+      "video": {
+        "type": "string",
+        "default": ""
+      },
+      "videoPosterPreview": {
+        "type": "string",
+        "default": ""
+      },
+      "videoMp4": {
+        "type": "string",
+        "default": ""
+      },
+      "videoOgv": {
+        "type": "string",
+        "default": ""
+      },
+      "videoWebm": {
+        "type": "string",
+        "default": ""
+      },
+      "videoAspectRatio": {
+        "type": "string",
+        "default": "16:9"
+      },
+      "videoVolume": {
+        "type": "number",
+        "default": 100
+      },
+      "iconPlay": {
+        "type": "string",
+        "default": "fas fa-play"
+      },
+      "iconLoading": {
+        "type": "string",
+        "default": "ghostkit-video-spinner"
+      },
+      "poster": {
+        "type": "number",
+        "default": ""
+      },
+      "posterTag": {
+        "type": "string",
+        "default": ""
+      },
+      "posterSizes": {
+        "type": "object",
+        "default": ""
+      },
+      "posterSize": {
+        "type": "string",
+        "default": "full"
+      },
+      "clickAction": {
+        "type": "string",
+        "default": "plain"
+      },
+      "fullscreenBackgroundColor": {
+        "type": "string",
+        "default": "rgba(0, 0, 0, .9)"
+      },
+      "fullscreenActionCloseIcon": {
+        "type": "string",
+        "default": "fas fa-times"
+      },
+      "align": {
+        "type": "string"
+      },
+      "anchor": {
+        "type": "string",
+        "source": "attribute",
+        "attribute": "id",
+        "selector": "*"
+      },
+      "className": {
+        "type": "string"
+      },
+      "ghostkitStyles": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitClassname": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitId": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitSpacings": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitIndents": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitDisplay": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitSR": {
+        "type": "string",
+        "default": ""
+      }
+    },
+    "deprecated": [
+      {
+        "supports": {
+          "html": false,
+          "className": false,
+          "align": [
+            "wide",
+            "full"
+          ],
+          "ghostkitStyles": true,
+          "ghostkitSpacings": true,
+          "ghostkitDisplay": true,
+          "ghostkitSR": true
+        },
+        "attributes": {
+          "variant": {
+            "type": "string",
+            "default": "default"
+          },
+          "type": {
+            "type": "string",
+            "default": "yt_vm_video"
+          },
+          "video": {
+            "type": "string",
+            "default": ""
+          },
+          "videoPosterPreview": {
+            "type": "string",
+            "default": ""
+          },
+          "videoMp4": {
+            "type": "string",
+            "default": ""
+          },
+          "videoOgv": {
+            "type": "string",
+            "default": ""
+          },
+          "videoWebm": {
+            "type": "string",
+            "default": ""
+          },
+          "videoAspectRatio": {
+            "type": "string",
+            "default": "16-9"
+          },
+          "videoVolume": {
+            "type": "number",
+            "default": 100
+          },
+          "iconPlay": {
+            "type": "string",
+            "default": "fas fa-play"
+          },
+          "iconLoading": {
+            "type": "string",
+            "default": "ghostkit-video-spinner"
+          },
+          "poster": {
+            "type": "string",
+            "default": ""
+          },
+          "posterTag": {
+            "type": "string",
+            "default": ""
+          },
+          "posterSizes": {
+            "type": "object",
+            "default": ""
+          },
+          "posterSize": {
+            "type": "string",
+            "default": "full"
+          },
+          "ghostkitStyles": {
+            "$ref": "$[27][\"attributes\"][\"ghostkitStyles\"]"
+          },
+          "ghostkitClassname": {
+            "$ref": "$[27][\"attributes\"][\"ghostkitClassname\"]"
+          },
+          "ghostkitId": {
+            "$ref": "$[27][\"attributes\"][\"ghostkitId\"]"
+          },
+          "ghostkitSpacings": {
+            "$ref": "$[27][\"attributes\"][\"ghostkitSpacings\"]"
+          },
+          "ghostkitIndents": {
+            "$ref": "$[27][\"attributes\"][\"ghostkitIndents\"]"
+          },
+          "ghostkitDisplay": {
+            "$ref": "$[27][\"attributes\"][\"ghostkitDisplay\"]"
+          },
+          "ghostkitSR": {
+            "$ref": "$[27][\"attributes\"][\"ghostkitSR\"]"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "ghostkit/gist",
+    "title": "GitHub Gist",
+    "description": "GitHub Gist embed.",
+    "icon": {},
+    "category": "ghostkit",
+    "keywords": [
+      "github",
+      "gist",
+      "ghostkit"
+    ],
+    "supports": {
+      "html": false,
+      "className": false,
+      "anchor": true,
+      "align": [
+        "wide",
+        "full"
+      ],
+      "ghostkitStyles": true,
+      "ghostkitSpacings": true,
+      "ghostkitDisplay": true,
+      "ghostkitSR": true
+    },
+    "attributes": {
+      "variant": {
+        "type": "string",
+        "default": "default"
+      },
+      "url": {
+        "type": "string",
+        "default": ""
+      },
+      "file": {
+        "type": "string",
+        "default": ""
+      },
+      "caption": {
+        "type": "string",
+        "default": ""
+      },
+      "showFooter": {
+        "type": "boolean",
+        "default": true
+      },
+      "showLineNumbers": {
+        "type": "boolean",
+        "default": true
+      },
+      "align": {
+        "type": "string"
+      },
+      "anchor": {
+        "type": "string",
+        "source": "attribute",
+        "attribute": "id",
+        "selector": "*"
+      },
+      "className": {
+        "type": "string"
+      },
+      "ghostkitStyles": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitClassname": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitId": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitSpacings": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitIndents": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitDisplay": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitSR": {
+        "type": "string",
+        "default": ""
+      }
+    },
+    "transforms": {
+      "from": [
+        {
+          "type": "raw",
+          "priority": 1
+        }
+      ]
+    }
+  },
+  {
+    "name": "ghostkit/changelog",
+    "title": "Changelog",
+    "description": "Block for adding changelog for you products.",
+    "icon": {},
+    "category": "ghostkit",
+    "keywords": [
+      "changelog",
+      "log",
+      "ghostkit"
+    ],
+    "supports": {
+      "html": false,
+      "className": false,
+      "anchor": true,
+      "align": [
+        "wide",
+        "full"
+      ],
+      "ghostkitStyles": true,
+      "ghostkitSpacings": true,
+      "ghostkitDisplay": true,
+      "ghostkitSR": true
+    },
+    "attributes": {
+      "variant": {
+        "type": "string",
+        "default": "default"
+      },
+      "version": {
+        "type": "string",
+        "default": ""
+      },
+      "date": {
+        "type": "string",
+        "default": ""
+      },
+      "align": {
+        "type": "string"
+      },
+      "anchor": {
+        "type": "string",
+        "source": "attribute",
+        "attribute": "id",
+        "selector": "*"
+      },
+      "className": {
+        "type": "string"
+      },
+      "ghostkitStyles": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitClassname": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitId": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitSpacings": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitIndents": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitDisplay": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitSR": {
+        "type": "string",
+        "default": ""
+      }
+    }
+  },
+  {
+    "name": "ghostkit/pricing-table",
+    "title": "Pricing Table",
+    "description": "Add pricing tables.",
+    "icon": {},
+    "category": "ghostkit",
+    "keywords": [
+      "pricing",
+      "table",
+      "ghostkit"
+    ],
+    "supports": {
+      "html": false,
+      "className": false,
+      "anchor": true,
+      "align": [
+        "wide",
+        "full"
+      ],
+      "ghostkitStyles": true,
+      "ghostkitSpacings": true,
+      "ghostkitDisplay": true,
+      "ghostkitSR": true
+    },
+    "attributes": {
+      "variant": {
+        "type": "string",
+        "default": "default"
+      },
+      "count": {
+        "type": "number",
+        "default": 2
+      },
+      "gap": {
+        "type": "string",
+        "default": "md"
+      },
+      "verticalAlign": {
+        "type": "string",
+        "default": "center"
+      },
+      "horizontalAlign": {
+        "type": "string",
+        "default": "center"
+      },
+      "align": {
+        "type": "string"
+      },
+      "anchor": {
+        "type": "string",
+        "source": "attribute",
+        "attribute": "id",
+        "selector": "*"
+      },
+      "className": {
+        "type": "string"
+      },
+      "ghostkitStyles": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitClassname": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitId": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitSpacings": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitIndents": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitDisplay": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitSR": {
+        "type": "string",
+        "default": ""
+      }
+    }
+  },
+  {
+    "name": "ghostkit/pricing-table-item",
+    "title": "Pricing Table Item",
+    "parent": [
+      "ghostkit/pricing-table"
+    ],
+    "description": "A single item within a pricing table block.",
+    "icon": {},
+    "category": "ghostkit",
+    "supports": {
+      "html": false,
+      "className": false,
+      "anchor": true,
+      "ghostkitStyles": true,
+      "ghostkitSpacings": true,
+      "ghostkitDisplay": true,
+      "ghostkitSR": true
+    },
+    "attributes": {
+      "variant": {
+        "type": "string",
+        "default": "default"
+      },
+      "showPopular": {
+        "type": "boolean",
+        "default": false
+      },
+      "popularText": {
+        "type": "array",
+        "source": "children",
+        "selector": ".ghostkit-pricing-table-item-popular-badge",
+        "default": "Popular"
+      },
+      "title": {
+        "type": "array",
+        "source": "children",
+        "selector": ".ghostkit-pricing-table-item-title",
+        "default": "Standard"
+      },
+      "price": {
+        "type": "array",
+        "source": "children",
+        "selector": ".ghostkit-pricing-table-item-price-amount",
+        "default": [
+          {
+            "props": {
+              "children": [
+                "77"
+              ]
+            },
+            "type": "strong"
+          }
+        ]
+      },
+      "priceCurrency": {
+        "type": "array",
+        "source": "children",
+        "selector": ".ghostkit-pricing-table-item-price-currency",
+        "default": "$"
+      },
+      "priceRepeat": {
+        "type": "array",
+        "source": "children",
+        "selector": ".ghostkit-pricing-table-item-price-repeat"
+      },
+      "description": {
+        "type": "array",
+        "source": "children",
+        "selector": ".ghostkit-pricing-table-item-description"
+      },
+      "features": {
+        "type": "array",
+        "source": "children",
+        "selector": ".ghostkit-pricing-table-item-features",
+        "default": [
+          {
+            "props": {
+              "children": [
+                "Feature 1"
+              ]
+            },
+            "type": "li"
+          },
+          {
+            "props": {
+              "children": [
+                "Feature 2"
+              ]
+            },
+            "type": "li"
+          }
+        ]
+      },
+      "showTitle": {
+        "type": "boolean",
+        "default": true
+      },
+      "showDescription": {
+        "type": "boolean",
+        "default": false
+      },
+      "showFeatures": {
+        "type": "boolean",
+        "default": true
+      },
+      "showButton": {
+        "type": "boolean",
+        "default": true
+      },
+      "anchor": {
+        "type": "string",
+        "source": "attribute",
+        "attribute": "id",
+        "selector": "*"
+      },
+      "className": {
+        "type": "string"
+      },
+      "ghostkitStyles": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitClassname": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitId": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitSpacings": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitIndents": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitDisplay": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitSR": {
+        "type": "string",
+        "default": ""
+      }
+    }
+  },
+  {
+    "name": "ghostkit/google-maps",
+    "title": "Google Maps",
+    "description": "Show Google Maps with markers.",
+    "icon": {},
+    "category": "ghostkit",
+    "keywords": [
+      "maps",
+      "google",
+      "ghostkit"
+    ],
+    "supports": {
+      "html": false,
+      "className": false,
+      "anchor": true,
+      "align": [
+        "wide",
+        "full"
+      ],
+      "ghostkitStyles": true,
+      "ghostkitSpacings": true,
+      "ghostkitDisplay": true,
+      "ghostkitSR": true
+    },
+    "attributes": {
+      "variant": {
+        "type": "string",
+        "default": "default"
+      },
+      "lat": {
+        "type": "number",
+        "default": 40.7127753
+      },
+      "lng": {
+        "type": "number",
+        "default": -74.0059728
+      },
+      "zoom": {
+        "type": "number",
+        "default": 10
+      },
+      "height": {
+        "type": "number",
+        "default": 350
+      },
+      "showZoomButtons": {
+        "type": "boolean",
+        "default": true
+      },
+      "showMapTypeButtons": {
+        "type": "boolean",
+        "default": true
+      },
+      "showStreetViewButton": {
+        "type": "boolean",
+        "default": true
+      },
+      "showFullscreenButton": {
+        "type": "boolean",
+        "default": true
+      },
+      "optionScrollWheel": {
+        "type": "boolean",
+        "default": true
+      },
+      "optionDraggable": {
+        "type": "boolean",
+        "default": true
+      },
+      "style": {
+        "type": "string",
+        "default": "default"
+      },
+      "styleCustom": {
+        "type": "string",
+        "default": ""
+      },
+      "markers": {
+        "type": "array",
+        "default": []
+      },
+      "fullHeight": {
+        "type": "boolean",
+        "default": false
+      },
+      "align": {
+        "type": "string"
+      },
+      "anchor": {
+        "type": "string",
+        "source": "attribute",
+        "attribute": "id",
+        "selector": "*"
+      },
+      "className": {
+        "type": "string"
+      },
+      "ghostkitStyles": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitClassname": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitId": {
+        "type": "string",
+        "default": ""
+      },
+      "ghostkitSpacings": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitIndents": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitDisplay": {
+        "type": "object",
+        "default": ""
+      },
+      "ghostkitSR": {
+        "type": "string",
+        "default": ""
+      }
+    },
+    "deprecated": [
+      {
+        "supports": {
+          "html": false,
+          "className": false,
+          "align": [
+            "wide",
+            "full"
+          ],
+          "ghostkitStyles": true,
+          "ghostkitSpacings": true,
+          "ghostkitDisplay": true,
+          "ghostkitSR": true
+        },
+        "attributes": {
+          "variant": {
+            "type": "string",
+            "default": "default"
+          },
+          "lat": {
+            "type": "number",
+            "default": 40.7127753
+          },
+          "lng": {
+            "type": "number",
+            "default": -74.0059728
+          },
+          "zoom": {
+            "type": "number",
+            "default": 10
+          },
+          "height": {
+            "type": "number",
+            "default": 350
+          },
+          "showZoomButtons": {
+            "type": "boolean",
+            "default": true
+          },
+          "showMapTypeButtons": {
+            "type": "boolean",
+            "default": true
+          },
+          "showStreetViewButton": {
+            "type": "boolean",
+            "default": true
+          },
+          "showFullscreenButton": {
+            "type": "boolean",
+            "default": true
+          },
+          "optionScrollWheel": {
+            "type": "boolean",
+            "default": true
+          },
+          "optionDraggable": {
+            "type": "boolean",
+            "default": true
+          },
+          "style": {
+            "type": "string",
+            "default": "default"
+          },
+          "styleCustom": {
+            "type": "string",
+            "default": ""
+          },
+          "markers": {
+            "type": "array",
+            "default": []
+          },
+          "fullHeight": {
+            "type": "boolean",
+            "default": false
+          },
+          "ghostkitStyles": {
+            "$ref": "$[32][\"attributes\"][\"ghostkitStyles\"]"
+          },
+          "ghostkitClassname": {
+            "$ref": "$[32][\"attributes\"][\"ghostkitClassname\"]"
+          },
+          "ghostkitId": {
+            "$ref": "$[32][\"attributes\"][\"ghostkitId\"]"
+          },
+          "ghostkitSpacings": {
+            "$ref": "$[32][\"attributes\"][\"ghostkitSpacings\"]"
+          },
+          "ghostkitIndents": {
+            "$ref": "$[32][\"attributes\"][\"ghostkitIndents\"]"
+          },
+          "ghostkitDisplay": {
+            "$ref": "$[32][\"attributes\"][\"ghostkitDisplay\"]"
+          },
+          "ghostkitSR": {
+            "$ref": "$[32][\"attributes\"][\"ghostkitSR\"]"
+          }
+        }
+      },
+      {
+        "supports": {
+          "$ref": "$[32][\"deprecated\"][0][\"supports\"]"
+        },
+        "attributes": {
+          "$ref": "$[32][\"deprecated\"][0][\"attributes\"]"
+        }
+      }
+    ]
+  },
+  {
+    "name": "ghostkit/widgetized-area",
+    "title": "Widgetized Area",
+    "description": "Output registered sidebars.",
+    "icon": {},
+    "category": "ghostkit",
+    "keywords": [
+      "widget",
+      "sidebar",
+      "ghostkit"
+    ],
+    "supports": {
+      "html": false,
+      "className": false,
+      "align": [
+        "wide",
+        "full"
+      ]
+    },
+    "attributes": {
+      "id": {
+        "type": "string"
+      },
+      "align": {
+        "type": "string"
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "ghostkit/instagram",
+    "title": "Instagram",
+    "description": "Show instagram feed and user data.",
+    "icon": {},
+    "category": "ghostkit",
+    "keywords": [
+      "instagram",
+      "ghostkit"
+    ],
+    "supports": {
+      "html": false,
+      "className": false,
+      "align": [
+        "wide",
+        "full"
+      ]
+    },
+    "attributes": {
+      "variant": {
+        "type": "string",
+        "default": "default"
+      },
+      "accessToken": {
+        "type": "string"
+      },
+      "count": {
+        "type": "number",
+        "default": 8
+      },
+      "columns": {
+        "type": "number",
+        "default": 4
+      },
+      "gap": {
+        "type": "string",
+        "default": "sm"
+      },
+      "showProfile": {
+        "type": "boolean",
+        "default": true
+      },
+      "showProfileAvatar": {
+        "type": "boolean",
+        "default": true
+      },
+      "profileAvatarSize": {
+        "type": "number",
+        "default": 70
+      },
+      "showProfileName": {
+        "type": "boolean",
+        "default": true
+      },
+      "showProfileStats": {
+        "type": "boolean",
+        "default": true
+      },
+      "showProfileBio": {
+        "type": "boolean",
+        "default": true
+      },
+      "showProfileWebsite": {
+        "type": "boolean",
+        "default": true
+      },
+      "align": {
+        "type": "string"
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "ghostkit/twitter",
+    "title": "Twitter",
+    "description": "Show twitter feed and user data.",
+    "icon": {},
+    "category": "ghostkit",
+    "keywords": [
+      "twitter",
+      "ghostkit"
+    ],
+    "supports": {
+      "html": false,
+      "className": false,
+      "align": [
+        "wide",
+        "full"
+      ]
+    },
+    "attributes": {
+      "variant": {
+        "type": "string",
+        "default": "default"
+      },
+      "consumerKey": {
+        "type": "string"
+      },
+      "consumerSecret": {
+        "type": "string"
+      },
+      "accessToken": {
+        "type": "string"
+      },
+      "accessTokenSecret": {
+        "type": "string"
+      },
+      "userName": {
+        "type": "string",
+        "default": "nkdevv"
+      },
+      "count": {
+        "type": "number",
+        "default": 3
+      },
+      "showReplies": {
+        "type": "boolean",
+        "default": false
+      },
+      "showRetweets": {
+        "type": "boolean",
+        "default": true
+      },
+      "showFeedAvatar": {
+        "type": "boolean",
+        "default": true
+      },
+      "feedAvatarSize": {
+        "type": "number",
+        "default": 48
+      },
+      "showFeedName": {
+        "type": "boolean",
+        "default": true
+      },
+      "showFeedDate": {
+        "type": "boolean",
+        "default": true
+      },
+      "feedTextConvertLinks": {
+        "type": "string",
+        "default": "links_media"
+      },
+      "showFeedActions": {
+        "type": "boolean",
+        "default": true
+      },
+      "showProfile": {
+        "type": "boolean",
+        "default": true
+      },
+      "showProfileAvatar": {
+        "type": "boolean",
+        "default": true
+      },
+      "profileAvatarSize": {
+        "type": "number",
+        "default": 70
+      },
+      "showProfileName": {
+        "type": "boolean",
+        "default": true
+      },
+      "showProfileStats": {
+        "type": "boolean",
+        "default": true
+      },
+      "showProfileDescription": {
+        "type": "boolean",
+        "default": true
+      },
+      "showProfileWebsite": {
+        "type": "boolean",
+        "default": true
+      },
+      "showProfileLocation": {
+        "type": "boolean",
+        "default": true
+      },
+      "align": {
+        "type": "string"
+      },
+      "className": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "name": "ghostkit/customizer",
+    "title": "Customizer",
+    "description": "Replace the customizer options for current post.",
+    "icon": {},
+    "category": "ghostkit",
+    "keywords": [
+      "customizer",
+      "options",
+      "ghostkit"
+    ],
+    "supports": {
+      "html": false,
+      "customClassName": false,
+      "inserter": false
+    },
+    "attributes": {
+      "options": {
+        "type": "string",
+        "source": "meta",
+        "meta": "ghostkit_customizer_options"
+      }
+    }
+  },
+  {
+    "name": "ghostkit/custom-css",
+    "title": "Custom CSS",
+    "description": "Custom CSS for current post.",
+    "icon": {},
+    "category": "ghostkit",
+    "keywords": [
+      "styles",
+      "css",
+      "ghostkit"
+    ],
+    "supports": {
+      "html": false,
+      "customClassName": false,
+      "inserter": false
+    },
+    "attributes": {
+      "customCSS": {
+        "type": "string",
+        "source": "meta",
+        "meta": "ghostkit_custom_css"
+      }
+    }
+  }
+]
