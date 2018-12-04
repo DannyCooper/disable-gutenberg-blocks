@@ -1,8 +1,8 @@
-.gutenberg_page_disable-blocks tr.disabled {
+.settings_page_disable-blocks tr.disabled {
 	opacity: .5
 }
 
-.gutenberg_page_disable-blocks table {
+.settings_page_disable-blocks table {
 	position: relative;
 }
 
@@ -12,4 +12,8 @@
 
 .example-block {
 	display: none
+}
+
+.poststuff {
+	padding-top: 0
 }

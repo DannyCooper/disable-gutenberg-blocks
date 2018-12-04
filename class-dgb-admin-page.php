@@ -20,7 +20,7 @@ class DGB_Admin_Page {
 	 */
 	public function __construct() {
 		// Register the submenu.
-		add_action( 'load-gutenberg_page_disable-blocks', array( $this, 'process_bulk_action' ) );
+		add_action( 'load-settings_page_disable-blocks', array( $this, 'process_bulk_action' ) );
 		add_action( 'admin_menu', array( $this, 'register_sub_menu' ), 50 );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue' ), 10 );
 	}
@@ -32,7 +32,7 @@ class DGB_Admin_Page {
 	 */
 	public function enqueue( $hook ) {
 
-		if ( 'gutenberg_page_disable-blocks' !== $hook ) {
+		if ( 'settings_page_disable-blocks' !== $hook ) {
 			return;
 		}
 
@@ -59,7 +59,7 @@ class DGB_Admin_Page {
 	 */
 	public function register_sub_menu() {
 		add_submenu_page(
-			'gutenberg',
+			'options-general.php',
 			esc_html__( 'Disable Blocks', 'disable-gutenberg-blocks' ),
 			esc_html__( 'Disable Blocks', 'disable-gutenberg-blocks' ),
 			'activate_plugins',

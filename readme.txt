@@ -6,7 +6,7 @@ Tested up to: 4.9.8
 License: GPLv2 or later
 Stable tag: trunk
 
-Remove unwanted blocks from Gutenberg editor.
+Remove unwanted blocks from the Gutenberg Block Inserter.
 
 == Description ==
 
@@ -32,6 +32,7 @@ If you find a block you can't disable using this plugin, please create a [suppor
 * [Caxton](https://wordpress.org/plugins/caxton/)
 * [CoBlocks](https://wordpress.org/plugins/coblocks/)
 * [Editor Blocks](https://wordpress.org/plugins/editor-blocks/)
+* [Jetpack Blocks](https://wordpress.org/plugins/jetpack/)
 * [GhostKit](https://wordpress.org/plugins/ghostkit/)
 * [Kadence Blocks](https://wordpress.org/plugins/kadence-blocks/)
 * [Secure Blocks](https://wordpress.org/plugins/secure-blocks-for-gutenberg/)
@@ -39,12 +40,14 @@ If you find a block you can't disable using this plugin, please create a [suppor
 * [Stackable Ultimate Gutenberg Blocks](https://wordpress.org/plugins/stackable-ultimate-gutenberg-blocks/)
 * [Orbit Fox by ThemeIsle](https://wordpress.org/plugins/themeisle-companion/)
 * [WooCommerce Product Block](https://wordpress.org/plugins/woo-gutenberg-products-block/)
+* [WPForms Blocks](https://wordpress.org/plugins/wpforms-lite/)
 * [Recipe Card Blocks by WPZOOM](https://wordpress.org/plugins/recipe-card-blocks-by-wpzoom/)
+* [Yoast Blocks](https://wordpress.org/plugins/wordpress-seo)
 
 == Installation ==
 Upload 'Disable Gutenberg Blocks', activate it, and you're done!
 
-Navigate to wp-admin -> Gutenberg -> Disable Blocks to use the plugin.
+Navigate to wp-admin -> Settings -> Disable Blocks to use the plugin.
 
 == Screenshots ==
 
@@ -53,12 +56,12 @@ Navigate to wp-admin -> Gutenberg -> Disable Blocks to use the plugin.
 
 == Changelog ==
 
+= 1.0.2 =
+*Release Date - December 4 2018*
+
+* readme updates.
+
 = 1.0.1 =
-*Release Date - December 3 2018*
-
-* Initial release
-
-= 1.0.0 =
-*Release Date - December 3 2018*
+*Release Date - December 4 2018*
 
 * Initial release

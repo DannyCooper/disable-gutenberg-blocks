@@ -4,10 +4,10 @@
  *
  * Plugin Name: Disable Gutenberg Blocks
  * Plugin URI:  https://wordpress.org/plugins/disable-gutenberg-blocks/
- * Description: Remove unwanted blocks from Gutenberg editor.
- * Version:     1.0.1
+ * Description: Remove unwanted blocks from the Gutenberg Block Inserter.
+ * Version:     1.0.2
  * Author:      Danny Cooper
- * Author URI:  https://editorblocks.com/disable-gutenberg-blocks
+ * Author URI:  https://editorblocks.com
  * Text Domain: disable-gutenberg-blocks
  * License:     GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
@@ -55,6 +55,8 @@ class Disable_Gutenberg_Blocks {
 	private function __construct() {
 		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue' ) );
 		require_once DGB_PLUGIN_DIR_PATH . 'class-dgb-admin-page.php';
+		add_filter( 'plugin_action_links_' . plugin_basename( DGB_PLUGIN_DIR_PATH . 'class-disable-gutenberg-blocks.php' ), array( $this, 'links' ) );
+
 	}
 
 	/**
@@ -71,20 +73,27 @@ class Disable_Gutenberg_Blocks {
 	public function get_disabled_blocks() {
 		return (array) get_option( 'dgb_disabled_blocks', array() );
 	}
+
+	/**
+	 * Add custom links to plugin settings page.
+	 *
+	 * @param array $links Current links array.
+	 */
+	public function links( $links ) {
+
+		$settings_link = '<a href="' . esc_url( admin_url( 'options-general.php?page=disable-blocks' ) ) . '">' . esc_html__( 'Disable Blocks', 'disable-gutenberg-blocks' ) . '</a>';
+		array_push( $links, $settings_link );
+		return $links;
+	}
 }
 
 /**
  * The main function for that returns Disable_Gutenberg_Blocks.
  */
 function DGF() {
-	return Disable_Gutenberg_Blocks::instance();
+	if ( function_exists( 'gutenberg_get_block_categories' ) ) {
+		return Disable_Gutenberg_Blocks::instance();
+	}
 }
 
-/**
- * Detect plugin. For use on Front End only.
- */
-include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-
-if ( is_plugin_active( 'gutenberg/gutenberg.php' ) ) {
-	DGF();
-}
+add_action( 'plugins_loaded', 'DGF' );
