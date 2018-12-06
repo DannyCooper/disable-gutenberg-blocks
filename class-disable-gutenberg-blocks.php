@@ -5,7 +5,7 @@
  * Plugin Name: Disable Gutenberg Blocks
  * Plugin URI:  https://wordpress.org/plugins/disable-gutenberg-blocks/
  * Description: Remove unwanted blocks from the Gutenberg Block Inserter.
- * Version:     1.0.2
+ * Version:     1.0.4
  * Author:      Danny Cooper
  * Author URI:  https://editorblocks.com
  * Text Domain: disable-gutenberg-blocks
@@ -56,14 +56,20 @@ class Disable_Gutenberg_Blocks {
 		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue' ) );
 		require_once DGB_PLUGIN_DIR_PATH . 'class-dgb-admin-page.php';
 		add_filter( 'plugin_action_links_' . plugin_basename( DGB_PLUGIN_DIR_PATH . 'class-disable-gutenberg-blocks.php' ), array( $this, 'links' ) );
-
 	}
 
 	/**
 	 * Enqueue the scripts.
 	 */
 	public function enqueue() {
-		wp_enqueue_script( 'disable-gutenberg-blocks', plugins_url( 'js/scripts.js', __FILE__ ), array( 'wp-edit-post' ), '1.0.0', false );
+
+		if ( function_exists( 'gutenberg_get_block_categories' ) ) {
+				$scripts = 'js/scripts-old.js';
+		} elseif ( function_exists( 'get_block_categories' ) ) {
+				$scripts = 'js/scripts.js';
+		}
+
+		wp_enqueue_script( 'disable-gutenberg-blocks', plugins_url( $scripts, __FILE__ ), array( 'wp-edit-post' ), '1.0.0', false );
 		wp_localize_script( 'disable-gutenberg-blocks', 'dgb_blocks', $this->get_disabled_blocks() );
 	}
 
@@ -91,9 +97,11 @@ class Disable_Gutenberg_Blocks {
  * The main function for that returns Disable_Gutenberg_Blocks.
  */
 function DGF() {
-	if ( function_exists( 'gutenberg_get_block_categories' ) ) {
-		return Disable_Gutenberg_Blocks::instance();
+	include_once ABSPATH . 'wp-admin/includes/plugin.php';
+
+	if ( is_plugin_active( 'gutenberg/gutenberg.php' ) || version_compare( get_bloginfo( 'version' ), '4.9.9', '>' ) ) {
+		Disable_Gutenberg_Blocks::instance();
 	}
 }
 
-add_action( 'plugins_loaded', 'DGF' );
+add_action( 'plugins_loaded', 'DGF', 100 );

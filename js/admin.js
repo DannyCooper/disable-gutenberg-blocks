@@ -1,4 +1,4 @@
-jQuery( document ).ready(function() {
+window.onload = function () {
 	wp.blockLibrary.registerCoreBlocks();
 	var blocks = wp.blocks.getBlockTypes();
 	var disabledBlocks = dgb_object.disabledBlocks;
@@ -60,4 +60,4 @@ jQuery( document ).ready(function() {
 		table.append(html);
 
 	});
-});
+};

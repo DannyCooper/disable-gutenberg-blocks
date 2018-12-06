@@ -37,10 +37,23 @@ class DGB_Admin_Page {
 		}
 
 		wp_enqueue_style( 'dgb-admin', plugins_url( 'css/style.css', __FILE__ ), array(), '1.0.0' );
+
+		$block_categories = array();
+		if ( function_exists( 'gutenberg_get_block_categories' ) ) {
+				$block_categories = gutenberg_get_block_categories( get_post() );
+		} elseif ( function_exists( 'get_block_categories' ) ) {
+				$block_categories = get_block_categories( get_post() );
+		}
+
 		wp_add_inline_script(
 			'wp-blocks',
-			sprintf( 'wp.blocks.setCategories( %s );', wp_json_encode( gutenberg_get_block_categories( get_post() ) ) ),
+			sprintf( 'wp.blocks.setCategories( %s );', wp_json_encode( $block_categories ) ),
 			'after'
+		);
+		// Preload server-registered block schemas.
+		wp_add_inline_script(
+			'wp-blocks',
+			'wp.blocks.unstable__bootstrapServerSideBlockDefinitions(' . wp_json_encode( get_block_editor_server_block_settings() ) . ');'
 		);
 		do_action( 'enqueue_block_editor_assets' );
 		wp_dequeue_script( 'disable-gutenberg-blocks' );
@@ -50,7 +63,7 @@ class DGB_Admin_Page {
 			'nonce'          => wp_create_nonce( 'dgb_nonce' ),
 		);
 
-		wp_enqueue_script( 'dgf-admin', plugins_url( 'js/admin.js', __FILE__ ), array( 'jquery', 'wp-blocks', 'wp-element', 'wp-data', 'wp-components', 'wp-block-library', 'wp-editor' ), '1.0.0', true );
+		wp_enqueue_script( 'dgf-admin', plugins_url( 'js/admin.js', __FILE__ ), array( 'jquery', 'wp-blocks', 'wp-element', 'wp-data', 'wp-components', 'wp-block-library' ), '1.1.0' );
 		wp_localize_script( 'dgf-admin', 'dgb_object', $local_arr );
 	}
 

@@ -151,10 +151,10 @@ class DGB_List_Table extends WP_List_Table {
 	 * Returns an associative array containing the bulk action
 	 */
 	public function get_bulk_actions() {
-		$actions = [
+		$actions = array(
 			'bulk-enable'  => esc_html__( 'Enable', 'disable-google-fonts' ),
 			'bulk-disable' => esc_html__( 'Disable', 'disable-google-fonts' ),
-		];
+		);
 
 		return $actions;
 	}
