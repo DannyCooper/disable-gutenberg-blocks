@@ -56,6 +56,11 @@ Navigate to wp-admin -> Settings -> Disable Blocks to use the plugin.
 
 == Changelog ==
 
+= 1.0.5 =
+*Release Date - December 6 2018*
+
+* Fix issue with blocks registered using register_block_type()
+
 = 1.0.4 =
 *Release Date - December 6 2018*
 

@@ -5,7 +5,7 @@
  * Plugin Name: Disable Gutenberg Blocks
  * Plugin URI:  https://wordpress.org/plugins/disable-gutenberg-blocks/
  * Description: Remove unwanted blocks from the Gutenberg Block Inserter.
- * Version:     1.0.4
+ * Version:     1.0.5
  * Author:      Danny Cooper
  * Author URI:  https://editorblocks.com
  * Text Domain: disable-gutenberg-blocks

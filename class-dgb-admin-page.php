@@ -22,7 +22,7 @@ class DGB_Admin_Page {
 		// Register the submenu.
 		add_action( 'load-settings_page_disable-blocks', array( $this, 'process_bulk_action' ) );
 		add_action( 'admin_menu', array( $this, 'register_sub_menu' ), 50 );
-		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue' ), 10 );
+		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue' ) );
 	}
 
 	/**
@@ -58,6 +58,14 @@ class DGB_Admin_Page {
 			'disabledBlocks' => get_option( 'dgb_disabled_blocks', array() ),
 			'nonce'          => wp_create_nonce( 'dgb_nonce' ),
 		);
+
+		$block_registry = WP_Block_Type_Registry::get_instance();
+		foreach ( $block_registry->get_all_registered() as $block_name => $block_type ) {
+			// Front-end script.
+			if ( ! empty( $block_type->editor_script ) ) {
+				wp_enqueue_script( $block_type->editor_script );
+			}
+		}
 
 		wp_enqueue_script( 'dgf-admin', plugins_url( 'js/admin.js', __FILE__ ), array( 'jquery', 'wp-blocks', 'wp-element', 'wp-data', 'wp-components', 'wp-block-library' ), '1.1.0' );
 		wp_localize_script( 'dgf-admin', 'dgb_object', $local_arr );
