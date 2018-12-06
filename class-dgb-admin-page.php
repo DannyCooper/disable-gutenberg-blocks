@@ -50,11 +50,7 @@ class DGB_Admin_Page {
 			sprintf( 'wp.blocks.setCategories( %s );', wp_json_encode( $block_categories ) ),
 			'after'
 		);
-		// Preload server-registered block schemas.
-		wp_add_inline_script(
-			'wp-blocks',
-			'wp.blocks.unstable__bootstrapServerSideBlockDefinitions(' . wp_json_encode( get_block_editor_server_block_settings() ) . ');'
-		);
+
 		do_action( 'enqueue_block_editor_assets' );
 		wp_dequeue_script( 'disable-gutenberg-blocks' );
 
