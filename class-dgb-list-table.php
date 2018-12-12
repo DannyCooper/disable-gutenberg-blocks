@@ -121,13 +121,13 @@ class DGB_List_Table extends WP_List_Table {
 		if ( $this->is_block_disabled( $item['name'] ) ) {
 
 			$actions = array(
-				'enable' => sprintf( '<a href="?page=%s&action=%s&block=%s&_wpnonce=%s">Enable</a>', 'disable-blocks', 'enable', esc_attr( $item['name'] ), $dgb_nonce ),
+				'enable' => sprintf( '<a href="?page=%s&action=%s&block=%s&_wpnonce=%s">%s</a>', 'disable-blocks', 'enable', esc_attr( $item['name'] ), $dgb_nonce, esc_html__( 'Enable', 'disable-gutenberg-blocks' ) ),
 			);
 
 		} else {
 
 			$actions = array(
-				'disable' => sprintf( '<a href="?page=%s&action=%s&block=%s&_wpnonce=%s">Disable</a>', 'disable-blocks', 'disable', esc_attr( $item['name'] ), $dgb_nonce ),
+				'disable' => sprintf( '<a href="?page=%s&action=%s&block=%s&_wpnonce=%s">%s</a>', 'disable-blocks', 'disable', esc_attr( $item['name'] ), $dgb_nonce, esc_html__( 'Disable', 'disable-gutenberg-blocks' ) ),
 			);
 
 		}
@@ -152,8 +152,8 @@ class DGB_List_Table extends WP_List_Table {
 	 */
 	public function get_bulk_actions() {
 		$actions = array(
-			'bulk-enable'  => esc_html__( 'Enable', 'disable-google-fonts' ),
-			'bulk-disable' => esc_html__( 'Disable', 'disable-google-fonts' ),
+			'bulk-enable'  => esc_html__( 'Enable', 'disable-gutenberg-blocks' ),
+			'bulk-disable' => esc_html__( 'Disable', 'disable-gutenberg-blocks' ),
 		);
 
 		return $actions;
