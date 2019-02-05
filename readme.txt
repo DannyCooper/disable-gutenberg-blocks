@@ -1,6 +1,6 @@
 === Disable Gutenberg Blocks ===
 Contributors: DannyCooper, editorblocks
-Tags: gutenberg, blocks, disable blocks, disable gutenberg blocks
+Tags: gutenberg, blocks, disable blocks, disable gutenberg blocks, manage blocks
 Requires at least: 4.0
 Tested up to: 5.0.0
 License: GPLv2 or later
@@ -56,27 +56,25 @@ Navigate to wp-admin -> Settings -> Disable Blocks to use the plugin.
 
 == Changelog ==
 
+= 1.0.6 =
+
+* Fix localization issues
+
 = 1.0.5 =
-*Release Date - December 6 2018*
 
 * Fix issue with blocks registered using register_block_type()
 
 = 1.0.4 =
-*Release Date - December 6 2018*
 
 * Further compatibility fixes
 
 = 1.0.3 =
-*Release Date - December 5 2018*
-
 * Add compatibility for 5.0RC
 
 = 1.0.2 =
-*Release Date - December 4 2018*
 
 * readme updates.
 
 = 1.0.1 =
-*Release Date - December 4 2018*
 
 * Initial release

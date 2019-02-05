@@ -44,9 +44,9 @@ window.onload = function () {
 		html += '<div class="row-actions">';
 
 		if( isDisabledBlock ) {
-			html += '<span class="enable"><a href="?page=disable-blocks&amp;action=enable&amp;block=' + id +'&amp;_wpnonce=' + nonce + '">Enable</a></span>';
+			html += '<span class="enable"><a href="?page=disable-blocks&amp;action=enable&amp;block=' + id +'&amp;_wpnonce=' + nonce + '">' + dgb_strings.enable + '</a></span>';
 		} else {
-			html += '<span class="disable"><a href="?page=disable-blocks&amp;action=disable&amp;block=' + id +'&amp;_wpnonce=' + nonce + '">Disable</a></span>';
+			html += '<span class="disable"><a href="?page=disable-blocks&amp;action=disable&amp;block=' + id +'&amp;_wpnonce=' + nonce + '">' + dgb_strings.disable + '</a></span>';
 		}
 
 		html += '</div>';

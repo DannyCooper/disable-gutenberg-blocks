@@ -67,8 +67,16 @@ class DGB_Admin_Page {
 			}
 		}
 
-		wp_enqueue_script( 'dgf-admin', plugins_url( 'js/admin.js', __FILE__ ), array( 'jquery', 'wp-blocks', 'wp-element', 'wp-data', 'wp-components', 'wp-block-library' ), '1.1.0' );
-		wp_localize_script( 'dgf-admin', 'dgb_object', $local_arr );
+		wp_enqueue_script( 'dgb-admin', plugins_url( 'js/admin.js', __FILE__ ), array( 'jquery', 'wp-blocks', 'wp-element', 'wp-data', 'wp-components', 'wp-block-library' ), '1.1.0' );
+		wp_localize_script( 'dgb-admin', 'dgb_object', $local_arr );
+		wp_localize_script(
+			'dgb-admin',
+			'dgb_strings',
+			array(
+				'enable'  => __( 'Enable', 'disable-gutenberg-blocks' ),
+				'disable' => __( 'Disable', 'disable-gutenberg-blocks' ),
+			)
+		);
 	}
 
 	/**
