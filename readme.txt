@@ -1,8 +1,8 @@
 === Disable Gutenberg Blocks ===
 Contributors: DannyCooper, editorblocks
 Tags: gutenberg, blocks, disable blocks, disable gutenberg blocks, manage blocks
-Requires at least: 4.0
-Tested up to: 5.0.0
+Requires at least: 5.0
+Tested up to: 5.0
 License: GPLv2 or later
 Stable tag: trunk
 
@@ -38,6 +38,7 @@ If you find a block you can't disable using this plugin, please create a [suppor
 * [Secure Blocks](https://wordpress.org/plugins/secure-blocks-for-gutenberg/)
 * [StagBlocks](https://wordpress.org/plugins/stag-blocks/)
 * [Stackable Ultimate Gutenberg Blocks](https://wordpress.org/plugins/stackable-ultimate-gutenberg-blocks/)
+* [Otter Blocks](https://wordpress.org/plugins/otter-blocks)
 * [Orbit Fox by ThemeIsle](https://wordpress.org/plugins/themeisle-companion/)
 * [WooCommerce Product Block](https://wordpress.org/plugins/woo-gutenberg-products-block/)
 * [WPForms Blocks](https://wordpress.org/plugins/wpforms-lite/)
@@ -55,6 +56,10 @@ Navigate to wp-admin -> Settings -> Disable Blocks to use the plugin.
 2. Disable Gutenberg Blocks list.
 
 == Changelog ==
+
+= 1.0.7 =
+
+* Improve Spacing Consistency
 
 = 1.0.6 =
 

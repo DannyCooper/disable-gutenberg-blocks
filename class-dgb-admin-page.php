@@ -19,10 +19,12 @@ class DGB_Admin_Page {
 	 * Autoload method
 	 */
 	public function __construct() {
+
 		// Register the submenu.
 		add_action( 'load-settings_page_disable-blocks', array( $this, 'process_bulk_action' ) );
 		add_action( 'admin_menu', array( $this, 'register_sub_menu' ), 50 );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue' ) );
+
 	}
 
 	/**
@@ -77,12 +79,14 @@ class DGB_Admin_Page {
 				'disable' => __( 'Disable', 'disable-gutenberg-blocks' ),
 			)
 		);
+
 	}
 
 	/**
 	 * [disable_gutenberg_blocks_add_menu description]
 	 */
 	public function register_sub_menu() {
+
 		add_submenu_page(
 			'options-general.php',
 			esc_html__( 'Disable Blocks', 'disable-gutenberg-blocks' ),
@@ -91,12 +95,14 @@ class DGB_Admin_Page {
 			'disable-blocks',
 			array( $this, 'submenu_page_callback' )
 		);
+
 	}
 
 	/**
 	 * [admin description]
 	 */
 	public function submenu_page_callback() {
+
 		$table = new DGB_List_Table();
 		$table->prepare_items();
 		?>
@@ -117,6 +123,7 @@ class DGB_Admin_Page {
 				</div>
 			</div>
 			<?php
+
 	}
 
 	/**
@@ -182,6 +189,7 @@ class DGB_Admin_Page {
 				$this->disable_block( $id );
 			}
 		}
+
 	}
 
 	/**
@@ -190,11 +198,13 @@ class DGB_Admin_Page {
 	 * @param string $name Name of block to disable.
 	 */
 	public function disable_block( $name ) {
+
 		$blocks = (array) get_option( 'dgb_disabled_blocks', array() );
 		if ( ! in_array( $name, $blocks, true ) ) {
 			$blocks[] = $name;
 		}
 		update_option( 'dgb_disabled_blocks', $blocks );
+
 	}
 
 	/**
@@ -203,12 +213,14 @@ class DGB_Admin_Page {
 	 * @param string $name Name of block to enable.
 	 */
 	public function enable_block( $name ) {
+
 		$blocks     = (array) get_option( 'dgb_disabled_blocks', array() );
 		$new_blocks = array();
 		if ( in_array( $name, $blocks, true ) ) {
 			$new_blocks = array_diff( $blocks, array( $name ) );
 		}
 		update_option( 'dgb_disabled_blocks', $new_blocks );
+
 	}
 
 }

@@ -27,6 +27,7 @@ class DGB_List_Table extends WP_List_Table {
 	 * [__construct description]
 	 */
 	public function __construct() {
+
 		global $status, $page;
 		parent::__construct(
 			array(
@@ -36,12 +37,14 @@ class DGB_List_Table extends WP_List_Table {
 			)
 		);
 		$this->set_data();
+
 	}
 
 	/**
 	 * [set_data description]
 	 */
 	public function set_data() {
+
 		$this->data = array(
 			array(
 				'name'        => 'Example Block',
@@ -50,6 +53,7 @@ class DGB_List_Table extends WP_List_Table {
 				'category'    => 'example',
 			),
 		);
+
 	}
 
 	/**
@@ -59,6 +63,7 @@ class DGB_List_Table extends WP_List_Table {
 	 * @param string $column_name Name of current column.
 	 */
 	public function column_default( $item, $column_name ) {
+
 		switch ( $column_name ) {
 			case 'name':
 			case 'id':
@@ -68,12 +73,14 @@ class DGB_List_Table extends WP_List_Table {
 			default:
 				return print_r( $item, true ); // Show the whole array for troubleshooting purposes.
 		}
+
 	}
 
 	/**
 	 * [get_columns description]
 	 */
 	public function get_columns() {
+
 		$columns = array(
 			'cb'          => '<input type="checkbox" />',
 			'name'        => __( 'Name', 'disable-gutenberg-blocks' ),
@@ -82,6 +89,7 @@ class DGB_List_Table extends WP_List_Table {
 			'category'    => __( 'Category', 'disable-gutenberg-blocks' ),
 		);
 		return $columns;
+
 	}
 
 	/**
@@ -133,6 +141,7 @@ class DGB_List_Table extends WP_List_Table {
 		}
 
 		return $title . $this->row_actions( $actions );
+
 	}
 
 	/**
@@ -141,22 +150,26 @@ class DGB_List_Table extends WP_List_Table {
 	 * @param array $item an array of block data.
 	 */
 	public function column_cb( $item ) {
+
 		return sprintf(
 			'<input type="checkbox" name="bulk-change[]" value="%s" />',
 			$item['name']
 		);
+
 	}
 
 	/**
 	 * Returns an associative array containing the bulk action
 	 */
 	public function get_bulk_actions() {
+
 		$actions = array(
 			'bulk-enable'  => esc_html__( 'Enable', 'disable-gutenberg-blocks' ),
 			'bulk-disable' => esc_html__( 'Disable', 'disable-gutenberg-blocks' ),
 		);
 
 		return $actions;
+
 	}
 
 	/**
@@ -165,6 +178,7 @@ class DGB_List_Table extends WP_List_Table {
 	 * @param string $name Name of block to check if disabled.
 	 */
 	public function is_block_disabled( $name ) {
+
 		$disabled_blocks = (array) get_option( 'dgb_disabled_blocks', array() );
 
 		if ( in_array( $name, $disabled_blocks, true ) ) {
@@ -172,6 +186,7 @@ class DGB_List_Table extends WP_List_Table {
 
 		}
 		return false;
+
 	}
 
 	/**
@@ -184,6 +199,7 @@ class DGB_List_Table extends WP_List_Table {
 		echo '<tr class="example-block">';
 		$this->single_row_columns( $item );
 		echo '</tr>';
+
 	}
 
 }
