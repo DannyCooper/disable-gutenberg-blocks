@@ -2,7 +2,7 @@
 Contributors: DannyCooper, editorblocks
 Tags: gutenberg, blocks, disable blocks, disable gutenberg blocks, manage blocks
 Requires at least: 5.0
-Tested up to: 5.0
+Tested up to: 5.1
 License: GPLv2 or later
 Stable tag: trunk
 
@@ -56,6 +56,10 @@ Navigate to wp-admin -> Settings -> Disable Blocks to use the plugin.
 2. Disable Gutenberg Blocks list.
 
 == Changelog ==
+
+= 1.0.8 =
+
+* Fix console error when block plugins are deactivated
 
 = 1.0.7 =
 
