@@ -1,4 +1,4 @@
-=== Disable Gutenberg Blocks ===
+=== Disable Gutenberg Blocks - Block Manager ===
 Contributors: DannyCooper, editorblocks
 Tags: gutenberg, blocks, disable blocks, disable gutenberg blocks, manage blocks
 Requires at least: 5.0

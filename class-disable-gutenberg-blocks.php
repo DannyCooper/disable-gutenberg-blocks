@@ -1,8 +1,8 @@
 <?php
 /**
- * Disable Gutenberg Blocks
+ * Disable Gutenberg Blocks - Block Manager
  *
- * Plugin Name: Disable Gutenberg Blocks
+ * Plugin Name: Disable Gutenberg Blocks - Block Manager
  * Plugin URI:  https://wordpress.org/plugins/disable-gutenberg-blocks/
  * Description: Remove unwanted blocks from the Gutenberg Block Inserter.
  * Version:     1.0.8
